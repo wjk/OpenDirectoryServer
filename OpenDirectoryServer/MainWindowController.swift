@@ -10,12 +10,14 @@ import Cocoa
 import SVRUserManagement
 
 internal final class MainWindowController: NSWindowController {
-	internal static func create() -> MainWindowController {
+	internal static func create(directoryNode: SVRDirectoryNode) -> MainWindowController {
 		guard let storyboard = NSStoryboard.main else {
 			fatalError("Could not retrieve main storyboard")
 		}
 
-		return storyboard.instantiateController(withIdentifier: "SVRMainWindow") as! MainWindowController
+		let controller = storyboard.instantiateController(withIdentifier: "SVRMainWindow") as! MainWindowController
+		controller.model = directoryNode
+		return controller
 	}
 
 	// MARK: Model
