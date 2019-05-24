@@ -53,7 +53,7 @@ fileprivate class XPCListenerDelegate: NSObject, NSXPCListenerDelegate {
 func swift_main() {
 	if CommandLine.arguments.count > 2 && CommandLine.arguments[1] == "-sshpass" {
 		guard let _ = swift_getenv("SSHPASS") else {
-			fputs("error: SSHPASS env var must be set to use -sshpass option", stderr)
+			fputs("error: SSHPASS env var must be set to use -sshpass option\n", stderr)
 			exit(1)
 		}
 
