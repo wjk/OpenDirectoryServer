@@ -20,7 +20,7 @@ int sshpass_main_wrapper(NSArray<NSString *> *argv) {
 		native_argv[i + 2] = [argv[i] UTF8String];
 	}
 
-	return sshpass_main(argc, native_argv);
+	return sshpass_main(argc + 2, native_argv);
 }
 
 NSString *swift_getenv(NSString *key) {
