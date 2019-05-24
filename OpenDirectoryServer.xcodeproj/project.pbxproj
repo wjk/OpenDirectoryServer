@@ -29,6 +29,7 @@
 		1F1E02062298881E009EA15A /* AuthorizationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E0204229886B1009EA15A /* AuthorizationAPI.swift */; };
 		1F1E0208229888AD009EA15A /* HelperToolProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E0207229888AD009EA15A /* HelperToolProtocol.swift */; };
 		1F6736DA229891A600C7A446 /* HelperToolProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E0207229888AD009EA15A /* HelperToolProtocol.swift */; };
+		1F6736DF2298949D00C7A446 /* sshpass.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F6736DE2298949D00C7A446 /* sshpass.c */; };
 		1FA72ACD22987DEB00623350 /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = 1FA72ACB22987DEB00623350 /* COPYING */; };
 		1FA72ACE22987DEB00623350 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1FA72ACC22987DEB00623350 /* README.md */; };
 /* End PBXBuildFile section */
@@ -103,6 +104,8 @@
 		1F14AFC8229871DD001A0318 /* SwiftKVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftKVO.swift; sourceTree = "<group>"; };
 		1F1E0204229886B1009EA15A /* AuthorizationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationAPI.swift; sourceTree = "<group>"; };
 		1F1E0207229888AD009EA15A /* HelperToolProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperToolProtocol.swift; sourceTree = "<group>"; };
+		1F6736DD2298949C00C7A446 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		1F6736DE2298949D00C7A446 /* sshpass.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sshpass.c; sourceTree = "<group>"; };
 		1FA72ACB22987DEB00623350 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		1FA72ACC22987DEB00623350 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,9 +150,11 @@
 				1F1E0204229886B1009EA15A /* AuthorizationAPI.swift */,
 				1F1E0207229888AD009EA15A /* HelperToolProtocol.swift */,
 				1F0DCFD22298829D00057AA1 /* main.swift */,
+				1F6736DE2298949D00C7A446 /* sshpass.c */,
 				1F0DCFD8229882F200057AA1 /* LaunchdJob.plist */,
 				1F0DCFD7229882F200057AA1 /* Info.plist */,
 				1F0DCFDB2298839200057AA1 /* UpdateInfoPlist.sh */,
+				1F6736DD2298949C00C7A446 /* BridgingHeader.h */,
 			);
 			path = PrivilegedHelperTool;
 			sourceTree = "<group>";
@@ -334,6 +339,7 @@
 				TargetAttributes = {
 					1F0DCFCF2298829D00057AA1 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 					1F1147D422986E7200ED8DA7 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -454,6 +460,7 @@
 				1F1E0208229888AD009EA15A /* HelperToolProtocol.swift in Sources */,
 				1F1E0205229886B1009EA15A /* AuthorizationAPI.swift in Sources */,
 				1F0DCFD32298829D00057AA1 /* main.swift in Sources */,
+				1F6736DF2298949D00C7A446 /* sshpass.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +583,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/PrivilegedHelperTool/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -591,6 +603,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = PrivilegedHelperTool/BridgingHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -645,6 +658,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/PrivilegedHelperTool/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -659,6 +677,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = PrivilegedHelperTool/BridgingHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 			};
