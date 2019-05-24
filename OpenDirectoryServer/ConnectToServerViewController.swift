@@ -57,8 +57,8 @@ class ConnectToServerViewController: NSViewController, NSTableViewDataSource, NS
 			NSSound.beep()
 		} else {
 			// Active Directory nodes cannot be edited using this application.
-			// (Theoretically, OpenDirectoryKit might be able to do so, but I
-			// wouldn't count on it working properly, plus I have no Active
+			// (Theoretically, the OpenDirectory subsystem might be able to do so,
+			// but I wouldn't count on it working properly, plus I have no Active
 			// Directory server to test against.)
 			if model.nodeName.hasPrefix("/Active Directory/") {
 				let alert = NSAlert()
