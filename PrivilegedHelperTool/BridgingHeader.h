@@ -3,4 +3,6 @@
 //
 
 @import Foundation;
+
 extern int sshpass_main_wrapper(NSArray<NSString *> *argv);
+NSString *swift_getenv(NSString *key);
