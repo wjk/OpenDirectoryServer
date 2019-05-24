@@ -10,7 +10,6 @@
 		1F0DCFD32298829D00057AA1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0DCFD22298829D00057AA1 /* main.swift */; };
 		1F0DCFDA2298835D00057AA1 /* me.sunsol.OpenDirectoryServer.PrivilegedHelperTool in Embed Privileged Helper Tool */ = {isa = PBXBuildFile; fileRef = 1F0DCFD02298829D00057AA1 /* me.sunsol.OpenDirectoryServer.PrivilegedHelperTool */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1F1147D922986E7200ED8DA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1147D822986E7200ED8DA7 /* AppDelegate.swift */; };
-		1F1147DB22986E7200ED8DA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1147DA22986E7200ED8DA7 /* ViewController.swift */; };
 		1F1147DD22986E7300ED8DA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F1147DC22986E7300ED8DA7 /* Assets.xcassets */; };
 		1F1147E022986E7300ED8DA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F1147DE22986E7300ED8DA7 /* Main.storyboard */; };
 		1F1147E922986F9800ED8DA7 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1147E722986F9800ED8DA7 /* AuthenticationViewController.swift */; };
@@ -89,7 +88,6 @@
 		1F0DCFDB2298839200057AA1 /* UpdateInfoPlist.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = UpdateInfoPlist.sh; sourceTree = "<group>"; };
 		1F1147D522986E7200ED8DA7 /* Open Directory Server.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Open Directory Server.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F1147D822986E7200ED8DA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1F1147DA22986E7200ED8DA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1F1147DC22986E7300ED8DA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F1147DF22986E7300ED8DA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1F1147E122986E7300ED8DA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -201,7 +199,6 @@
 				1F1147D822986E7200ED8DA7 /* AppDelegate.swift */,
 				1F1147E722986F9800ED8DA7 /* AuthenticationViewController.swift */,
 				1F1147E822986F9800ED8DA7 /* ConnectToServerViewController.swift */,
-				1F1147DA22986E7200ED8DA7 /* ViewController.swift */,
 				1F1147DE22986E7300ED8DA7 /* Main.storyboard */,
 				1F1147EF2298702A00ED8DA7 /* Localizable.strings */,
 				1F6A569B2298A44900CFC403 /* Authorization.strings */,
@@ -486,7 +483,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F1147DB22986E7200ED8DA7 /* ViewController.swift in Sources */,
 				1F1147EA22986F9800ED8DA7 /* ConnectToServerViewController.swift in Sources */,
 				1F1147E922986F9800ED8DA7 /* AuthenticationViewController.swift in Sources */,
 				1F6736DA229891A600C7A446 /* HelperToolProtocol.swift in Sources */,
