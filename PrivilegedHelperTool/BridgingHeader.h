@@ -14,3 +14,5 @@ typedef CF_ENUM(int, sshpass_return_code) {
 	RETURN_HOST_KEY_UNKNOWN,
 	RETURN_HOST_KEY_CHANGED,
 };
+
+extern sshpass_return_code sshpass_runprogram( const char *password, int* exit_code, int argc, char *argv[] );
