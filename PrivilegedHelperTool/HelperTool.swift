@@ -10,7 +10,7 @@ import Foundation
 
 internal final class HelperTool: NSObject, HelperToolRequestProtocol {
 	func getProtocolVersion(reply: @escaping (String) -> Void) {
-		reply(HelperToolProtocolVersion)
+		reply(HelperToolVersion)
 	}
 
 	func createOpenDirectoryMaster(parameters: [String : String], reply: @escaping (NSNumber?, NSError?) -> Void) {

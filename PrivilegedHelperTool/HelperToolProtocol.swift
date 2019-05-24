@@ -51,7 +51,7 @@ internal enum HelperToolRequetParameters {
 	func standardErrorWritten(text: String)
 }
 
-internal let HelperToolProtocolVersion = "1.0"
+internal let HelperToolVersion = "1.0"
 
 internal enum HelperToolErrors {
 	internal static let domain = "me.sunsol.OpenDirectoryServer.PrivilegedToolErrorDomain"
