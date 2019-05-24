@@ -58,7 +58,7 @@ static int masterpt;
 static int handleoutput( int fd );
 static void sigchld_handler(int signum);
 
-sshpass_return_code sshpass_runprogram( const char *password, int argc, char *argv[] )
+sshpass_return_code sshpass_runprogram( const char *password, int* exit_code, int argc, char *argv[] )
 {
 	os_log_t logger = os_log_create("me.sunsol.OpenDirectoryServer", "sshpass");
 	args.pwsrc.password = password;
@@ -201,10 +201,11 @@ sshpass_return_code sshpass_runprogram( const char *password, int argc, char *ar
 
 	if( terminate>0 )
 		return terminate;
-	else if( WIFEXITED( status ) )
-		return WEXITSTATUS(status);
-	else
-		return 255;
+	else if( WIFEXITED( status ) ) {
+		if (exit_code != NULL) *exit_code = WEXITSTATUS(status);
+		return RETURN_NOERROR;
+	} else
+		return RETURN_RUNTIME_ERROR;
 }
 
 static int match( const char *reference, const char *buffer, ssize_t bufsize, int state );
