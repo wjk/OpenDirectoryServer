@@ -81,7 +81,11 @@ class ConnectToServerViewController: NSViewController, NSTableViewDataSource, NS
 			}
 
 			self.selectedDirectoryNode = node
-			if !node.loadSavedCredentials() {
+			var credentialsOK = node.loadSavedCredentials()
+			if credentialsOK {
+				credentialsOK = node.authenticate()
+			}
+			if !credentialsOK {
 				performSegue(withIdentifier: "SVRAuthenticationSheet", sender: sender)
 			}
 		}
