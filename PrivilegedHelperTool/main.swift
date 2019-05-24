@@ -27,6 +27,29 @@ internal extension OSLog {
 
 // MARK: -
 
+fileprivate class XPCListenerDelegate: NSObject, NSXPCListenerDelegate {
+	func listener(_ listener: NSXPCListener, shouldAcceptNewConnection connection: NSXPCConnection) -> Bool {
+		let logger = OSLog(subsystem: "me.sunsol.WebServer", category: "Security")
+
+		do {
+			let matches = try CodesignCheck.codeSigningMatches(pid: connection.processIdentifier)
+			if !matches {
+				logger.log(type: .info, message: "Refusing to connect to pid %{public}d, as its code signing does not match ours", connection.processIdentifier)
+				return false
+			}
+		} catch {
+			logger.log(type: .error, message: "Could not verify code signing for pid %{public}d: %{public}@", connection.processIdentifier, String(describing: error))
+			return false
+		}
+
+		connection.exportedInterface = NSXPCInterface(with: HelperToolRequestProtocol.self)
+		connection.exportedObject = HelperTool()
+		connection.resume()
+
+		return true
+	}
+}
+
 func swift_main() {
 	if CommandLine.arguments.count > 2 && CommandLine.arguments[1] == "-sshpass" {
 		guard let _ = swift_getenv("SSHPASS") else {
@@ -37,8 +60,13 @@ func swift_main() {
 		let sshpass_argv = Array<String>(CommandLine.arguments[2...])
 		exit(sshpass_main_wrapper(sshpass_argv))
 	} else {
-		// TODO: Implement XPC server here.
-		print("Hello, World!")
+		let delegate = XPCListenerDelegate()
+		let listener = NSXPCListener(machServiceName: "me.sunsol.OpenDirectoryServer.PrivilegedHelperTool")
+		listener.delegate = delegate
+		listener.resume()
+
+		RunLoop.current.run()
+
 	}
 }
 
