@@ -9,7 +9,7 @@
 import Cocoa
 import SVRUserManagement
 
-internal final class MainWindowController: NSWindowController {
+internal final class MainWindowController: NSWindowController, NSWindowDelegate {
 	internal static func create(directoryNode: SVRDirectoryNode) -> MainWindowController {
 		guard let storyboard = NSStoryboard.main else {
 			fatalError("Could not retrieve main storyboard")
@@ -18,6 +18,22 @@ internal final class MainWindowController: NSWindowController {
 		let controller = storyboard.instantiateController(withIdentifier: "SVRMainWindow") as! MainWindowController
 		controller.model = directoryNode
 		return controller
+	}
+
+	// MARK: Lifecycle
+
+	func windowDidBecomeMain(_ notification: Notification) {
+		if let model = model {
+			let appDelegate = NSApp.delegate as! AppDelegate
+			appDelegate.windowControllers[model.nodeName] = self
+		}
+	}
+
+	func windowWillClose(_ notification: Notification) {
+		if let model = model {
+			let appDelegate = NSApp.delegate as! AppDelegate
+			appDelegate.windowControllers.removeValue(forKey: model.nodeName)
+		}
 	}
 
 	// MARK: Model

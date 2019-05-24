@@ -96,6 +96,13 @@ class ConnectToServerViewController: NSViewController, NSTableViewDataSource, NS
 				return
 			}
 
+			let appDelegate = NSApp.delegate as! AppDelegate
+			if let existingController = appDelegate.findWindowController(directoryNode: node) {
+				existingController.showWindow(sender)
+				self.view.window!.close()
+				return
+			}
+
 			self.selectedDirectoryNode = node
 			var credentialsOK = node.loadSavedCredentials()
 			if credentialsOK {
@@ -103,8 +110,9 @@ class ConnectToServerViewController: NSViewController, NSTableViewDataSource, NS
 			}
 
 			if credentialsOK {
-				let controller = MainWindowController.create(directoryNode: node)
-				controller.showWindow(sender)
+				let windowController = MainWindowController.create(directoryNode: node)
+				windowController.showWindow(sender)
+
 				self.view.window!.close()
 			} else {
 				performSegue(withIdentifier: "SVRAuthenticationSheet", sender: sender)

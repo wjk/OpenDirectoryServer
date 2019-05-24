@@ -18,6 +18,7 @@
 
 import Cocoa
 import ServiceManagement
+import SVRUserManagement
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -28,8 +29,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 		connectToServerWindowController = storyboard.instantiateController(withIdentifier: "SVRConnectWindow") as! NSWindowController
 	}
-
-	private let connectToServerWindowController: NSWindowController
 
 	func applicationDidFinishLaunching(_ notification: Notification) {
 		let connection = NSXPCConnection(machServiceName: "me.sunsol.OpenDirectoryServer.PrivilegedHelperTool", options: .privileged)
@@ -66,6 +65,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 	func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
 		return true
+	}
+
+	// MARK: Window Management
+
+	private let connectToServerWindowController: NSWindowController
+	internal var windowControllers: [String: MainWindowController] = [:]
+
+	internal func findWindowController(directoryNode: SVRDirectoryNode) -> MainWindowController? {
+		return windowControllers[directoryNode.nodeName]
 	}
 
 	// MARK: IBActions

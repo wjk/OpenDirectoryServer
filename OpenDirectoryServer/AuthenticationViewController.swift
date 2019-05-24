@@ -109,8 +109,13 @@ class AuthenticationViewController: NSViewController, NSTextFieldDelegate {
 			}
 		}
 
-		let windowController = MainWindowController.create(directoryNode: model)
-		windowController.showWindow(sender)
+		let appDelegate = NSApp.delegate as! AppDelegate
+		if let existingController = appDelegate.findWindowController(directoryNode: model) {
+			existingController.showWindow(sender)
+		} else {
+			let windowController = MainWindowController.create(directoryNode: model)
+			windowController.showWindow(sender)
+		}
 
 		authSuccess = true
 		self.dismiss(sender)
