@@ -23,6 +23,8 @@
 		1F14AFC3229871B6001A0318 /* SwiftKVO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F14AFBC229871B6001A0318 /* SwiftKVO.framework */; };
 		1F14AFC4229871B6001A0318 /* SwiftKVO.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F14AFBC229871B6001A0318 /* SwiftKVO.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1F14AFC9229871DD001A0318 /* SwiftKVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F14AFC8229871DD001A0318 /* SwiftKVO.swift */; };
+		1FA72ACD22987DEB00623350 /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = 1FA72ACB22987DEB00623350 /* COPYING */; };
+		1FA72ACE22987DEB00623350 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1FA72ACC22987DEB00623350 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		1F14AFBE229871B6001A0318 /* SwiftKVO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftKVO.h; sourceTree = "<group>"; };
 		1F14AFBF229871B6001A0318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F14AFC8229871DD001A0318 /* SwiftKVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftKVO.swift; sourceTree = "<group>"; };
+		1FA72ACB22987DEB00623350 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
+		1FA72ACC22987DEB00623350 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 				1F1147D722986E7200ED8DA7 /* OpenDirectoryServer */,
 				1F14AFBD229871B6001A0318 /* SwiftKVO */,
 				1F1147F62298703D00ED8DA7 /* SVRUserManagement */,
+				1FA72ACA22987DE300623350 /* Documentation */,
 				1F1147D622986E7200ED8DA7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -161,6 +166,15 @@
 				1F14AFBF229871B6001A0318 /* Info.plist */,
 			);
 			path = SwiftKVO;
+			sourceTree = "<group>";
+		};
+		1FA72ACA22987DE300623350 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				1FA72ACC22987DEB00623350 /* README.md */,
+				1FA72ACB22987DEB00623350 /* COPYING */,
+			);
+			name = Documentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,7 +312,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FA72ACD22987DEB00623350 /* COPYING in Resources */,
 				1F1147DD22986E7300ED8DA7 /* Assets.xcassets in Resources */,
+				1FA72ACE22987DEB00623350 /* README.md in Resources */,
 				1F1147ED2298702A00ED8DA7 /* Localizable.strings in Resources */,
 				1F1147E022986E7300ED8DA7 /* Main.storyboard in Resources */,
 			);
