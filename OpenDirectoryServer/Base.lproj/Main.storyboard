@@ -194,9 +194,11 @@
                 <windowController storyboardIdentifier="SVRMainWindow" id="TaU-Wu-VGm" userLabel="Main Window" customClass="MainWindowController" customModule="OpenDirectoryServer" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Server Name" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="4XO-ee-t56">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowCollectionBehavior key="collectionBehavior" fullScreenNone="YES"/>
                         <windowPositionMask key="initialPositionMask" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="425" y="640" width="850" height="520"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+                        <value key="minSize" type="size" width="850" height="520"/>
                         <connections>
                             <outlet property="delegate" destination="TaU-Wu-VGm" id="4qA-Yk-uey"/>
                         </connections>
