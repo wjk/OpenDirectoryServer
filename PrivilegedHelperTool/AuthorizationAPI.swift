@@ -83,11 +83,11 @@ class Authorization {
 	]
 
 	static let authorizationRights = [
-		AuthorizationRight(name: AuthorizationRight.RightName.createMasterServer, description: "Open Directory Server is trying to create an Open Directory master server.", ruleCustom: authenticateAsAdminRule),
-		AuthorizationRight(name: AuthorizationRight.RightName.createReplicaServer, description: "Open Directory Server is trying to create an Open Directory replica server.", ruleCustom: authenticateAsAdminRule),
-		AuthorizationRight(name: AuthorizationRight.RightName.destroyServer, description: "Web Server is trying to destroy the Open Directory server.", ruleCustom: authenticateAsAdminRule),
-		AuthorizationRight(name: AuthorizationRight.RightName.createBackup, description: "Web Server is trying to create a backup of the Open Directory database.", ruleCustom: authenticateAsAdminRule),
-		AuthorizationRight(name: AuthorizationRight.RightName.restoreBackup, description: "Web Server is trying to restore a backup of the Open Directory database.", ruleCustom: authenticateAsAdminRule)
+		AuthorizationRight(name: AuthorizationRight.RightName.createMasterServer, description: "Open Directory Server is trying to create a master server.", ruleCustom: authenticateAsAdminRule),
+		AuthorizationRight(name: AuthorizationRight.RightName.createReplicaServer, description: "Open Directory Server is trying to create a replica server.", ruleCustom: authenticateAsAdminRule),
+		AuthorizationRight(name: AuthorizationRight.RightName.destroyServer, description: "Open Directory Server is trying to destroy the local server's directory database.", ruleCustom: authenticateAsAdminRule),
+		AuthorizationRight(name: AuthorizationRight.RightName.createBackup, description: "Open Directory Server is trying to create a backup of the local server's directory database.", ruleCustom: authenticateAsAdminRule),
+		AuthorizationRight(name: AuthorizationRight.RightName.restoreBackup, description: "Open Directory Server is trying to restore a backup of the local server's directory database.", ruleCustom: authenticateAsAdminRule)
 	]
 
 	private static func authorizationRight(withName name: String) -> AuthorizationRight? {
