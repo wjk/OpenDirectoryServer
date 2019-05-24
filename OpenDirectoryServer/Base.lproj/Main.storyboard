@@ -235,7 +235,7 @@
                                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSComputer" id="iNU-q5-LtE"/>
                                                                 </imageView>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JrI-RE-0cz">
-                                                                    <rect key="frame" x="42" y="6" width="502" height="17"/>
+                                                                    <rect key="frame" x="42" y="6" width="622" height="17"/>
                                                                     <textFieldCell key="cell" title="Edit user accounts and groups that can be accessed from the local computer only." id="TYg-gc-Gyy">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -254,15 +254,14 @@
                                                             <constraints>
                                                                 <constraint firstItem="JrI-RE-0cz" firstAttribute="leading" secondItem="VUK-8Z-gam" secondAttribute="trailing" constant="7" id="6OW-OE-BlD"/>
                                                                 <constraint firstItem="VUK-8Z-gam" firstAttribute="leading" secondItem="jJj-Ve-p35" secondAttribute="leading" constant="5" id="9YB-oA-GGI"/>
-                                                                <constraint firstItem="VUK-8Z-gam" firstAttribute="centerY" secondItem="jJj-Ve-p35" secondAttribute="centerY" id="Bdi-lY-wpE"/>
-                                                                <constraint firstItem="VUK-8Z-gam" firstAttribute="top" relation="greaterThanOrEqual" secondItem="jJj-Ve-p35" secondAttribute="top" constant="6" id="CWR-Y1-u09"/>
+                                                                <constraint firstItem="VUK-8Z-gam" firstAttribute="top" secondItem="jJj-Ve-p35" secondAttribute="top" constant="6" id="CWR-Y1-u09"/>
                                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Nzh-qC-zz0" secondAttribute="trailing" constant="20" symbolic="YES" id="HSL-r2-qsz"/>
                                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="VUK-8Z-gam" secondAttribute="bottom" constant="6" id="JS1-Ri-fYQ"/>
                                                                 <constraint firstItem="JrI-RE-0cz" firstAttribute="top" secondItem="Nzh-qC-zz0" secondAttribute="bottom" constant="1" id="SYf-4g-0sa"/>
                                                                 <constraint firstAttribute="bottom" secondItem="JrI-RE-0cz" secondAttribute="bottom" constant="6" id="h2Y-dp-eWm"/>
                                                                 <constraint firstItem="Nzh-qC-zz0" firstAttribute="leading" secondItem="VUK-8Z-gam" secondAttribute="trailing" constant="8" id="lrq-01-ZGT"/>
                                                                 <constraint firstItem="Nzh-qC-zz0" firstAttribute="top" secondItem="jJj-Ve-p35" secondAttribute="top" constant="3" id="mHK-ur-Zby"/>
-                                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JrI-RE-0cz" secondAttribute="trailing" constant="20" symbolic="YES" id="rff-nr-FcF"/>
+                                                                <constraint firstAttribute="trailing" secondItem="JrI-RE-0cz" secondAttribute="trailing" constant="20" symbolic="YES" id="rff-nr-FcF"/>
                                                                 <constraint firstItem="VUK-8Z-gam" firstAttribute="leading" secondItem="jJj-Ve-p35" secondAttribute="leading" constant="5" id="xAS-7f-yU0"/>
                                                             </constraints>
                                                             <connections>
