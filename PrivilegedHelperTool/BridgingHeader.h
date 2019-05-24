@@ -4,5 +4,7 @@
 
 @import Foundation;
 
+NS_ASSUME_NONNULL_BEGIN
 extern int sshpass_main_wrapper(NSArray<NSString *> *argv);
-NSString *swift_getenv(NSString *key);
+NSString * _Nullable swift_getenv(NSString *key);
+NS_ASSUME_NONNULL_END
