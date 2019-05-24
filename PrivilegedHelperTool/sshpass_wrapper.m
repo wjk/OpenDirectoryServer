@@ -12,11 +12,12 @@ extern int sshpass_main( int argc, const char *argv[] );
 
 int sshpass_main_wrapper(NSArray<NSString *> *argv) {
 	int argc = (int)argv.count;
-	const char **native_argv = calloc(argc + 1, sizeof(char *));
+	const char **native_argv = calloc(argc + 2, sizeof(char *));
 
-	native_argv[0] = getprogname();
+	native_argv[0] = "sshpass";
+	native_argv[1] = "-e";
 	for (int i = 0; i < argc; i++) {
-		native_argv[i + 1] = [argv[i] UTF8String];
+		native_argv[i + 2] = [argv[i] UTF8String];
 	}
 
 	return sshpass_main(argc, native_argv);
