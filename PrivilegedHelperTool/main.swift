@@ -17,6 +17,15 @@
  */
 
 import Foundation
+import os.log
+
+internal extension OSLog {
+	func log(type: OSLogType, message: StaticString, _ args: CVarArg...) {
+		os_log(message, log: self, type: type, args)
+	}
+}
+
+// MARK: -
 
 func swift_main() {
 	if CommandLine.arguments.count > 2 && CommandLine.arguments[1] == "-sshpass" {
