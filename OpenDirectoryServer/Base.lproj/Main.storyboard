@@ -59,7 +59,11 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Server" id="bib-Uj-vzu">
                                     <items>
-                                        <menuItem title="Connect to Server" keyEquivalent="k" id="Grh-ii-MuE"/>
+                                        <menuItem title="Connect to Server" keyEquivalent="k" id="Grh-ii-MuE">
+                                            <connections>
+                                                <action selector="showConnectToServerWindow:" target="Voe-Tx-rLC" id="iNM-tE-HWH"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="m54-Is-iLE"/>
                                         <menuItem title="New User" keyEquivalent="n" id="Was-JA-tGl"/>
                                         <menuItem title="New Group" keyEquivalent="n" id="ujc-gm-Uzt">
