@@ -30,6 +30,7 @@
 		1F1E0208229888AD009EA15A /* HelperToolProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E0207229888AD009EA15A /* HelperToolProtocol.swift */; };
 		1F6736DA229891A600C7A446 /* HelperToolProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E0207229888AD009EA15A /* HelperToolProtocol.swift */; };
 		1F6736DF2298949D00C7A446 /* sshpass.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F6736DE2298949D00C7A446 /* sshpass.c */; };
+		1F6A56992298A44900CFC403 /* Authorization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F6A569B2298A44900CFC403 /* Authorization.strings */; };
 		1FA72ACD22987DEB00623350 /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = 1FA72ACB22987DEB00623350 /* COPYING */; };
 		1FA72ACE22987DEB00623350 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1FA72ACC22987DEB00623350 /* README.md */; };
 		1FCCB05122989C5200B5DC85 /* sshpass_wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCB05022989C5200B5DC85 /* sshpass_wrapper.m */; };
@@ -109,6 +110,7 @@
 		1F1E0207229888AD009EA15A /* HelperToolProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperToolProtocol.swift; sourceTree = "<group>"; };
 		1F6736DD2298949C00C7A446 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		1F6736DE2298949D00C7A446 /* sshpass.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sshpass.c; sourceTree = "<group>"; };
+		1F6A569A2298A44900CFC403 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Authorization.strings; sourceTree = "<group>"; };
 		1FA72ACB22987DEB00623350 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		1FA72ACC22987DEB00623350 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1FCCB05022989C5200B5DC85 /* sshpass_wrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sshpass_wrapper.m; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				1F1147DA22986E7200ED8DA7 /* ViewController.swift */,
 				1F1147DE22986E7300ED8DA7 /* Main.storyboard */,
 				1F1147EF2298702A00ED8DA7 /* Localizable.strings */,
+				1F6A569B2298A44900CFC403 /* Authorization.strings */,
 				1F1147E122986E7300ED8DA7 /* Info.plist */,
 				1F1147DC22986E7300ED8DA7 /* Assets.xcassets */,
 				1F1147E222986E7300ED8DA7 /* app.entitlements */,
@@ -400,6 +403,7 @@
 				1F1147DD22986E7300ED8DA7 /* Assets.xcassets in Resources */,
 				1FA72ACE22987DEB00623350 /* README.md in Resources */,
 				1F1147ED2298702A00ED8DA7 /* Localizable.strings in Resources */,
+				1F6A56992298A44900CFC403 /* Authorization.strings in Resources */,
 				1F1147E022986E7300ED8DA7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,6 +539,14 @@
 				1F1147EE2298702A00ED8DA7 /* en */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		1F6A569B2298A44900CFC403 /* Authorization.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F6A569A2298A44900CFC403 /* en */,
+			);
+			name = Authorization.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
