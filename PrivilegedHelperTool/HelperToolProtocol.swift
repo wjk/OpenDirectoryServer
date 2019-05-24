@@ -46,6 +46,11 @@ internal enum HelperToolRequetParameters {
 	func restoreOpenDirectoryBackup(backupLocation: URL, reply: @escaping (NSNumber?, NSError?) -> Void)
 }
 
+@objc internal protocol HelperToolResponseProtocol: NSObjectProtocol {
+	func standardOutputWritten(text: String)
+	func standardErrorWritten(text: String)
+}
+
 internal let HelperToolProtocolVersion = "1.0"
 
 internal enum HelperToolErrors {
