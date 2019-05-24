@@ -116,6 +116,11 @@ class AuthenticationViewController: NSViewController, NSTextFieldDelegate {
 		self.dismiss(sender)
 	}
 
+	@IBAction private func cancel(_ sender: AnyObject?) {
+		authSuccess = false
+		self.dismiss(sender)
+	}
+
 	func controlTextDidChange(_ obj: Notification) {
 		if let loginButton = loginButton, let usernameField = usernameField, let passwordField = passwordField {
 			loginButton.isEnabled = usernameField.stringValue != "" && passwordField.stringValue != ""

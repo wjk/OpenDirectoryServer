@@ -721,7 +721,7 @@ Gw
 </string>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="dismissController:" target="3vG-Z5-XvT" id="v28-Yi-FDS"/>
+                                    <action selector="cancel:" target="3vG-Z5-XvT" id="Wg8-t5-aqg"/>
                                 </connections>
                             </button>
                         </subviews>
