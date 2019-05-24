@@ -26,6 +26,7 @@
 		1F14AFC4229871B6001A0318 /* SwiftKVO.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F14AFBC229871B6001A0318 /* SwiftKVO.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1F14AFC9229871DD001A0318 /* SwiftKVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F14AFC8229871DD001A0318 /* SwiftKVO.swift */; };
 		1F1E0205229886B1009EA15A /* AuthorizationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E0204229886B1009EA15A /* AuthorizationAPI.swift */; };
+		1F1E02062298881E009EA15A /* AuthorizationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E0204229886B1009EA15A /* AuthorizationAPI.swift */; };
 		1FA72ACD22987DEB00623350 /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = 1FA72ACB22987DEB00623350 /* COPYING */; };
 		1FA72ACE22987DEB00623350 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1FA72ACC22987DEB00623350 /* README.md */; };
 /* End PBXBuildFile section */
@@ -458,6 +459,7 @@
 				1F1147DB22986E7200ED8DA7 /* ViewController.swift in Sources */,
 				1F1147EA22986F9800ED8DA7 /* ConnectToServerViewController.swift in Sources */,
 				1F1147E922986F9800ED8DA7 /* AuthenticationViewController.swift in Sources */,
+				1F1E02062298881E009EA15A /* AuthorizationAPI.swift in Sources */,
 				1F1147D922986E7200ED8DA7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
