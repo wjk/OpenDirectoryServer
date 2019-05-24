@@ -17,9 +17,24 @@
  */
 
 import Cocoa
+import SwiftKVO
 import SVRUserManagement
 
 class AuthenticationViewController: NSViewController, NSTextFieldDelegate {
+	private func commonInit() {
+		KVO.owner = self
+	}
+
+	public override init(nibName: NSNib.Name?, bundle: Bundle?) {
+		super.init(nibName: nibName, bundle: bundle)
+		commonInit()
+	}
+
+	required public init?(coder: NSCoder) {
+		super.init(coder: coder)
+		commonInit()
+	}
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		updateUI()
@@ -42,6 +57,19 @@ class AuthenticationViewController: NSViewController, NSTextFieldDelegate {
 			}
 
 			return model
+		}
+	}
+
+	// MARK: Observable Properties
+
+	internal let KVO = KVOProxy<AuthenticationViewController>()
+	private(set) internal var authSuccess = false {
+		willSet {
+			KVO.willChangeValue(keyPath: \AuthenticationViewController.authSuccess)
+		}
+
+		didSet {
+			KVO.didChangeValue(keyPath: \AuthenticationViewController.authSuccess)
 		}
 	}
 
@@ -81,6 +109,10 @@ class AuthenticationViewController: NSViewController, NSTextFieldDelegate {
 			}
 		}
 
+		let windowController = MainWindowController.create(directoryNode: model)
+		windowController.showWindow(sender)
+
+		authSuccess = true
 		self.dismiss(sender)
 	}
 

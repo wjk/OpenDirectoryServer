@@ -17,6 +17,7 @@
  */
 
 import Cocoa
+import SwiftKVO
 import SVRUserManagement
 
 class ConnectToServerViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
@@ -31,10 +32,25 @@ class ConnectToServerViewController: NSViewController, NSTableViewDataSource, NS
 		}
 	}
 
+	private var observers: [AnyKeyPath: [KVOObserver]] = [
+		\AuthenticationViewController.authSuccess: []
+	]
+
 	override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
 		if segue.identifier == "SVRAuthenticationSheet" {
-			let destinationController = segue.destinationController as! NSViewController
+			let destinationController = segue.destinationController as! AuthenticationViewController
 			destinationController.representedObject = selectedDirectoryNode
+
+			let observer = destinationController.KVO.addObserver(keyPath: \AuthenticationViewController.authSuccess, options: [.afterChange]) {
+				(_, value) in
+				self.observers[\AuthenticationViewController.authSuccess]?.removeAll()
+
+				if value {
+					self.view.window!.close()
+				}
+			}
+
+			observers[\AuthenticationViewController.authSuccess]!.append(observer)
 		}
 	}
 
@@ -85,7 +101,12 @@ class ConnectToServerViewController: NSViewController, NSTableViewDataSource, NS
 			if credentialsOK {
 				credentialsOK = node.authenticate()
 			}
-			if !credentialsOK {
+
+			if credentialsOK {
+				let controller = MainWindowController.create(directoryNode: node)
+				controller.showWindow(sender)
+				self.view.window!.close()
+			} else {
 				performSegue(withIdentifier: "SVRAuthenticationSheet", sender: sender)
 			}
 		}
