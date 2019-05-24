@@ -27,6 +27,8 @@
 		1F14AFC9229871DD001A0318 /* SwiftKVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F14AFC8229871DD001A0318 /* SwiftKVO.swift */; };
 		1F1E0205229886B1009EA15A /* AuthorizationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E0204229886B1009EA15A /* AuthorizationAPI.swift */; };
 		1F1E02062298881E009EA15A /* AuthorizationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E0204229886B1009EA15A /* AuthorizationAPI.swift */; };
+		1F1E0208229888AD009EA15A /* HelperToolProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E0207229888AD009EA15A /* HelperToolProtocol.swift */; };
+		1F6736DA229891A600C7A446 /* HelperToolProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E0207229888AD009EA15A /* HelperToolProtocol.swift */; };
 		1FA72ACD22987DEB00623350 /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = 1FA72ACB22987DEB00623350 /* COPYING */; };
 		1FA72ACE22987DEB00623350 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1FA72ACC22987DEB00623350 /* README.md */; };
 /* End PBXBuildFile section */
@@ -100,6 +102,7 @@
 		1F14AFBF229871B6001A0318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F14AFC8229871DD001A0318 /* SwiftKVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftKVO.swift; sourceTree = "<group>"; };
 		1F1E0204229886B1009EA15A /* AuthorizationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationAPI.swift; sourceTree = "<group>"; };
+		1F1E0207229888AD009EA15A /* HelperToolProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperToolProtocol.swift; sourceTree = "<group>"; };
 		1FA72ACB22987DEB00623350 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		1FA72ACC22987DEB00623350 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				1F1E0204229886B1009EA15A /* AuthorizationAPI.swift */,
+				1F1E0207229888AD009EA15A /* HelperToolProtocol.swift */,
 				1F0DCFD22298829D00057AA1 /* main.swift */,
 				1F0DCFD8229882F200057AA1 /* LaunchdJob.plist */,
 				1F0DCFD7229882F200057AA1 /* Info.plist */,
@@ -447,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F1E0208229888AD009EA15A /* HelperToolProtocol.swift in Sources */,
 				1F1E0205229886B1009EA15A /* AuthorizationAPI.swift in Sources */,
 				1F0DCFD32298829D00057AA1 /* main.swift in Sources */,
 			);
@@ -459,6 +464,7 @@
 				1F1147DB22986E7200ED8DA7 /* ViewController.swift in Sources */,
 				1F1147EA22986F9800ED8DA7 /* ConnectToServerViewController.swift in Sources */,
 				1F1147E922986F9800ED8DA7 /* AuthenticationViewController.swift in Sources */,
+				1F6736DA229891A600C7A446 /* HelperToolProtocol.swift in Sources */,
 				1F1E02062298881E009EA15A /* AuthorizationAPI.swift in Sources */,
 				1F1147D922986E7200ED8DA7 /* AppDelegate.swift in Sources */,
 			);
