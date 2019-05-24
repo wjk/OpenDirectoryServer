@@ -111,6 +111,7 @@
 		1F6736DD2298949C00C7A446 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		1F6736DE2298949D00C7A446 /* sshpass.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sshpass.c; sourceTree = "<group>"; };
 		1F6A569A2298A44900CFC403 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Authorization.strings; sourceTree = "<group>"; };
+		1F6A569C2298A52600CFC403 /* Uninstall.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = Uninstall.sh; sourceTree = "<group>"; };
 		1FA72ACB22987DEB00623350 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		1FA72ACC22987DEB00623350 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1FCCB05022989C5200B5DC85 /* sshpass_wrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sshpass_wrapper.m; sourceTree = "<group>"; };
@@ -164,6 +165,7 @@
 				1FCCB05022989C5200B5DC85 /* sshpass_wrapper.m */,
 				1F0DCFD8229882F200057AA1 /* LaunchdJob.plist */,
 				1F0DCFD7229882F200057AA1 /* Info.plist */,
+				1F6A569C2298A52600CFC403 /* Uninstall.sh */,
 				1F0DCFDB2298839200057AA1 /* UpdateInfoPlist.sh */,
 				1F6736DD2298949C00C7A446 /* BridgingHeader.h */,
 			);
