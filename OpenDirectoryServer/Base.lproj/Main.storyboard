@@ -188,10 +188,10 @@
             </objects>
             <point key="canvasLocation" x="4.5" y="314"/>
         </scene>
-        <!--Window Controller-->
+        <!--Main Window-->
         <scene sceneID="wJy-wZ-eSQ">
             <objects>
-                <windowController storyboardIdentifier="SVRMainWindow" id="TaU-Wu-VGm" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="SVRMainWindow" id="TaU-Wu-VGm" userLabel="Main Window" customClass="MainWindowController" customModule="OpenDirectoryServer" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Server Name" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="4XO-ee-t56">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" topStrut="YES" bottomStrut="YES"/>
@@ -209,10 +209,10 @@
             </objects>
             <point key="canvasLocation" x="816" y="354"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="PH6-ej-ycE">
             <objects>
-                <viewController id="Y9A-Je-icI" sceneMemberID="viewController">
+                <viewController id="Y9A-Je-icI" customClass="MainViewController" customModule="OpenDirectoryServer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="f1v-Kh-ZoQ">
                         <rect key="frame" x="0.0" y="0.0" width="850" height="520"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -344,6 +344,9 @@
                                     <real value="250"/>
                                     <real value="250"/>
                                 </holdingPriorities>
+                                <connections>
+                                    <outlet property="delegate" destination="Y9A-Je-icI" id="Ugx-k4-fNo"/>
+                                </connections>
                             </splitView>
                         </subviews>
                         <constraints>

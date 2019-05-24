@@ -19,6 +19,8 @@
 "Connect..." = "Connect…";
 "Create..." = "Create…";
 
+"Local Directory" = "Local Directory";
+"This Mac" = "This Mac";
 "%@ (Open Directory Server)" = "%@ (Open Directory Server)";
 "%@ (Active Directory Server)" = "%@ (Active Directory Server)";
 
