@@ -82,7 +82,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 	private func showPrivilegedToolAlert() {
 		let alert = NSAlert()
-		alert.messageText = localize("Open Directory Server must install a privileged helper tool for it to be able to create Open Dierctory databases.", table: "Localizable")
+		alert.messageText = localize("Open Directory Server must install a privileged helper tool for it to be able to create Open Directory databases.", table: "Localizable")
 		alert.addButton(withTitle: localize("Install", table: "Localizable"))
 		alert.addButton(withTitle: localize("Quit", table: "Localizable"))
 

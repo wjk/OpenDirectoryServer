@@ -33,7 +33,7 @@
 "OK" = "OK";
 
 // Strings used in the privileged-tool alert.
-"Open Directory Server must install a privileged helper tool for it to be able to create Open Dierctory databases." = "Open Directory Server must install a privileged helper tool for it to be able to create Open Dierctory databases.";
+"Open Directory Server must install a privileged helper tool for it to be able to create Open Directory databases." = "Open Directory Server must install a privileged helper tool for it to be able to create Open Directory databases.";
 "Install" = "Install";
 "Quit" = "Quit";
 
