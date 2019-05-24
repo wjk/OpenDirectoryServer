@@ -1,6 +1,3 @@
-// NOTE: This file is used under the GPLv3 per the "any later version" clause included below.
-// The Web link 404ed, so I assume that GPLv3 is acceptable.
-
 /*  This file is part of "sshpass", a tool for batch running password ssh authentication
  *  Copyright (C) 2006, 2015 Lingnu Open Source Consulting Ltd.
  *
@@ -37,10 +34,22 @@
 #include <errno.h>
 #include <string.h>
 
-#include <os/log.h>
-#include "BridgingHeader.h"
+#define PASSWORD_PROMPT "assword"
 
-static struct {
+enum program_return_codes {
+	RETURN_NOERROR,
+	RETURN_INVALID_ARGUMENTS,
+	RETURN_CONFLICTING_ARGUMENTS,
+	RETURN_RUNTIME_ERROR,
+	RETURN_PARSE_ERRROR,
+	RETURN_INCORRECT_PASSWORD,
+	RETURN_HOST_KEY_UNKNOWN,
+	RETURN_HOST_KEY_CHANGED,
+};
+
+static int runprogram( int argc, char *argv[] );
+
+struct {
 	enum { PWT_STDIN, PWT_FILE, PWT_FD, PWT_PASS } pwtype;
 	union {
 		const char *filename;
@@ -52,17 +61,139 @@ static struct {
 	int verbose;
 } args;
 
+static void show_help()
+{
+	printf("Usage: sshpass [-f|-d|-p|-e] [-hV] command parameters\n"
+		   "   -f filename   Take password to use from file\n"
+		   "   -d number     Use number as file descriptor for getting password\n"
+		   "   -p password   Provide password as argument (security unwise)\n"
+		   "   -e            Password is passed as env-var \"SSHPASS\"\n"
+		   "   With no parameters - password will be taken from stdin\n\n"
+		   "   -P prompt     Which string should sshpass search for to detect a password prompt\n"
+		   "   -v            Be verbose about what you're doing\n"
+		   "   -h            Show help (this screen)\n"
+		   "   -V            Print version information\n"
+		   "At most one of -f, -d, -p or -e should be used\n");
+}
+
+// Parse the command line. Fill in the "args" global struct with the results. Return argv offset
+// on success, and a negative number on failure
+static int parse_options( int argc, char *argv[] )
+{
+	int error=-1;
+	int opt;
+
+	// Set the default password source to stdin
+	args.pwtype=PWT_STDIN;
+	args.pwsrc.fd=0;
+
+#define VIRGIN_PWTYPE if( args.pwtype!=PWT_STDIN ) { \
+fprintf(stderr, "Conflicting password source\n"); \
+error=RETURN_CONFLICTING_ARGUMENTS; }
+
+	while( (opt=getopt(argc, argv, "+f:d:p:P:heVv"))!=-1 && error==-1 ) {
+		switch( opt ) {
+			case 'f':
+				// Password should come from a file
+				VIRGIN_PWTYPE;
+
+				args.pwtype=PWT_FILE;
+				args.pwsrc.filename=optarg;
+				break;
+			case 'd':
+				// Password should come from an open file descriptor
+				VIRGIN_PWTYPE;
+
+				args.pwtype=PWT_FD;
+				args.pwsrc.fd=atoi(optarg);
+				break;
+			case 'p':
+				// Password is given on the command line
+				VIRGIN_PWTYPE;
+
+				args.pwtype=PWT_PASS;
+				args.pwsrc.password=strdup(optarg);
+
+				// Hide the original password from the command line
+			{
+				int i;
+
+				for( i=0; optarg[i]!='\0'; ++i )
+					optarg[i]='z';
+			}
+				break;
+			case 'P':
+				args.pwprompt=optarg;
+				break;
+			case 'v':
+				args.verbose++;
+				break;
+			case 'e':
+				VIRGIN_PWTYPE;
+
+				args.pwtype=PWT_PASS;
+				args.pwsrc.password=getenv("SSHPASS");
+				if( args.pwsrc.password==NULL ) {
+					fprintf(stderr, "sshpass: -e option given but SSHPASS environment variable not set\n");
+
+					error=RETURN_INVALID_ARGUMENTS;
+				}
+				break;
+			case '?':
+			case ':':
+				error=RETURN_INVALID_ARGUMENTS;
+				break;
+			case 'h':
+				error=RETURN_NOERROR;
+				break;
+			case 'V':
+				printf("%s\n"
+					   "(C) 2006-2011 Lingnu Open Source Consulting Ltd.\n"
+					   "(C) 2015-2016 Shachar Shemesh\n"
+					   "This program is free software, and can be distributed under the terms of the GPL\n"
+					   "See the COPYING file for more information.\n"
+					   "\n"
+					   "Using \"%s\" as the default password prompt indicator.\n", "sshpass", PASSWORD_PROMPT );
+				exit(0);
+				break;
+		}
+	}
+
+	if( error>=0 )
+		return -(error+1);
+	else
+		return optind;
+}
+
+int sshpass_main( int argc, char *argv[] )
+{
+	int opt_offset=parse_options( argc, argv );
+
+	if( opt_offset<0 ) {
+		// There was some error
+		show_help();
+
+		return -(opt_offset+1); // -1 becomes 0, -2 becomes 1 etc.
+	}
+
+	if( argc-opt_offset<1 ) {
+		show_help();
+
+		return 0;
+	}
+
+	return runprogram( argc-opt_offset, argv+opt_offset );
+}
+
+static int handleoutput( int fd );
+
 /* Global variables so that this information be shared with the signal handler */
 static int masterpt;
 
-static int handleoutput( int fd );
 static void sigchld_handler(int signum);
 
-sshpass_return_code sshpass_runprogram( const char *password, int* exit_code, int argc, char *argv[] )
+int runprogram( int argc, char *argv[] )
 {
-	os_log_t logger = os_log_create("me.sunsol.OpenDirectoryServer", "sshpass");
-	args.pwsrc.password = password;
-
 	// We need to interrupt a select with a SIGCHLD. In order to do so, we need a SIGCHLD handler
 	signal( SIGCHLD,sigchld_handler );
 
@@ -70,18 +201,21 @@ sshpass_return_code sshpass_runprogram( const char *password, int* exit_code, in
 	masterpt=posix_openpt(O_RDWR);
 
 	if( masterpt==-1 ) {
-		os_log(logger, "Failed to get a pseudo terminal");
+		perror("Failed to get a pseudo terminal");
+
 		return RETURN_RUNTIME_ERROR;
 	}
 
 	fcntl(masterpt, F_SETFL, O_NONBLOCK);
 
 	if( grantpt( masterpt )!=0 ) {
-		os_log(logger, "Failed to change pseudo terminal's permission");
+		perror("Failed to change pseudo terminal's permission");
+
 		return RETURN_RUNTIME_ERROR;
 	}
 	if( unlockpt( masterpt )!=0 ) {
-		os_log(logger, "Failed to unlock pseudo terminal");
+		perror("Failed to unlock pseudo terminal");
+
 		return RETURN_RUNTIME_ERROR;
 	}
 
@@ -138,11 +272,12 @@ sshpass_return_code sshpass_runprogram( const char *password, int* exit_code, in
 
 		execvp( new_argv[0], new_argv );
 
-		// Don't os_log() here, as we have forked.
 		perror("sshpass: Failed to run command");
+
 		exit(RETURN_RUNTIME_ERROR);
 	} else if( childpid<0 ) {
-		os_log(logger, "sshpass: Failed to create child process");
+		perror("sshpass: Failed to create child process");
+
 		return RETURN_RUNTIME_ERROR;
 	}
 	
@@ -201,11 +336,10 @@ sshpass_return_code sshpass_runprogram( const char *password, int* exit_code, in
 
 	if( terminate>0 )
 		return terminate;
-	else if( WIFEXITED( status ) ) {
-		if (exit_code != NULL) *exit_code = WEXITSTATUS(status);
-		return RETURN_NOERROR;
-	} else
-		return RETURN_RUNTIME_ERROR;
+	else if( WIFEXITED( status ) )
+		return WEXITSTATUS(status);
+	else
+		return 255;
 }
 
 static int match( const char *reference, const char *buffer, ssize_t bufsize, int state );
@@ -217,7 +351,7 @@ int handleoutput( int fd )
 	static int prevmatch=0; // If the "password" prompt is repeated, we have the wrong password.
 	static int state1, state2;
 	static int firsttime = 1;
-	static const char *compare1="assword"; // Asking for a password
+	static const char *compare1=PASSWORD_PROMPT; // Asking for a password
 	static const char compare2[]="The authenticity of host "; // Asks to authenticate host
 	// static const char compare3[]="WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!"; // Warns about man in the middle attack
 	// The remote identification changed error is sent to stderr, not the tty, so we do not handle it.
@@ -289,7 +423,7 @@ int match( const char *reference, const char *buffer, ssize_t bufsize, int state
 	return state;
 }
 
-void write_pass_fd( int srcfd, int dstfd );
+static void write_pass_fd( int srcfd, int dstfd );
 
 void write_pass( int fd )
 {
