@@ -163,11 +163,11 @@
 				1F0DCFD22298829D00057AA1 /* main.swift */,
 				1F6736DE2298949D00C7A446 /* sshpass.c */,
 				1FCCB05022989C5200B5DC85 /* sshpass_wrapper.m */,
+				1F6736DD2298949C00C7A446 /* BridgingHeader.h */,
 				1F0DCFD8229882F200057AA1 /* LaunchdJob.plist */,
 				1F0DCFD7229882F200057AA1 /* Info.plist */,
-				1F6A569C2298A52600CFC403 /* Uninstall.sh */,
 				1F0DCFDB2298839200057AA1 /* UpdateInfoPlist.sh */,
-				1F6736DD2298949C00C7A446 /* BridgingHeader.h */,
+				1F6A569C2298A52600CFC403 /* Uninstall.sh */,
 			);
 			path = PrivilegedHelperTool;
 			sourceTree = "<group>";
