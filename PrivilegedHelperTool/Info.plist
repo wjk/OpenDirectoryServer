@@ -12,5 +12,9 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>SMAuthorizedClients</key>
+	<array>
+		<string>identifier "me.sunsol.OpenDirectoryServer" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: William Kent (47T5C6TZYT)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+	</array>
 </dict>
 </plist>
