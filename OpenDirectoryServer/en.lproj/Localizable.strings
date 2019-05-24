@@ -1,0 +1,23 @@
+/* 
+ * Localizable.strings
+ * ServerApp
+ *
+ * Created by William Kent on 5/11/19.
+ * Copyright © 2019 William Kent. All rights reserved.
+ */
+
+"Connect..." = "Connect…";
+"Create..." = "Create…";
+
+"%@ (Open Directory Server)" = "%@ (Open Directory Server)";
+"%@ (Active Directory Server)" = "%@ (Active Directory Server)";
+
+"Please enter the name and password of a local administrator." = "Please enter the name and password of a local administrator.";
+"Please enter the name and password of an administrator in the local Open Directory domain." = "Please enter the name and password of an administrator in the local Open Directory domain.";
+"Please enter the name and password of an administrator in the Open Directory domain on the server %@." = "Please enter the name and password of an administrator in the Open Directory domain on the server %@.";
+"Please try again." = "Please try again.";
+
+"This application cannot edit Active Directory domains." = "This application cannot edit Active Directory domains.";
+"The specified username and/or password is incorrect." = "The specified username and/or password is incorrect.";
+"The Open Directory domain on the server \"%@\" couldn't be contacted." = "The Open Directory domain on the server “%@” couldn’t be contacted.";
+"OK" = "OK";
