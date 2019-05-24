@@ -33,6 +33,7 @@
 		1FA72ACD22987DEB00623350 /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = 1FA72ACB22987DEB00623350 /* COPYING */; };
 		1FA72ACE22987DEB00623350 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1FA72ACC22987DEB00623350 /* README.md */; };
 		1FCCB05122989C5200B5DC85 /* sshpass_wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCB05022989C5200B5DC85 /* sshpass_wrapper.m */; };
+		1FCCB0532298A0F600B5DC85 /* HelperTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCB0522298A0F600B5DC85 /* HelperTool.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		1FA72ACB22987DEB00623350 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		1FA72ACC22987DEB00623350 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1FCCB05022989C5200B5DC85 /* sshpass_wrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sshpass_wrapper.m; sourceTree = "<group>"; };
+		1FCCB0522298A0F600B5DC85 /* HelperTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperTool.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 			children = (
 				1F1E0204229886B1009EA15A /* AuthorizationAPI.swift */,
 				1F1E0207229888AD009EA15A /* HelperToolProtocol.swift */,
+				1FCCB0522298A0F600B5DC85 /* HelperTool.swift */,
 				1F0DCFD22298829D00057AA1 /* main.swift */,
 				1F6736DE2298949D00C7A446 /* sshpass.c */,
 				1FCCB05022989C5200B5DC85 /* sshpass_wrapper.m */,
@@ -461,6 +464,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F1E0208229888AD009EA15A /* HelperToolProtocol.swift in Sources */,
+				1FCCB0532298A0F600B5DC85 /* HelperTool.swift in Sources */,
 				1FCCB05122989C5200B5DC85 /* sshpass_wrapper.m in Sources */,
 				1F1E0205229886B1009EA15A /* AuthorizationAPI.swift in Sources */,
 				1F0DCFD32298829D00057AA1 /* main.swift in Sources */,
