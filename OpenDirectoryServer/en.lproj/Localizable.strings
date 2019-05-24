@@ -23,7 +23,7 @@
 "%@ (Active Directory Server)" = "%@ (Active Directory Server)";
 
 "Please enter the name and password of a local administrator." = "Please enter the name and password of a local administrator.";
-"Please enter the name and password of an administrator in the local Open Directory domain." = "Please enter the name and password of an administrator in the local Open Directory domain.";
+"Please enter the name and password of an administrator in the Open Directory domain on this Mac." = "Please enter the name and password of an administrator in the Open Directory domain on this Mac.";
 "Please enter the name and password of an administrator in the Open Directory domain on the server %@." = "Please enter the name and password of an administrator in the Open Directory domain on the server %@.";
 "Please try again." = "Please try again.";
 
