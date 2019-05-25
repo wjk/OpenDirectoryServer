@@ -35,7 +35,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		connection.invalidationHandler = {
 			DispatchQueue.main.async {
 				self.showPrivilegedToolAlert()
-				self.showMainWindow()
+				self.showConnectToServerWindow(nil)
 			}
 		}
 		connection.remoteObjectInterface = NSXPCInterface(with: HelperToolRequestProtocol.self)
@@ -48,12 +48,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			connection.invalidationHandler = nil
 			if version == HelperToolVersion {
 				DispatchQueue.main.async {
-					self.showMainWindow()
+					self.showConnectToServerWindow(nil)
 				}
 			} else {
 				DispatchQueue.main.async {
 					self.showPrivilegedToolAlert()
-					self.showMainWindow()
+					self.showConnectToServerWindow(nil)
 				}
 			}
 		}
@@ -64,7 +64,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 
 	func applicationOpenUntitledFile(_ sender: NSApplication) -> Bool {
-		self.showMainWindow()
+		self.showConnectToServerWindow(nil)
 		return true
 	}
 
@@ -84,10 +84,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 
 	// MARK: Installation
-
-	private func showMainWindow() {
-		connectToServerWindowController.showWindow(nil)
-	}
 
 	private func showPrivilegedToolAlert() {
 		let alert = NSAlert()
