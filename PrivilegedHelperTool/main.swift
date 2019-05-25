@@ -29,7 +29,7 @@ internal extension OSLog {
 
 fileprivate class XPCListenerDelegate: NSObject, NSXPCListenerDelegate {
 	func listener(_ listener: NSXPCListener, shouldAcceptNewConnection connection: NSXPCConnection) -> Bool {
-		let logger = OSLog(subsystem: "me.sunsol.WebServer", category: "Security")
+		let logger = OSLog(subsystem: "me.sunsol.OpenDirectoryServer", category: "Security")
 
 		do {
 			let matches = try CodesignCheck.codeSigningMatches(pid: connection.processIdentifier)
