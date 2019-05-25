@@ -226,14 +226,14 @@
                                         <rect key="frame" x="0.0" y="0.0" width="265" height="520"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
-                                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="26" horizontalPageScroll="10" verticalLineScroll="26" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdJ-Ef-J32">
-                                                <rect key="frame" x="0.0" y="0.0" width="265" height="520"/>
+                                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdJ-Ef-J32">
+                                                <rect key="frame" x="0.0" y="27" width="265" height="493"/>
                                                 <clipView key="contentView" drawsBackground="NO" id="oR4-Ks-ZXB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="265" height="520"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="265" height="493"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowHeight="24" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="ixR-Wa-Iqt" id="nQG-yt-iju">
-                                                            <rect key="frame" x="0.0" y="0.0" width="265" height="520"/>
+                                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="ixR-Wa-Iqt" id="nQG-yt-iju">
+                                                            <rect key="frame" x="0.0" y="0.0" width="265" height="493"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <size key="intercellSpacing" width="3" height="2"/>
                                                             <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -314,12 +314,77 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </scroller>
                                             </scrollView>
+                                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tff-D9-ngL">
+                                                <rect key="frame" x="0.0" y="-1" width="35" height="29"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="35" id="Uvt-Ti-pc9"/>
+                                                    <constraint firstAttribute="height" constant="27" id="ygp-rm-g9d"/>
+                                                </constraints>
+                                                <popUpButtonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" autoenablesItems="NO" id="o09-Tn-a0K">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="menu"/>
+                                                    <menu key="menu" autoenablesItems="NO" id="BYm-tH-0gL">
+                                                        <items>
+                                                            <menuItem state="on" image="NSAddTemplate" hidden="YES" id="wzu-67-QRX"/>
+                                                            <menuItem title="New User…" id="No5-HO-iK1">
+                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                            </menuItem>
+                                                            <menuItem title="New Group…" id="eqj-td-tM1">
+                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                            </menuItem>
+                                                            <menuItem title="New Computer…" enabled="NO" id="VVT-ae-hbO">
+                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                            </menuItem>
+                                                            <menuItem title="New Computer Group…" enabled="NO" id="Eel-fq-7kJ">
+                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                            </menuItem>
+                                                        </items>
+                                                    </menu>
+                                                </popUpButtonCell>
+                                            </popUpButton>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Anm-Mc-Zhm">
+                                                <rect key="frame" x="70" y="-1" width="195" height="29"/>
+                                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" refusesFirstResponder="YES" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="feh-wh-ujY">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                            </button>
+                                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lzx-aI-85c">
+                                                <rect key="frame" x="35" y="-1" width="35" height="29"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="35" id="im2-bU-8WP"/>
+                                                </constraints>
+                                                <popUpButtonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" autoenablesItems="NO" selectedItem="pvE-wW-uAu" id="j78-5F-eyW">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="menu"/>
+                                                    <menu key="menu" autoenablesItems="NO" id="ugs-4Q-gSa">
+                                                        <items>
+                                                            <menuItem state="on" image="NSActionTemplate" hidden="YES" id="pvE-wW-uAu"/>
+                                                            <menuItem title="Change Credentials…" id="L5P-pt-nV2">
+                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                            </menuItem>
+                                                            <menuItem title="Show Hidden Accounts" id="YAd-bL-aau"/>
+                                                            <menuItem isSeparatorItem="YES" id="z3O-GK-8g7"/>
+                                                            <menuItem title="Destroy Open Directory Database…" enabled="NO" id="neh-F4-UOu"/>
+                                                        </items>
+                                                    </menu>
+                                                </popUpButtonCell>
+                                            </popUpButton>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="DdJ-Ef-J32" secondAttribute="bottom" id="1WX-Kz-Ojo"/>
+                                            <constraint firstItem="Lzx-aI-85c" firstAttribute="leading" secondItem="tff-D9-ngL" secondAttribute="trailing" id="4t8-pi-kzS"/>
                                             <constraint firstItem="DdJ-Ef-J32" firstAttribute="leading" secondItem="g42-iq-alR" secondAttribute="leading" id="LhV-Bd-KuF"/>
+                                            <constraint firstItem="tff-D9-ngL" firstAttribute="height" secondItem="Lzx-aI-85c" secondAttribute="height" id="PZv-fs-FMP"/>
+                                            <constraint firstItem="tff-D9-ngL" firstAttribute="leading" secondItem="g42-iq-alR" secondAttribute="leading" id="Ssk-Yq-1Tl"/>
+                                            <constraint firstItem="Anm-Mc-Zhm" firstAttribute="leading" secondItem="Lzx-aI-85c" secondAttribute="trailing" id="TdM-nP-Sb3"/>
+                                            <constraint firstAttribute="bottom" secondItem="Anm-Mc-Zhm" secondAttribute="bottom" id="V2P-Qd-mP6"/>
+                                            <constraint firstAttribute="bottom" secondItem="Lzx-aI-85c" secondAttribute="bottom" id="XQN-Pc-q3B"/>
+                                            <constraint firstItem="tff-D9-ngL" firstAttribute="height" secondItem="Anm-Mc-Zhm" secondAttribute="height" id="aMD-DZ-Ywf"/>
                                             <constraint firstAttribute="trailing" secondItem="DdJ-Ef-J32" secondAttribute="trailing" id="fyu-lE-7ka"/>
                                             <constraint firstItem="DdJ-Ef-J32" firstAttribute="top" secondItem="g42-iq-alR" secondAttribute="top" id="mNm-a7-MPq"/>
+                                            <constraint firstAttribute="bottom" secondItem="tff-D9-ngL" secondAttribute="bottom" id="oIB-w0-5RQ"/>
+                                            <constraint firstItem="Anm-Mc-Zhm" firstAttribute="top" secondItem="DdJ-Ef-J32" secondAttribute="bottom" id="ogJ-js-g7D"/>
+                                            <constraint firstAttribute="trailing" secondItem="Anm-Mc-Zhm" secondAttribute="trailing" id="qUW-3p-Ndv"/>
                                         </constraints>
                                     </customView>
                                     <customView id="6pj-dU-Ewj">
@@ -766,6 +831,8 @@ Gw
         </scene>
     </scenes>
     <resources>
+        <image name="NSActionTemplate" width="14" height="14"/>
+        <image name="NSAddTemplate" width="11" height="11"/>
         <image name="NSComputer" width="32" height="32"/>
         <image name="NSNetwork" width="32" height="32"/>
     </resources>
