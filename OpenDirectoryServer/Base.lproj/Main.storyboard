@@ -69,6 +69,12 @@
                                         <menuItem title="New Group…" keyEquivalent="n" id="ujc-gm-Uzt">
                                             <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                         </menuItem>
+                                        <menuItem title="New Computer…" id="u6C-x2-5qN">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem title="New Computer Group…" id="Kb0-u2-LtB">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="aJh-i4-bef"/>
                                         <menuItem title="Close Window" keyEquivalent="w" id="DVo-aG-piG">
                                             <connections>
