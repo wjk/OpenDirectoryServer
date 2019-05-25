@@ -65,8 +65,8 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="m54-Is-iLE"/>
-                                        <menuItem title="New User" keyEquivalent="n" id="Was-JA-tGl"/>
-                                        <menuItem title="New Group" keyEquivalent="n" id="ujc-gm-Uzt">
+                                        <menuItem title="New User…" keyEquivalent="n" id="Was-JA-tGl"/>
+                                        <menuItem title="New Group…" keyEquivalent="n" id="ujc-gm-Uzt">
                                             <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="aJh-i4-bef"/>
