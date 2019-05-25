@@ -63,6 +63,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		// Insert code here to tear down your application
 	}
 
+	func applicationOpenUntitledFile(_ sender: NSApplication) -> Bool {
+		self.showMainWindow()
+		return true
+	}
+
 	// MARK: Window Management
 
 	private let connectToServerWindowController: NSWindowController
