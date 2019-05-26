@@ -30,39 +30,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		connectToServerWindowController = storyboard.instantiateController(withIdentifier: "SVRConnectWindow") as! NSWindowController
 	}
 
-	func applicationDidFinishLaunching(_ notification: Notification) {
-		let connection = NSXPCConnection(machServiceName: "me.sunsol.OpenDirectoryServer.PrivilegedHelperTool", options: .privileged)
-		connection.invalidationHandler = {
-			DispatchQueue.main.async {
-				self.showPrivilegedToolAlert()
-				self.showConnectToServerWindow(nil)
-			}
-		}
-		connection.remoteObjectInterface = NSXPCInterface(with: HelperToolRequestProtocol.self)
-		connection.resume()
-
-		let interface = connection.remoteObjectProxy as! HelperToolRequestProtocol
-
-		interface.getProtocolVersion {
-			(version) in
-			connection.invalidationHandler = nil
-			if version == HelperToolVersion {
-				DispatchQueue.main.async {
-					self.showConnectToServerWindow(nil)
-				}
-			} else {
-				DispatchQueue.main.async {
-					self.showPrivilegedToolAlert()
-					self.showConnectToServerWindow(nil)
-				}
-			}
-		}
-	}
-
-	func applicationWillTerminate(_ notification: Notification) {
-		// Insert code here to tear down your application
-	}
-
 	func applicationOpenUntitledFile(_ sender: NSApplication) -> Bool {
 		self.showConnectToServerWindow(nil)
 		return true
