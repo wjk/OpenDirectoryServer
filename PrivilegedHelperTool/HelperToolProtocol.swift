@@ -41,7 +41,6 @@ internal enum HelperToolRequetParameters {
 	// Optional parameters: certificateAdminEmail
 	func createOpenDirectoryReplica(parameterrs: [String: String], reply: @escaping (NSNumber? , NSError?) -> Void)
 
-	func destroyOpenDirectoryServer(adminUserName: String?, reply: @escaping (NSNumber?, NSError?) -> Void)
 	func createOpenDirectoryBackup(backupLocation: URL, reply: @escaping (NSNumber?, NSError?) -> Void)
 	func restoreOpenDirectoryBackup(backupLocation: URL, reply: @escaping (NSNumber?, NSError?) -> Void)
 }

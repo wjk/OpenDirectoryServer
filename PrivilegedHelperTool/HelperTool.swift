@@ -25,12 +25,6 @@ internal final class HelperTool: NSObject, HelperToolRequestProtocol {
 		reply(nil, error)
 	}
 
-	func destroyOpenDirectoryServer(adminUserName: String?, reply: @escaping (NSNumber?, NSError?) -> Void) {
-		// Not yet implemented.
-		let error = NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
-		reply(nil, error)
-	}
-
 	func createOpenDirectoryBackup(backupLocation: URL, reply: @escaping (NSNumber?, NSError?) -> Void) {
 		// Not yet implemented.
 		let error = NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)

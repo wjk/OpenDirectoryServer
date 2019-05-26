@@ -360,7 +360,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="35" id="im2-bU-8WP"/>
                                                 </constraints>
-                                                <popUpButtonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" autoenablesItems="NO" selectedItem="pvE-wW-uAu" id="j78-5F-eyW">
+                                                <popUpButtonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" autoenablesItems="NO" id="j78-5F-eyW">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="menu"/>
                                                     <menu key="menu" autoenablesItems="NO" id="ugs-4Q-gSa">
@@ -370,8 +370,6 @@
                                                                 <modifierMask key="keyEquivalentModifierMask"/>
                                                             </menuItem>
                                                             <menuItem title="Show Hidden Accounts" id="YAd-bL-aau"/>
-                                                            <menuItem isSeparatorItem="YES" id="z3O-GK-8g7"/>
-                                                            <menuItem title="Destroy Open Directory Database…" enabled="NO" id="neh-F4-UOu"/>
                                                         </items>
                                                     </menu>
                                                 </popUpButtonCell>

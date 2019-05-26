@@ -28,7 +28,6 @@ internal struct AuthorizationRight {
 	internal enum RightName {
 		internal static let createMasterServer = "me.sunsol.OpenDirectoryServer.createMaster"
 		internal static let createReplicaServer = "me.sunsol.OpenDirectoryServer.createReplica"
-		internal static let destroyServer = "me.sunsol.OpenDirectoryServer.destroy"
 		internal static let createBackup = "me.sunsol.OpenDirectoryServer.createBackup"
 		internal static let restoreBackup = "me.sunsol.OpenDirectoryServer.restoreBackup"
 	}
@@ -85,7 +84,6 @@ class Authorization {
 	static let authorizationRights = [
 		AuthorizationRight(name: AuthorizationRight.RightName.createMasterServer, description: "Open Directory Server is trying to create a master server.", ruleCustom: authenticateAsAdminRule),
 		AuthorizationRight(name: AuthorizationRight.RightName.createReplicaServer, description: "Open Directory Server is trying to create a replica server.", ruleCustom: authenticateAsAdminRule),
-		AuthorizationRight(name: AuthorizationRight.RightName.destroyServer, description: "Open Directory Server is trying to destroy the local server's directory database.", ruleCustom: authenticateAsAdminRule),
 		AuthorizationRight(name: AuthorizationRight.RightName.createBackup, description: "Open Directory Server is trying to create a backup of the local server's directory database.", ruleCustom: authenticateAsAdminRule),
 		AuthorizationRight(name: AuthorizationRight.RightName.restoreBackup, description: "Open Directory Server is trying to restore a backup of the local server's directory database.", ruleCustom: authenticateAsAdminRule)
 	]

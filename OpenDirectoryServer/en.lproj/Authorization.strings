@@ -18,6 +18,5 @@
 
 "Open Directory Server is trying to create a master server." = "Open Directory Server is trying to create a master server.";
 "Open Directory Server is trying to create a replica server." = "Open Directory Server is trying to create a replica server.";
-"Open Directory Server is trying to destroy the local server's directory database." = "Open Directory Server is trying to destroy the local server’s directory database.";
 "Open Directory Server is trying to create a backup of the local server's directory database." = "Open Directory Server is trying to create a backup of the local server’s directory database.";
 "Open Directory Server is trying to restore a backup of the local server's directory database." = "Open Directory Server is trying to restore a backup of the local server’s directory database.";
