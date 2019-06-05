@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14810.11" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14810.11"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -240,14 +241,14 @@
                                                     <subviews>
                                                         <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="ixR-Wa-Iqt" id="nQG-yt-iju">
                                                             <rect key="frame" x="0.0" y="0.0" width="265" height="493"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <size key="intercellSpacing" width="3" height="2"/>
                                                             <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                             <tableColumns>
                                                                 <tableColumn identifier="SVRItemColumn" width="262" minWidth="16" maxWidth="1000" id="ixR-Wa-Iqt">
                                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                                        <font key="font" metaFont="smallSystem"/>
+                                                                        <font key="font" metaFont="message" size="11"/>
                                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                                     </tableHeaderCell>
@@ -281,12 +282,12 @@
                                                                                 <outlet property="textField" destination="a0r-7z-Fc3" id="IDY-uz-PVa"/>
                                                                             </connections>
                                                                         </tableCellView>
-                                                                        <tableCellView identifier="DataCell" id="zjJ-HX-0sG">
+                                                                        <tableCellView identifier="DataCell" misplaced="YES" id="zjJ-HX-0sG">
                                                                             <rect key="frame" x="1" y="20" width="262" height="17"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                             <subviews>
                                                                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="b14-Cj-kHT">
-                                                                                    <rect key="frame" x="1" y="0.0" width="261" height="17"/>
+                                                                                    <rect key="frame" x="1" y="0.0" width="261" height="16"/>
                                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="q3S-UB-5fv">
                                                                                         <font key="font" metaFont="system"/>
                                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -320,7 +321,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </scroller>
                                             </scrollView>
-                                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tff-D9-ngL">
+                                            <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="tff-D9-ngL">
                                                 <rect key="frame" x="0.0" y="-1" width="35" height="29"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="35" id="Uvt-Ti-pc9"/>
@@ -328,7 +329,7 @@
                                                 </constraints>
                                                 <popUpButtonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" autoenablesItems="NO" id="o09-Tn-a0K">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="menu"/>
+                                                    <font key="font" metaFont="system"/>
                                                     <menu key="menu" autoenablesItems="NO" id="BYm-tH-0gL">
                                                         <items>
                                                             <menuItem state="on" image="NSAddTemplate" hidden="YES" id="wzu-67-QRX"/>
@@ -355,14 +356,14 @@
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
                                             </button>
-                                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lzx-aI-85c">
+                                            <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="Lzx-aI-85c">
                                                 <rect key="frame" x="35" y="-1" width="35" height="29"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="35" id="im2-bU-8WP"/>
                                                 </constraints>
                                                 <popUpButtonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" autoenablesItems="NO" id="j78-5F-eyW">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="menu"/>
+                                                    <font key="font" metaFont="system"/>
                                                     <menu key="menu" autoenablesItems="NO" id="ugs-4Q-gSa">
                                                         <items>
                                                             <menuItem state="on" image="NSActionTemplate" hidden="YES" id="pvE-wW-uAu"/>
@@ -448,14 +449,14 @@
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnSelection="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="61" rowSizeStyle="automatic" usesAutomaticRowHeights="YES" viewBased="YES" id="I0v-qh-nlA">
                                             <rect key="frame" x="0.0" y="0.0" width="685" height="378"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
                                                 <tableColumn width="682" minWidth="40" maxWidth="1000" id="IpD-L0-JcI">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <font key="font" metaFont="message" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -488,6 +489,9 @@
                                                                 </textField>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Nzh-qC-zz0">
                                                                     <rect key="frame" x="43" y="24" width="167" height="17"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="17" id="9Mv-xC-Ngi"/>
+                                                                    </constraints>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="My Mac (Local Directory)" id="oFA-yP-9uK">
                                                                         <font key="font" metaFont="systemBold"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -512,12 +516,12 @@
                                                                 <outlet property="textField" destination="Nzh-qC-zz0" id="uLl-aG-Iap"/>
                                                             </connections>
                                                         </tableCellView>
-                                                        <tableCellView identifier="LocalLDAPCell" id="OzJ-Pu-XLr">
+                                                        <tableCellView identifier="LocalLDAPCell" misplaced="YES" id="OzJ-Pu-XLr">
                                                             <rect key="frame" x="1" y="47" width="682" height="61"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="REW-3G-ViS">
-                                                                    <rect key="frame" x="5" y="23" width="32" height="32"/>
+                                                                    <rect key="frame" x="5" y="20" width="32" height="32"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="32" id="0tH-Q4-Shl"/>
                                                                         <constraint firstAttribute="height" constant="32" id="WYx-gb-bHH"/>
@@ -525,7 +529,7 @@
                                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSComputer" id="MSm-uK-Sls"/>
                                                                 </imageView>
                                                                 <textField verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P1U-U5-rA8">
-                                                                    <rect key="frame" x="42" y="6" width="622" height="34"/>
+                                                                    <rect key="frame" x="42" y="6" width="622" height="32"/>
                                                                     <textFieldCell key="cell" title="Edit users, user groups, computer accounts, and computer groups that can be accessed from other computers on the network." id="gy4-JI-hBC">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -533,7 +537,7 @@
                                                                     </textFieldCell>
                                                                 </textField>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="IoD-wl-xtf">
-                                                                    <rect key="frame" x="43" y="41" width="213" height="17"/>
+                                                                    <rect key="frame" x="43" y="39" width="213" height="16"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="My Mac (Open Directory Server)" id="nIL-vd-PcF">
                                                                         <font key="font" metaFont="systemBold"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -571,7 +575,7 @@
                                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSNetwork" id="ggI-by-JTb"/>
                                                                 </imageView>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="9Gx-af-51V">
-                                                                    <rect key="frame" x="43" y="14" width="237" height="17"/>
+                                                                    <rect key="frame" x="43" y="14" width="237" height="16"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="192.168.0.1 (Open Directory Server)" id="5Jn-Wh-IT2">
                                                                         <font key="font" metaFont="systemBold"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -593,12 +597,12 @@
                                                                 <outlet property="textField" destination="9Gx-af-51V" id="CNg-H3-fi7"/>
                                                             </connections>
                                                         </tableCellView>
-                                                        <tableCellView identifier="CreateLocalLDAPCell" id="BQy-e8-0nK">
+                                                        <tableCellView identifier="CreateLocalLDAPCell" misplaced="YES" id="BQy-e8-0nK">
                                                             <rect key="frame" x="1" y="156" width="682" height="61"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zfE-mn-xf3">
-                                                                    <rect key="frame" x="5" y="23" width="32" height="32"/>
+                                                                    <rect key="frame" x="5" y="20" width="32" height="32"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="32" id="fuR-UJ-wOs"/>
                                                                         <constraint firstAttribute="width" constant="32" id="vV1-jG-ZrP"/>
@@ -606,7 +610,7 @@
                                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSComputer" id="Pzx-5p-3c0"/>
                                                                 </imageView>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dZx-Tg-3FT">
-                                                                    <rect key="frame" x="42" y="6" width="622" height="34"/>
+                                                                    <rect key="frame" x="42" y="6" width="622" height="32"/>
                                                                     <textFieldCell key="cell" id="MyJ-0m-rdA">
                                                                         <font key="font" metaFont="system"/>
                                                                         <string key="title">Select this item to set up an Open Directory server on this Mac. An Open Directory server contains user accounts and groups that can be accessed from other computers on the network.</string>
@@ -615,7 +619,7 @@
                                                                     </textFieldCell>
                                                                 </textField>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ysg-7p-7Jm">
-                                                                    <rect key="frame" x="43" y="41" width="195" height="17"/>
+                                                                    <rect key="frame" x="43" y="39" width="195" height="16"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Create Open Directory Server" id="gkd-v9-CCG">
                                                                         <font key="font" metaFont="systemBold"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -708,11 +712,11 @@ DQ
             <objects>
                 <viewController id="3vG-Z5-XvT" customClass="AuthenticationViewController" customModule="OpenDirectoryServer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="lWf-ne-Vd9">
-                        <rect key="frame" x="0.0" y="0.0" width="515" height="208"/>
+                        <rect key="frame" x="0.0" y="0.0" width="515" height="204"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="1Gb-IG-0Qh">
-                                <rect key="frame" x="18" y="154" width="479" height="34"/>
+                                <rect key="frame" x="18" y="152" width="479" height="32"/>
                                 <textFieldCell key="cell" title="Please enter the name and password of a user with administrative access to “%@.”" id="3wj-U7-Qrw">
                                     <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -720,7 +724,7 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iLl-T8-dOJ">
-                                <rect key="frame" x="18" y="118" width="70" height="17"/>
+                                <rect key="frame" x="18" y="117" width="70" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Username:" id="neI-sf-4U7">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -728,7 +732,7 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7JX-vQ-EJQ">
-                                <rect key="frame" x="18" y="86" width="70" height="17"/>
+                                <rect key="frame" x="18" y="86" width="70" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Password:" id="h5h-Hx-UNt">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -736,7 +740,7 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CcJ-zv-ey4">
-                                <rect key="frame" x="94" y="115" width="401" height="22"/>
+                                <rect key="frame" x="94" y="114" width="401" height="21"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="cYO-3O-fdd">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -747,7 +751,7 @@ DQ
                                 </connections>
                             </textField>
                             <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="co0-nY-Mda">
-                                <rect key="frame" x="94" y="83" width="401" height="22"/>
+                                <rect key="frame" x="94" y="83" width="401" height="21"/>
                                 <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="6xK-ba-MeN">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
