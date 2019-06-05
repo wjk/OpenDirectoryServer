@@ -79,7 +79,7 @@ function identifierHelper {
 function developerID {
 	developmentTeamIdentifier="${DEVELOPMENT_TEAM}"
 	if ! [[ ${developmentTeamIdentifier} =~ ^[A-Z0-9]{10}$ ]]; then
-		printf "%s\n" "Invalid Development Team Identifier: ${developmentTeamIdentifier}"
+		printf "%s\n" "Invalid Development Team Identifier: ${developmentTeamIdentifier}" 1>&2
 		exit 1
 	fi
 
@@ -89,7 +89,7 @@ function developerID {
 function macDeveloper {
 	macDeveloperCN="${EXPANDED_CODE_SIGN_IDENTITY_NAME}"
 	if ! [[ ${macDeveloperCN} =~ ^Mac\ Developer:\ .*\ \([A-Z0-9]{10}\)$ ]]; then
-		printf "%s\n" "Invalid Mac Developer CN: ${macDeveloperCN}"
+		printf "%s\n" "Invalid Mac Developer CN: ${macDeveloperCN}" 1>&2
 		exit 1
 	fi
 
@@ -138,7 +138,7 @@ case "${ACTION}" in
 		helperString="${helperString} and $( developerID ))";;
 
 	*)
-		printf "%s\n" "Unknown Xcode Action: ${ACTION}"
+		printf "%s\n" "Unknown Xcode Action: ${ACTION}" 1>&2
 		exit 1;;
 esac
 
@@ -150,6 +150,6 @@ case "${target}" in
 		updateSMPrivilegedExecutables "${helperString}";;
 
 	*)
-		printf "%s\n" "Unknown Target: ${target}"
+		printf "%s\n" "Unknown Target: ${target}" 1>&2
 		exit 1;;
 esac
