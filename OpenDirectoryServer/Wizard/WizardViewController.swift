@@ -96,6 +96,12 @@ internal final class WizardViewController: NSViewController {
 		return controller
 	}
 
+	private var observers: [AnyKeyPath: [KVOObserver]] = [
+		\WizardPaneController.backButtonEnabled: [],
+		\WizardPaneController.nextButtonEnabled: [],
+		\WizardPaneController.cancelButtonEnabled: []
+	]
+
 	private var currentPane: WizardPaneController?
 
 	// MARK: Outlets & Actions
@@ -175,6 +181,13 @@ internal final class WizardViewController: NSViewController {
 			fatalError("required outlets not set")
 		}
 
+		for observer in observers[\WizardPaneController.backButtonEnabled]! { observer.cancel() }
+		observers[\WizardPaneController.backButtonEnabled]!.removeAll()
+		for observer in observers[\WizardPaneController.nextButtonEnabled]! { observer.cancel() }
+		observers[\WizardPaneController.nextButtonEnabled]!.removeAll()
+		for observer in observers[\WizardPaneController.cancelButtonEnabled]! { observer.cancel() }
+		observers[\WizardPaneController.cancelButtonEnabled]!.removeAll()
+
 		currentPane.paneWillBecomeCurrent()
 
 		mainBox.contentView = currentPane.view
@@ -197,6 +210,23 @@ internal final class WizardViewController: NSViewController {
 			}
 			window.styleMask = mask
 		}
+
+		var observer: KVOObserver
+		observer = currentPane.commonKVO.addObserver(keyPath: \WizardPaneController.backButtonEnabled, options: [.afterChange]) {
+			(_, newValue) in
+			backButton.isEnabled = newValue
+		}
+		observers[\WizardPaneController.backButtonEnabled]!.append(observer)
+		observer = currentPane.commonKVO.addObserver(keyPath: \WizardPaneController.nextButtonEnabled, options: [.afterChange]) {
+			(_, newValue) in
+			continueButton.isEnabled = newValue
+		}
+		observers[\WizardPaneController.nextButtonEnabled]!.append(observer)
+		observer = currentPane.commonKVO.addObserver(keyPath: \WizardPaneController.cancelButtonEnabled, options: [.afterChange]) {
+			(_, newValue) in
+			cancelButton.isEnabled = newValue
+		}
+		observers[\WizardPaneController.cancelButtonEnabled]!.append(observer)
 
 		currentPane.paneDidBecomeCurrent()
 	}
