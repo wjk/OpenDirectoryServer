@@ -42,7 +42,6 @@
 "You do not have permission to install helper tools." = "You do not have permission to install helper tools.";
 "Please consult your system administrator for further information." = "Please consult your system administrator for further information.";
 "The privileged helper tool could not be registered." = "The privileged helper tool could not be registered.";
-"OK" = "OK";
 
 // MARK: Strings used in the wizard
 "Continue" = "Continue";
