@@ -39,6 +39,7 @@
 		1FCCB0552298A1FE00B5DC85 /* CodesignCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCB0542298A1FE00B5DC85 /* CodesignCheck.swift */; };
 		1FCEEAA922A87D1C009C278B /* DirectoryServiceWizard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FCEEAAB22A87D1C009C278B /* DirectoryServiceWizard.storyboard */; };
 		1FCEEAAD22A87D4E009C278B /* WizardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCEEAAC22A87D4E009C278B /* WizardViewController.swift */; };
+		1FCEEAB022A8859D009C278B /* PrivilegedToolConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCEEAAF22A8859D009C278B /* PrivilegedToolConnection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,7 @@
 		1FCCB0542298A1FE00B5DC85 /* CodesignCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodesignCheck.swift; sourceTree = "<group>"; };
 		1FCEEAAA22A87D1C009C278B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DirectoryServiceWizard.storyboard; sourceTree = "<group>"; };
 		1FCEEAAC22A87D4E009C278B /* WizardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WizardViewController.swift; sourceTree = "<group>"; };
+		1FCEEAAF22A8859D009C278B /* PrivilegedToolConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivilegedToolConnection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 		1F1147D722986E7200ED8DA7 /* OpenDirectoryServer */ = {
 			isa = PBXGroup;
 			children = (
+				1FCEEAAE22A88593009C278B /* Model */,
 				1FCEEAA622A87ACF009C278B /* Wizard */,
 				1F1147D822986E7200ED8DA7 /* AppDelegate.swift */,
 				1F1147E722986F9800ED8DA7 /* AuthenticationViewController.swift */,
@@ -257,6 +260,14 @@
 				1FCEEAAB22A87D1C009C278B /* DirectoryServiceWizard.storyboard */,
 			);
 			path = Wizard;
+			sourceTree = "<group>";
+		};
+		1FCEEAAE22A88593009C278B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1FCEEAAF22A8859D009C278B /* PrivilegedToolConnection.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -510,6 +521,7 @@
 				1F6E2B2A2298B1E400DDC60F /* MainWindowController.swift in Sources */,
 				1F6736DA229891A600C7A446 /* HelperToolProtocol.swift in Sources */,
 				1FCEEAAD22A87D4E009C278B /* WizardViewController.swift in Sources */,
+				1FCEEAB022A8859D009C278B /* PrivilegedToolConnection.swift in Sources */,
 				1F1E02062298881E009EA15A /* AuthorizationAPI.swift in Sources */,
 				1F1147D922986E7200ED8DA7 /* AppDelegate.swift in Sources */,
 			);
