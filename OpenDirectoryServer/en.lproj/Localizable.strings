@@ -34,7 +34,7 @@
 "The Open Directory domain on the server \"%@\" couldn't be contacted." = "The Open Directory domain on the server “%@” couldn’t be contacted.";
 "OK" = "OK";
 
-// Strings used in the privileged-tool alert.
+// MARK: Strings used in the privileged-tool alert
 "Open Directory Server must install a privileged helper tool for it to be able to create Open Directory databases." = "Open Directory Server must install a privileged helper tool for it to be able to create Open Directory databases.";
 "Install" = "Install";
 "Quit" = "Quit";
