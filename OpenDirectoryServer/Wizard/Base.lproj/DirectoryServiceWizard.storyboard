@@ -29,6 +29,57 @@
             </objects>
             <point key="canvasLocation" x="-227.5" y="13"/>
         </scene>
+        <!--Privileged Tool Install Pane Controller-->
+        <scene sceneID="0xU-5x-CNV">
+            <objects>
+                <viewController storyboardIdentifier="PrivilegedToolPane" id="AVE-YP-NgU" customClass="PrivilegedToolInstallPaneController" customModule="OpenDirectoryServer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="13R-U8-fwJ">
+                        <rect key="frame" x="0.0" y="0.0" width="775" height="426"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="lp2-gx-mhw">
+                                <rect key="frame" x="18" y="390" width="739" height="16"/>
+                                <textFieldCell key="cell" title="To create an Open Directory server on this Mac, a privileged helper tool must be installed or updated." id="8LO-CW-KCH">
+                                    <font key="font" metaFont="systemBold"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="LGc-tS-W36">
+                                <rect key="frame" x="18" y="350" width="739" height="32"/>
+                                <textFieldCell key="cell" id="htN-Uz-Bt3">
+                                    <font key="font" metaFont="system"/>
+                                    <string key="title">To install or update this tool, click the button below. You will be prompted to enter the username and password of a local administrator.</string>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="g5k-yA-Lls">
+                                <rect key="frame" x="303" y="285" width="169" height="32"/>
+                                <buttonCell key="cell" type="push" title="Install Privileged Tool" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VDu-3K-pTE">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="LGc-tS-W36" firstAttribute="leading" secondItem="13R-U8-fwJ" secondAttribute="leading" constant="20" symbolic="YES" id="Fzg-jQ-rDX"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="g5k-yA-Lls" secondAttribute="trailing" constant="20" symbolic="YES" id="KaW-CI-g7H"/>
+                            <constraint firstItem="g5k-yA-Lls" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="13R-U8-fwJ" secondAttribute="leading" constant="20" symbolic="YES" id="No3-qi-j6G"/>
+                            <constraint firstItem="lp2-gx-mhw" firstAttribute="leading" secondItem="13R-U8-fwJ" secondAttribute="leading" constant="20" symbolic="YES" id="OFX-Vy-bN9"/>
+                            <constraint firstItem="lp2-gx-mhw" firstAttribute="top" secondItem="13R-U8-fwJ" secondAttribute="top" constant="20" symbolic="YES" id="Xuq-Kx-fOD"/>
+                            <constraint firstAttribute="trailing" secondItem="LGc-tS-W36" secondAttribute="trailing" constant="20" symbolic="YES" id="Zor-ML-A15"/>
+                            <constraint firstItem="g5k-yA-Lls" firstAttribute="top" secondItem="LGc-tS-W36" secondAttribute="bottom" constant="37" id="aZq-Dv-ebi"/>
+                            <constraint firstAttribute="trailing" secondItem="lp2-gx-mhw" secondAttribute="trailing" constant="20" symbolic="YES" id="iGC-ln-yF8"/>
+                            <constraint firstItem="LGc-tS-W36" firstAttribute="top" secondItem="lp2-gx-mhw" secondAttribute="bottom" constant="8" symbolic="YES" id="prq-Ra-a5a"/>
+                            <constraint firstItem="g5k-yA-Lls" firstAttribute="centerX" secondItem="13R-U8-fwJ" secondAttribute="centerX" id="yl2-hi-0Rx"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="4e7-SK-c7S" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-228" y="668"/>
+        </scene>
         <!--Wizard View Controller-->
         <scene sceneID="zBM-7Z-B1d">
             <objects>
