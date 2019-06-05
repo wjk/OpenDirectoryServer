@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (nullable NSArray<SVRDirectoryNode *> *)allNodesBoundToLocalComputerWithError:(NSError **)outError;
 - (nullable instancetype)initWithName:(NSString *)nodeName error:(NSError **)outError;
+- (instancetype)init NS_UNAVAILABLE;
 
 @property (readonly) NSString *nodeName;
 
