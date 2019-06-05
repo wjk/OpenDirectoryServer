@@ -37,6 +37,7 @@
 		1FCCB05122989C5200B5DC85 /* sshpass_wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCB05022989C5200B5DC85 /* sshpass_wrapper.m */; };
 		1FCCB0532298A0F600B5DC85 /* HelperTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCB0522298A0F600B5DC85 /* HelperTool.swift */; };
 		1FCCB0552298A1FE00B5DC85 /* CodesignCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCB0542298A1FE00B5DC85 /* CodesignCheck.swift */; };
+		1FCEEAA922A87D1C009C278B /* DirectoryServiceWizard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FCEEAAB22A87D1C009C278B /* DirectoryServiceWizard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		1FCCB05022989C5200B5DC85 /* sshpass_wrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sshpass_wrapper.m; sourceTree = "<group>"; };
 		1FCCB0522298A0F600B5DC85 /* HelperTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperTool.swift; sourceTree = "<group>"; };
 		1FCCB0542298A1FE00B5DC85 /* CodesignCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodesignCheck.swift; sourceTree = "<group>"; };
+		1FCEEAAA22A87D1C009C278B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DirectoryServiceWizard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 		1F1147D722986E7200ED8DA7 /* OpenDirectoryServer */ = {
 			isa = PBXGroup;
 			children = (
+				1FCEEAA622A87ACF009C278B /* Wizard */,
 				1F1147D822986E7200ED8DA7 /* AppDelegate.swift */,
 				1F1147E722986F9800ED8DA7 /* AuthenticationViewController.swift */,
 				1F1147E822986F9800ED8DA7 /* ConnectToServerViewController.swift */,
@@ -243,6 +246,14 @@
 				1FA72ACB22987DEB00623350 /* COPYING */,
 			);
 			name = Documentation;
+			sourceTree = "<group>";
+		};
+		1FCEEAA622A87ACF009C278B /* Wizard */ = {
+			isa = PBXGroup;
+			children = (
+				1FCEEAAB22A87D1C009C278B /* DirectoryServiceWizard.storyboard */,
+			);
+			path = Wizard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,6 +419,7 @@
 				1F1147DD22986E7300ED8DA7 /* Assets.xcassets in Resources */,
 				1FA72ACE22987DEB00623350 /* README.md in Resources */,
 				1F1147ED2298702A00ED8DA7 /* Localizable.strings in Resources */,
+				1FCEEAA922A87D1C009C278B /* DirectoryServiceWizard.storyboard in Resources */,
 				1F6A56992298A44900CFC403 /* Authorization.strings in Resources */,
 				1F1147E022986E7300ED8DA7 /* Main.storyboard in Resources */,
 			);
@@ -553,6 +565,14 @@
 				1F6A569A2298A44900CFC403 /* en */,
 			);
 			name = Authorization.strings;
+			sourceTree = "<group>";
+		};
+		1FCEEAAB22A87D1C009C278B /* DirectoryServiceWizard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1FCEEAAA22A87D1C009C278B /* Base */,
+			);
+			name = DirectoryServiceWizard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
