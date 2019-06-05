@@ -10,7 +10,7 @@
         <scene sceneID="MC0-0x-VWY">
             <objects>
                 <windowController showSeguePresentationStyle="single" id="o6p-rz-IqD" sceneMemberID="viewController">
-                    <window key="window" title="Directory Service Wizard" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" tabbingMode="disallowed" id="ZAx-Y4-lup">
+                    <window key="window" title="Wizard" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" tabbingMode="disallowed" id="ZAx-Y4-lup">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowCollectionBehavior key="collectionBehavior" fullScreenNone="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -29,10 +29,10 @@
             </objects>
             <point key="canvasLocation" x="-227.5" y="13"/>
         </scene>
-        <!--View Controller-->
+        <!--Wizard View Controller-->
         <scene sceneID="zBM-7Z-B1d">
             <objects>
-                <viewController id="eeC-9d-F5U" sceneMemberID="viewController">
+                <viewController id="eeC-9d-F5U" customClass="WizardViewController" customModule="OpenDirectoryServer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="DrL-Au-rq2">
                         <rect key="frame" x="0.0" y="0.0" width="774" height="490"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -48,17 +48,23 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="80" id="YUj-NV-WOq"/>
                                             </constraints>
-                                            <buttonCell key="cell" type="roundTextured" title="Continue" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mqt-N4-HmU">
+                                            <buttonCell key="cell" type="roundTextured" title="Continue" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" enabled="NO" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mqt-N4-HmU">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="goForward:" target="eeC-9d-F5U" id="dwx-8f-xAe"/>
+                                            </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Mjx-0r-cTD">
                                             <rect key="frame" x="585.5" y="19" width="81" height="23"/>
-                                            <buttonCell key="cell" type="roundTextured" title="Go Back" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UnT-4b-ZXZ">
+                                            <buttonCell key="cell" type="roundTextured" title="Go Back" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" enabled="NO" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UnT-4b-ZXZ">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="goBack:" target="eeC-9d-F5U" id="RTk-0x-rEM"/>
+                                            </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fn7-c2-dxC">
                                             <rect key="frame" x="19.5" y="19" width="81" height="23"/>
@@ -66,6 +72,9 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="cancel:" target="eeC-9d-F5U" id="2yH-SA-VSd"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -102,6 +111,12 @@
                             <constraint firstAttribute="trailing" secondItem="2ez-F2-HeZ" secondAttribute="trailing" id="wJz-m5-0rv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="Mjx-0r-cTD" id="5Sq-cy-Caa"/>
+                        <outlet property="cancelButton" destination="fn7-c2-dxC" id="sYw-em-Hu5"/>
+                        <outlet property="continueButton" destination="mt2-Fv-mD9" id="4Df-XB-3tJ"/>
+                        <outlet property="mainBox" destination="2ez-F2-HeZ" id="pwj-xb-TlW"/>
+                    </connections>
                 </viewController>
                 <customObject id="9C5-ZB-EnP" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
