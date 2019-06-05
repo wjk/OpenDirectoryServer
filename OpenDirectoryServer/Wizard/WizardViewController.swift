@@ -80,7 +80,7 @@ internal class WizardPaneController: NSViewController {
 	/// If this property returns `true`, then the "Continue" button will say "Finish" instead.
 	public var isFinalPane: Bool { false }
 
-	/// This method is called when Continue is clicked. If it returns `nil`, then the navigation will be cancelled.
+	/// This method is called when Continue is clicked. If it returns `false`, then the navigation will be cancelled.
 	/// Use this to implement error sheets or similar.
 	public func viewShouldContinue() -> Bool { true }
 
