@@ -234,13 +234,13 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
                                             <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdJ-Ef-J32">
-                                                <rect key="frame" x="0.0" y="27" width="265" height="493"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="265" height="520"/>
                                                 <clipView key="contentView" drawsBackground="NO" id="oR4-Ks-ZXB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="265" height="493"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="265" height="520"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="ixR-Wa-Iqt" id="nQG-yt-iju">
-                                                            <rect key="frame" x="0.0" y="0.0" width="265" height="493"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="265" height="520"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <size key="intercellSpacing" width="3" height="2"/>
                                                             <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -248,7 +248,7 @@
                                                             <tableColumns>
                                                                 <tableColumn identifier="SVRItemColumn" width="262" minWidth="16" maxWidth="1000" id="ixR-Wa-Iqt">
                                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                                        <font key="font" metaFont="controlContent" size="11"/>
+                                                                        <font key="font" metaFont="menu" size="11"/>
                                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                                     </tableHeaderCell>
@@ -305,6 +305,63 @@
                                                                                 <outlet property="textField" destination="b14-Cj-kHT" id="kHa-K5-CoR"/>
                                                                             </connections>
                                                                         </tableCellView>
+                                                                        <tableCellView id="k5c-sx-9as">
+                                                                            <rect key="frame" x="1" y="38" width="262" height="42"/>
+                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                            <subviews>
+                                                                                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xYA-iW-S5l">
+                                                                                    <rect key="frame" x="14" y="9" width="37" height="23"/>
+                                                                                    <popUpButtonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" autoenablesItems="NO" altersStateOfSelectedItem="NO" id="XMM-qa-E6K">
+                                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                                        <font key="font" metaFont="system"/>
+                                                                                        <menu key="menu" autoenablesItems="NO" id="D8K-6i-11L">
+                                                                                            <items>
+                                                                                                <menuItem state="on" image="NSAddTemplate" hidden="YES" id="Aot-wD-cgO"/>
+                                                                                                <menuItem title="New User…" id="JcZ-Ik-uqV">
+                                                                                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                                                                                </menuItem>
+                                                                                                <menuItem title="New Group…" id="KeV-jf-2H3">
+                                                                                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                                                                                </menuItem>
+                                                                                                <menuItem title="New Computer…" enabled="NO" id="VEW-ME-3VA">
+                                                                                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                                                                                </menuItem>
+                                                                                                <menuItem title="New Computer Group…" enabled="NO" id="cJI-OQ-xEw">
+                                                                                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                                                                                </menuItem>
+                                                                                            </items>
+                                                                                        </menu>
+                                                                                    </popUpButtonCell>
+                                                                                </popUpButton>
+                                                                                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kxl-ug-JHC">
+                                                                                    <rect key="frame" x="59" y="9" width="40" height="22"/>
+                                                                                    <popUpButtonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" autoenablesItems="NO" altersStateOfSelectedItem="NO" selectedItem="c2X-Z1-oAE" id="8To-kK-F8B">
+                                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                                        <font key="font" metaFont="system"/>
+                                                                                        <menu key="menu" autoenablesItems="NO" id="ygz-UW-h4B">
+                                                                                            <items>
+                                                                                                <menuItem state="on" image="NSActionTemplate" hidden="YES" id="c2X-Z1-oAE"/>
+                                                                                                <menuItem title="Change Credentials…" id="pFo-hn-iSC">
+                                                                                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                                                                                </menuItem>
+                                                                                                <menuItem title="Show Hidden Accounts" id="x3G-Gl-ALH">
+                                                                                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                                                                                </menuItem>
+                                                                                            </items>
+                                                                                        </menu>
+                                                                                    </popUpButtonCell>
+                                                                                </popUpButton>
+                                                                            </subviews>
+                                                                            <constraints>
+                                                                                <constraint firstItem="kxl-ug-JHC" firstAttribute="leading" secondItem="xYA-iW-S5l" secondAttribute="trailing" constant="8" id="90p-sQ-3fy"/>
+                                                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kxl-ug-JHC" secondAttribute="trailing" constant="20" symbolic="YES" id="CyZ-gS-C2Z"/>
+                                                                                <constraint firstItem="xYA-iW-S5l" firstAttribute="top" secondItem="k5c-sx-9as" secondAttribute="top" constant="10" id="PDx-cK-uFk"/>
+                                                                                <constraint firstAttribute="bottom" secondItem="kxl-ug-JHC" secondAttribute="bottom" constant="10" id="Zfs-Sf-FGa"/>
+                                                                                <constraint firstItem="xYA-iW-S5l" firstAttribute="leading" secondItem="k5c-sx-9as" secondAttribute="leading" constant="14" id="pU4-yp-sAv"/>
+                                                                                <constraint firstAttribute="bottom" secondItem="xYA-iW-S5l" secondAttribute="bottom" constant="10" id="ucK-VC-iOM"/>
+                                                                                <constraint firstItem="kxl-ug-JHC" firstAttribute="top" secondItem="k5c-sx-9as" secondAttribute="top" constant="11" id="wuJ-Mr-fxe"/>
+                                                                            </constraints>
+                                                                        </tableCellView>
                                                                     </prototypeCellViews>
                                                                 </tableColumn>
                                                             </tableColumns>
@@ -321,75 +378,12 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </scroller>
                                             </scrollView>
-                                            <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="tff-D9-ngL">
-                                                <rect key="frame" x="0.0" y="-1" width="35" height="29"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="35" id="Uvt-Ti-pc9"/>
-                                                    <constraint firstAttribute="height" constant="27" id="ygp-rm-g9d"/>
-                                                </constraints>
-                                                <popUpButtonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" autoenablesItems="NO" id="o09-Tn-a0K">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                    <menu key="menu" autoenablesItems="NO" id="BYm-tH-0gL">
-                                                        <items>
-                                                            <menuItem state="on" image="NSAddTemplate" hidden="YES" id="wzu-67-QRX"/>
-                                                            <menuItem title="New User…" id="No5-HO-iK1">
-                                                                <modifierMask key="keyEquivalentModifierMask"/>
-                                                            </menuItem>
-                                                            <menuItem title="New Group…" id="eqj-td-tM1">
-                                                                <modifierMask key="keyEquivalentModifierMask"/>
-                                                            </menuItem>
-                                                            <menuItem title="New Computer…" enabled="NO" id="VVT-ae-hbO">
-                                                                <modifierMask key="keyEquivalentModifierMask"/>
-                                                            </menuItem>
-                                                            <menuItem title="New Computer Group…" enabled="NO" id="Eel-fq-7kJ">
-                                                                <modifierMask key="keyEquivalentModifierMask"/>
-                                                            </menuItem>
-                                                        </items>
-                                                    </menu>
-                                                </popUpButtonCell>
-                                            </popUpButton>
-                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Anm-Mc-Zhm">
-                                                <rect key="frame" x="70" y="-1" width="195" height="29"/>
-                                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" refusesFirstResponder="YES" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="feh-wh-ujY">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                </buttonCell>
-                                            </button>
-                                            <popUpButton translatesAutoresizingMaskIntoConstraints="NO" id="Lzx-aI-85c">
-                                                <rect key="frame" x="35" y="-1" width="35" height="29"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="35" id="im2-bU-8WP"/>
-                                                </constraints>
-                                                <popUpButtonCell key="cell" type="smallSquare" bezelStyle="smallSquare" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" autoenablesItems="NO" id="j78-5F-eyW">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                    <menu key="menu" autoenablesItems="NO" id="ugs-4Q-gSa">
-                                                        <items>
-                                                            <menuItem state="on" image="NSActionTemplate" hidden="YES" id="pvE-wW-uAu"/>
-                                                            <menuItem title="Change Credentials…" id="L5P-pt-nV2">
-                                                                <modifierMask key="keyEquivalentModifierMask"/>
-                                                            </menuItem>
-                                                            <menuItem title="Show Hidden Accounts" id="YAd-bL-aau"/>
-                                                        </items>
-                                                    </menu>
-                                                </popUpButtonCell>
-                                            </popUpButton>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="Lzx-aI-85c" firstAttribute="leading" secondItem="tff-D9-ngL" secondAttribute="trailing" id="4t8-pi-kzS"/>
+                                            <constraint firstAttribute="bottom" secondItem="DdJ-Ef-J32" secondAttribute="bottom" id="By7-Ws-IsF"/>
                                             <constraint firstItem="DdJ-Ef-J32" firstAttribute="leading" secondItem="g42-iq-alR" secondAttribute="leading" id="LhV-Bd-KuF"/>
-                                            <constraint firstItem="tff-D9-ngL" firstAttribute="height" secondItem="Lzx-aI-85c" secondAttribute="height" id="PZv-fs-FMP"/>
-                                            <constraint firstItem="tff-D9-ngL" firstAttribute="leading" secondItem="g42-iq-alR" secondAttribute="leading" id="Ssk-Yq-1Tl"/>
-                                            <constraint firstItem="Anm-Mc-Zhm" firstAttribute="leading" secondItem="Lzx-aI-85c" secondAttribute="trailing" id="TdM-nP-Sb3"/>
-                                            <constraint firstAttribute="bottom" secondItem="Anm-Mc-Zhm" secondAttribute="bottom" id="V2P-Qd-mP6"/>
-                                            <constraint firstAttribute="bottom" secondItem="Lzx-aI-85c" secondAttribute="bottom" id="XQN-Pc-q3B"/>
-                                            <constraint firstItem="tff-D9-ngL" firstAttribute="height" secondItem="Anm-Mc-Zhm" secondAttribute="height" id="aMD-DZ-Ywf"/>
                                             <constraint firstAttribute="trailing" secondItem="DdJ-Ef-J32" secondAttribute="trailing" id="fyu-lE-7ka"/>
                                             <constraint firstItem="DdJ-Ef-J32" firstAttribute="top" secondItem="g42-iq-alR" secondAttribute="top" id="mNm-a7-MPq"/>
-                                            <constraint firstAttribute="bottom" secondItem="tff-D9-ngL" secondAttribute="bottom" id="oIB-w0-5RQ"/>
-                                            <constraint firstItem="Anm-Mc-Zhm" firstAttribute="top" secondItem="DdJ-Ef-J32" secondAttribute="bottom" id="ogJ-js-g7D"/>
-                                            <constraint firstAttribute="trailing" secondItem="Anm-Mc-Zhm" secondAttribute="trailing" id="qUW-3p-Ndv"/>
                                         </constraints>
                                     </customView>
                                     <customView id="6pj-dU-Ewj">
