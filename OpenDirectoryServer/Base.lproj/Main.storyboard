@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14810.11" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14835.7" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14810.11"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14835.7"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -282,8 +282,8 @@
                                                                                 <outlet property="textField" destination="a0r-7z-Fc3" id="IDY-uz-PVa"/>
                                                                             </connections>
                                                                         </tableCellView>
-                                                                        <tableCellView identifier="DataCell" misplaced="YES" id="zjJ-HX-0sG">
-                                                                            <rect key="frame" x="1" y="20" width="262" height="17"/>
+                                                                        <tableCellView identifier="DataCell" id="zjJ-HX-0sG">
+                                                                            <rect key="frame" x="1" y="20" width="262" height="16"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                             <subviews>
                                                                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="b14-Cj-kHT">
@@ -516,8 +516,8 @@
                                                                 <outlet property="textField" destination="Nzh-qC-zz0" id="uLl-aG-Iap"/>
                                                             </connections>
                                                         </tableCellView>
-                                                        <tableCellView identifier="LocalLDAPCell" misplaced="YES" id="OzJ-Pu-XLr">
-                                                            <rect key="frame" x="1" y="47" width="682" height="61"/>
+                                                        <tableCellView identifier="LocalLDAPCell" id="OzJ-Pu-XLr">
+                                                            <rect key="frame" x="1" y="47" width="682" height="58"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="REW-3G-ViS">
@@ -597,8 +597,8 @@
                                                                 <outlet property="textField" destination="9Gx-af-51V" id="CNg-H3-fi7"/>
                                                             </connections>
                                                         </tableCellView>
-                                                        <tableCellView identifier="CreateLocalLDAPCell" misplaced="YES" id="BQy-e8-0nK">
-                                                            <rect key="frame" x="1" y="156" width="682" height="61"/>
+                                                        <tableCellView identifier="CreateLocalLDAPCell" id="BQy-e8-0nK">
+                                                            <rect key="frame" x="1" y="156" width="682" height="58"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zfE-mn-xf3">
