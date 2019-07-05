@@ -18,7 +18,7 @@
 
 import Foundation
 
-internal enum HelperToolRequetParameters {
+internal enum HelperToolRequestParameters {
 	internal static let certificateName = "SVRCertificateAuthName"
 	internal static let certificateOrganizationName = "SVRCertificateOrganizationName"
 	internal static let certificateAdminEmail = "SVRCertificateAdminEmail"
@@ -39,7 +39,7 @@ internal enum HelperToolRequetParameters {
 
 	// Required parameters: masterAddress, adminUserName
 	// Optional parameters: certificateAdminEmail
-	func createOpenDirectoryReplica(parameterrs: [String: String], reply: @escaping (NSNumber? , NSError?) -> Void)
+	func createOpenDirectoryReplica(parameters: [String: String], reply: @escaping (NSNumber? , NSError?) -> Void)
 
 	func createOpenDirectoryBackup(backupLocation: URL, reply: @escaping (NSNumber?, NSError?) -> Void)
 	func restoreOpenDirectoryBackup(backupLocation: URL, reply: @escaping (NSNumber?, NSError?) -> Void)
@@ -50,7 +50,7 @@ internal enum HelperToolRequetParameters {
 	func standardErrorWritten(text: String)
 }
 
-internal let HelperToolVersion = "1.0"
+internal let HelperToolVersion = "1.0.1"
 
 internal enum HelperToolErrors {
 	internal static let domain = "me.sunsol.OpenDirectoryServer.PrivilegedToolErrorDomain"

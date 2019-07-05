@@ -19,7 +19,7 @@ internal final class HelperTool: NSObject, HelperToolRequestProtocol {
 		reply(nil, error)
 	}
 
-	func createOpenDirectoryReplica(parameterrs: [String : String], reply: @escaping (NSNumber?, NSError?) -> Void) {
+	func createOpenDirectoryReplica(parameters: [String : String], reply: @escaping (NSNumber?, NSError?) -> Void) {
 		// Not yet implemented.
 		let error = NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
 		reply(nil, error)
