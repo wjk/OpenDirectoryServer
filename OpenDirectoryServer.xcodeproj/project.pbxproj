@@ -20,7 +20,6 @@
 		1F1147FD2298703D00ED8DA7 /* SVRUserManagement.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F1147F52298703D00ED8DA7 /* SVRUserManagement.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1F1148042298705800ED8DA7 /* SVRDirectoryNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F1148022298705800ED8DA7 /* SVRDirectoryNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F1148052298705800ED8DA7 /* SVRDirectoryNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1148032298705800ED8DA7 /* SVRDirectoryNode.m */; };
-		1F14AFC0229871B6001A0318 /* SwiftKVO.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F14AFBE229871B6001A0318 /* SwiftKVO.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F14AFC3229871B6001A0318 /* SwiftKVO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F14AFBC229871B6001A0318 /* SwiftKVO.framework */; };
 		1F14AFC4229871B6001A0318 /* SwiftKVO.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F14AFBC229871B6001A0318 /* SwiftKVO.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1F14AFC9229871DD001A0318 /* SwiftKVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F14AFC8229871DD001A0318 /* SwiftKVO.swift */; };
@@ -107,7 +106,6 @@
 		1F1148022298705800ED8DA7 /* SVRDirectoryNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRDirectoryNode.h; sourceTree = "<group>"; };
 		1F1148032298705800ED8DA7 /* SVRDirectoryNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRDirectoryNode.m; sourceTree = "<group>"; };
 		1F14AFBC229871B6001A0318 /* SwiftKVO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftKVO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1F14AFBE229871B6001A0318 /* SwiftKVO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftKVO.h; sourceTree = "<group>"; };
 		1F14AFBF229871B6001A0318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F14AFC8229871DD001A0318 /* SwiftKVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftKVO.swift; sourceTree = "<group>"; };
 		1F1E0204229886B1009EA15A /* AuthorizationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationAPI.swift; sourceTree = "<group>"; };
@@ -240,7 +238,6 @@
 			isa = PBXGroup;
 			children = (
 				1F14AFC8229871DD001A0318 /* SwiftKVO.swift */,
-				1F14AFBE229871B6001A0318 /* SwiftKVO.h */,
 				1F14AFBF229871B6001A0318 /* Info.plist */,
 			);
 			path = SwiftKVO;
@@ -297,7 +294,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F14AFC0229871B6001A0318 /* SwiftKVO.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
