@@ -236,13 +236,12 @@
 		1F1147D722986E7200ED8DA7 /* OpenDirectoryServer */ = {
 			isa = PBXGroup;
 			children = (
+				1FDBC23B23136D3500B737C0 /* MainWindow */,
 				1FCEEAAE22A88593009C278B /* Model */,
 				1FCEEAA622A87ACF009C278B /* Wizard */,
 				1F1147D822986E7200ED8DA7 /* AppDelegate.swift */,
 				1F1147E722986F9800ED8DA7 /* AuthenticationViewController.swift */,
 				1F1147E822986F9800ED8DA7 /* ConnectToServerViewController.swift */,
-				1F6E2B292298B1E400DDC60F /* MainWindowController.swift */,
-				1F6E2B2B2298B38200DDC60F /* MainViewController.swift */,
 				1F1147DE22986E7300ED8DA7 /* Main.storyboard */,
 				1F1147EF2298702A00ED8DA7 /* Localizable.strings */,
 				1F6A569B2298A44900CFC403 /* Authorization.strings */,
@@ -317,6 +316,15 @@
 				1FCEEAB222A88784009C278B /* PrivilegedToolInstallPane.swift */,
 			);
 			path = CreateDirectoryMasterPanes;
+			sourceTree = "<group>";
+		};
+		1FDBC23B23136D3500B737C0 /* MainWindow */ = {
+			isa = PBXGroup;
+			children = (
+				1F6E2B292298B1E400DDC60F /* MainWindowController.swift */,
+				1F6E2B2B2298B38200DDC60F /* MainViewController.swift */,
+			);
+			path = MainWindow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
