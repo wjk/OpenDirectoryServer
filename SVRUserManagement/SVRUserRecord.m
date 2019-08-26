@@ -31,6 +31,44 @@
 	return self;
 }
 
+#pragma mark Attributes
+
+- (nullable NSArray<NSString *> *)stringValuesForAttribute:(NSString *)attributeName error:(NSError **)outError {
+	NSArray *nativeValues = [record valuesForAttribute:attributeName error:outError];
+	if (nativeValues == nil) return nil;
+
+	NSMutableArray<NSString *> *retval = [[NSMutableArray alloc] init];
+	for (id object in nativeValues) {
+		if ([object isKindOfClass:[NSString class]]) {
+			[retval addObject:(NSString *)object];
+		} else if ([object isKindOfClass:[NSData class]]) {
+			NSLog(@"Unexpected binary value found when querying attribute %@, ignoring", attributeName);
+		} else {
+			NSAssert(NO, @"Found unexpected attribute value %@", object);
+		}
+	}
+
+	return retval;
+}
+
+- (nullable NSArray<NSData *> *)binaryValuesForAttribute:(NSString *)attributeName error:(NSError **)outError {
+	NSArray *nativeValues = [record valuesForAttribute:attributeName error:outError];
+	if (nativeValues == nil) return nil;
+
+	NSMutableArray<NSData *> *retval = [[NSMutableArray alloc] init];
+	for (id object in nativeValues) {
+		if ([object isKindOfClass:[NSData class]]) {
+			[retval addObject:(NSData *)object];
+		} else if ([object isKindOfClass:[NSString class]]) {
+			NSLog(@"Unexpected string value found when querying attribute %@, ignoring", attributeName);
+		} else {
+			NSAssert(NO, @"Found unexpected attribute value %@", object);
+		}
+	}
+
+	return retval;
+}
+
 #pragma mark Changing Password
 
 - (BOOL)changePassword:(NSString *)oldPassword toPassword:(NSString *)newPassword error:(NSError *__autoreleasing  _Nullable *)outError {
