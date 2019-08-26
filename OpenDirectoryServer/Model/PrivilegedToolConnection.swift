@@ -79,6 +79,6 @@ internal enum PrivilegedToolConnection {
 			}
 		}
 
-		try Authorization.authorizationRightsUpdateDatabase(bundle: MainBundle, stringTableName: "Authorization")
+		try Authorization.authorizationRightsUpdateDatabase(bundle: Bundle.main, stringTableName: "Authorization")
 	}
 }

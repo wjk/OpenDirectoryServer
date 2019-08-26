@@ -50,7 +50,3 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		connectToServerWindowController.showWindow(sender)
 	}
 }
-
-// MARK: -
-
-internal let MainBundle = Bundle(for: AppDelegate.self)
