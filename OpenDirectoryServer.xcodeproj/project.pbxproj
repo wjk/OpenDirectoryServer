@@ -39,6 +39,7 @@
 		1F6E2B2C2298B38200DDC60F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E2B2B2298B38200DDC60F /* MainViewController.swift */; };
 		1FA72ACD22987DEB00623350 /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = 1FA72ACB22987DEB00623350 /* COPYING */; };
 		1FA72ACE22987DEB00623350 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1FA72ACC22987DEB00623350 /* README.md */; };
+		1FC0113B231475AB00EDB47F /* SVRUserRecord+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC0113A231475AB00EDB47F /* SVRUserRecord+Attributes.swift */; };
 		1FCCB05122989C5200B5DC85 /* sshpass_wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCB05022989C5200B5DC85 /* sshpass_wrapper.m */; };
 		1FCCB0532298A0F600B5DC85 /* HelperTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCB0522298A0F600B5DC85 /* HelperTool.swift */; };
 		1FCCB0552298A1FE00B5DC85 /* CodesignCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCB0542298A1FE00B5DC85 /* CodesignCheck.swift */; };
@@ -139,6 +140,7 @@
 		1F6E2B2B2298B38200DDC60F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1FA72ACB22987DEB00623350 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		1FA72ACC22987DEB00623350 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1FC0113A231475AB00EDB47F /* SVRUserRecord+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SVRUserRecord+Attributes.swift"; sourceTree = "<group>"; };
 		1FCCB05022989C5200B5DC85 /* sshpass_wrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sshpass_wrapper.m; sourceTree = "<group>"; };
 		1FCCB0522298A0F600B5DC85 /* HelperTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperTool.swift; sourceTree = "<group>"; };
 		1FCCB0542298A1FE00B5DC85 /* CodesignCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodesignCheck.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				1F63414E23135FB400AB8A27 /* SVRDirectoryNode+Keychain.swift */,
 				1FDBC24023136F8A00B737C0 /* SVRUserRecord.h */,
 				1FDBC24123136F8A00B737C0 /* SVRUserRecord.m */,
+				1FC0113A231475AB00EDB47F /* SVRUserRecord+Attributes.swift */,
 				1F1147F82298703D00ED8DA7 /* Info.plist */,
 				1F6341542313638D00AB8A27 /* Localizable.strings */,
 			);
@@ -641,6 +644,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FC0113B231475AB00EDB47F /* SVRUserRecord+Attributes.swift in Sources */,
 				1FDBC24323136F8A00B737C0 /* SVRUserRecord.m in Sources */,
 				1F1148052298705800ED8DA7 /* SVRDirectoryNode.m in Sources */,
 				1F63414F23135FB400AB8A27 /* SVRDirectoryNode+Keychain.swift in Sources */,
