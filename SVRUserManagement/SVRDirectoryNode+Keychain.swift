@@ -10,13 +10,21 @@ import Foundation
 import KeychainAccess
 
 public extension SVRDirectoryNode {
+	private func createKeychain() -> Keychain {
+		let bundle = Bundle(for: SVRDirectoryNode.self)
+		let label = bundle.localizedString(forKey: "Open Directory Server Saved Credential", value: nil, table: nil)
+		let comment = bundle.localizedString(forKey: "This credential was saved by the Open Directory Server app. Please don't modify it, as then the app won't be able to find it again.", value: nil, table: nil)
+
+		return Keychain(service: "me.sunsol.OpenDirectoryServer").label(label).comment(comment)
+	}
+
 	func saveCredentials() throws {
 		guard let userName = self.userName, let password = self.password else {
 			throw NSError(domain: SVRCredentialStoreErrors.domain, code: SVRCredentialStoreErrors.noCredentials, userInfo: nil)
 		}
 
 		do {
-			let keychain = Keychain(service: "me.sunsol.OpenDirectoryServer")
+			let keychain = createKeychain()
 			let keychainEntryPrefix: String
 			if self.nodeName.hasPrefix("/LDAPv3/") {
 				let serverName = self.nodeName.replacingOccurrences(of: "/LDAPv3/", with: "")
@@ -47,7 +55,7 @@ public extension SVRDirectoryNode {
 
 	func loadSavedCredentials() -> Bool {
 		do {
-			let keychain = Keychain(service: "me.sunsol.OpenDirectoryServer")
+			let keychain = createKeychain()
 			let keychainEntryPrefix: String
 			if self.nodeName.hasPrefix("/LDAPv3/") {
 				let serverName = self.nodeName.replacingOccurrences(of: "/LDAPv3/", with: "")
