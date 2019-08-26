@@ -20,6 +20,10 @@
 @import OpenDirectory;
 @import Security;
 
+@interface SVRUserRecord ()
+- (instancetype)initWithRecord:(ODRecord *)record owningNode:(SVRDirectoryNode *)owningNode;
+@end
+
 @implementation SVRDirectoryNode
 {
 	ODNode *node;
@@ -70,6 +74,28 @@
 
 - (BOOL)authenticate {
 	return [node setCredentialsWithRecordType:kODRecordTypeUsers recordName:self.userName password:self.password error:NULL];
+}
+
+- (nullable NSArray<SVRUserRecord *> *)allUserRecordsWithError:(NSError **)outError {
+	NSError *error;
+	ODQuery *query = [ODQuery queryWithNode:node forRecordTypes:kODRecordTypeUsers attribute:kODAttributeTypeAllAttributes matchType:kODMatchAny queryValues:nil returnAttributes:kODAttributeTypeAllAttributes maximumResults:NSIntegerMax error:&error];
+	if (query == nil) {
+		if (outError != NULL) *outError = error;
+		return nil;
+	}
+
+	NSArray *results = [query resultsAllowingPartial:NO error:&error];
+	if (results == nil) {
+		if (outError != NULL) *outError = error;
+		return nil;
+	}
+
+	NSMutableArray<SVRUserRecord *> *retval = [[NSMutableArray alloc] init];
+	for (ODRecord *record in results) {
+		NSAssert([[record recordType] isEqualToString:kODRecordTypeUsers], @"ODRecord not of user type");
+		[retval addObject:[[SVRUserRecord alloc] initWithRecord:record owningNode:self]];
+	}
+	return retval;
 }
 
 @end

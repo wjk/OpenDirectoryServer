@@ -46,6 +46,8 @@
 		1FCEEAAD22A87D4E009C278B /* WizardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCEEAAC22A87D4E009C278B /* WizardViewController.swift */; };
 		1FCEEAB022A8859D009C278B /* PrivilegedToolConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCEEAAF22A8859D009C278B /* PrivilegedToolConnection.swift */; };
 		1FCEEAB322A88784009C278B /* PrivilegedToolInstallPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCEEAB222A88784009C278B /* PrivilegedToolInstallPane.swift */; };
+		1FDBC24223136F8A00B737C0 /* SVRUserRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FDBC24023136F8A00B737C0 /* SVRUserRecord.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FDBC24323136F8A00B737C0 /* SVRUserRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FDBC24123136F8A00B737C0 /* SVRUserRecord.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +146,8 @@
 		1FCEEAAC22A87D4E009C278B /* WizardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WizardViewController.swift; sourceTree = "<group>"; };
 		1FCEEAAF22A8859D009C278B /* PrivilegedToolConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivilegedToolConnection.swift; sourceTree = "<group>"; };
 		1FCEEAB222A88784009C278B /* PrivilegedToolInstallPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivilegedToolInstallPane.swift; sourceTree = "<group>"; };
+		1FDBC24023136F8A00B737C0 /* SVRUserRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVRUserRecord.h; sourceTree = "<group>"; };
+		1FDBC24123136F8A00B737C0 /* SVRUserRecord.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVRUserRecord.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +263,8 @@
 				1F1148022298705800ED8DA7 /* SVRDirectoryNode.h */,
 				1F1148032298705800ED8DA7 /* SVRDirectoryNode.m */,
 				1F63414E23135FB400AB8A27 /* SVRDirectoryNode+Keychain.swift */,
+				1FDBC24023136F8A00B737C0 /* SVRUserRecord.h */,
+				1FDBC24123136F8A00B737C0 /* SVRUserRecord.m */,
 				1F1147F82298703D00ED8DA7 /* Info.plist */,
 				1F6341542313638D00AB8A27 /* Localizable.strings */,
 			);
@@ -334,6 +340,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FDBC24223136F8A00B737C0 /* SVRUserRecord.h in Headers */,
 				1F1148042298705800ED8DA7 /* SVRDirectoryNode.h in Headers */,
 				1F1147F92298703D00ED8DA7 /* SVRUserManagement.h in Headers */,
 			);
@@ -634,6 +641,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FDBC24323136F8A00B737C0 /* SVRUserRecord.m in Sources */,
 				1F1148052298705800ED8DA7 /* SVRDirectoryNode.m in Sources */,
 				1F63414F23135FB400AB8A27 /* SVRDirectoryNode+Keychain.swift in Sources */,
 			);

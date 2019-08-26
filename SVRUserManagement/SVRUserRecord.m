@@ -16,9 +16,33 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#import <Cocoa/Cocoa.h>
-#import <SVRUserManagement/SVRDirectoryNode.h>
-#import <SVRUserManagement/SVRUserRecord.h>
+#import "SVRUserRecord.h"
+#import "SVRDirectoryNode.h"
+@import OpenDirectory;
 
-extern double SVRUserManagementVersionNumber;
-extern const unsigned char SVRUserManagementVersionString[];
+@implementation SVRUserRecord
+{
+	ODRecord *record;
+	SVRDirectoryNode *owningNode;
+}
+
+- (instancetype)initWithRecord:(ODRecord *)record owningNode:(SVRDirectoryNode *)owningNode {
+	self = [super init];
+	self->record = record;
+	self->owningNode = owningNode;
+	return self;
+}
+
+#pragma mark NSObject
+
+- (BOOL)isEqual:(id)object {
+	if (![object isKindOfClass:[SVRUserRecord class]]) return NO;
+	SVRUserRecord *other = object;
+	return [other->record isEqual:record] && [other->owningNode isEqual:owningNode];
+}
+
+- (NSUInteger)hash {
+	return [record hash] ^ [owningNode hash];
+}
+
+@end

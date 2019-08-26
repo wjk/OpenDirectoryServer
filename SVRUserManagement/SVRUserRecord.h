@@ -17,30 +17,12 @@
  */
 
 @import Foundation;
-#import <SVRUserManagement/SVRUserRecord.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SVRDirectoryNode : NSObject
+@interface SVRUserRecord : NSObject
 
-+ (nullable NSArray<SVRDirectoryNode *> *)allNodesBoundToLocalComputerWithError:(NSError **)outError;
-- (nullable instancetype)initWithName:(NSString *)nodeName error:(NSError **)outError;
 - (instancetype)init NS_UNAVAILABLE;
-
-@property (readonly) NSString *nodeName;
-
-#pragma mark Authentication
-
-@property (nullable, copy) NSString *userName;
-@property (nullable, copy) NSString *password;
-
-- (BOOL)authenticate;
-
-#pragma mark Querying Records
-
-// Note: All query methods on this class are blocking calls.
-// You may want to call them on a background dispatch queue.
-- (nullable NSArray<SVRUserRecord *> *)allUserRecordsWithError:(NSError **)outError;
 
 @end
 
