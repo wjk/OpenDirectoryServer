@@ -33,8 +33,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, copy) NSString *userName;
 @property (nullable, copy) NSString *password;
 
-- (BOOL)saveCredentialsWithError:(NSError **)outError;
-- (BOOL)loadSavedCredentials;
 - (BOOL)authenticate;
 
 @end

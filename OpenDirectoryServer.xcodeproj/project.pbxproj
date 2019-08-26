@@ -27,6 +27,7 @@
 		1F1E02062298881E009EA15A /* AuthorizationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E0204229886B1009EA15A /* AuthorizationAPI.swift */; };
 		1F1E0208229888AD009EA15A /* HelperToolProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E0207229888AD009EA15A /* HelperToolProtocol.swift */; };
 		1F63414D23135F9600AB8A27 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 1F63414C23135F9600AB8A27 /* KeychainAccess */; };
+		1F63414F23135FB400AB8A27 /* SVRDirectoryNode+Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F63414E23135FB400AB8A27 /* SVRDirectoryNode+Keychain.swift */; };
 		1F6736DA229891A600C7A446 /* HelperToolProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E0207229888AD009EA15A /* HelperToolProtocol.swift */; };
 		1F6736DF2298949D00C7A446 /* sshpass.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F6736DE2298949D00C7A446 /* sshpass.c */; };
 		1F6A56992298A44900CFC403 /* Authorization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F6A569B2298A44900CFC403 /* Authorization.strings */; };
@@ -111,6 +112,7 @@
 		1F14AFC8229871DD001A0318 /* SwiftKVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftKVO.swift; sourceTree = "<group>"; };
 		1F1E0204229886B1009EA15A /* AuthorizationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationAPI.swift; sourceTree = "<group>"; };
 		1F1E0207229888AD009EA15A /* HelperToolProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperToolProtocol.swift; sourceTree = "<group>"; };
+		1F63414E23135FB400AB8A27 /* SVRDirectoryNode+Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SVRDirectoryNode+Keychain.swift"; sourceTree = "<group>"; };
 		1F6736DD2298949C00C7A446 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		1F6736DE2298949D00C7A446 /* sshpass.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sshpass.c; sourceTree = "<group>"; };
 		1F6A569A2298A44900CFC403 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Authorization.strings; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				1F1147F72298703D00ED8DA7 /* SVRUserManagement.h */,
 				1F1148022298705800ED8DA7 /* SVRDirectoryNode.h */,
 				1F1148032298705800ED8DA7 /* SVRDirectoryNode.m */,
+				1F63414E23135FB400AB8A27 /* SVRDirectoryNode+Keychain.swift */,
 				1F1147F82298703D00ED8DA7 /* Info.plist */,
 			);
 			path = SVRUserManagement;
@@ -408,6 +411,7 @@
 					};
 					1F1147F42298703D00ED8DA7 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1100;
 					};
 					1F14AFBB229871B6001A0318 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -548,6 +552,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F1148052298705800ED8DA7 /* SVRDirectoryNode.m in Sources */,
+				1F63414F23135FB400AB8A27 /* SVRDirectoryNode+Keychain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1056,6 +1061,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1129,6 +1136,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
