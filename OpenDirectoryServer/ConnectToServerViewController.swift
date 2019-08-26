@@ -19,6 +19,7 @@
 import Cocoa
 import SwiftKVO
 import SVRUserManagement
+import LocalizedString
 
 class ConnectToServerViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
 	override func viewDidLoad() {
@@ -88,9 +89,11 @@ class ConnectToServerViewController: NSViewController, NSTableViewDataSource, NS
 			do {
 				node = try SVRDirectoryNode(name: model.nodeName)
 			} catch {
+				let serverName = model.nodeName.replacingOccurrences(of: "/LDAPv3/", with: "")
+
 				NSLog("Could not connect to \(model.nodeName): \(error)")
 				let alert = NSAlert()
-				alert.messageText = String(format: localize("The Open Directory domain on the server \"%@\" couldn't be contacted.", table: "Localizable"), model.nodeName.replacingOccurrences(of: "/LDAPv3/", with: ""))
+				alert.messageText = localize("The Open Directory domain on the server \"\(serverName)\" couldn't be contacted.")
 				alert.addButton(withTitle: localize("OK", table: "Localizable"))
 				alert.beginSheetModal(for: self.view.window!, completionHandler: nil)
 				return
@@ -197,11 +200,11 @@ class ConnectToServerViewController: NSViewController, NSTableViewDataSource, NS
 
 			if rowData.nodeName.hasPrefix("/LDAPv3/") {
 				let remoteName = rowData.nodeName.replacingOccurrences(of: "/LDAPv3/", with: "")
-				let formattedName = String(format: localize("%@ (Open Directory Server)", table: "Localizable"), remoteName)
+				let formattedName = localize("\(remoteName) (Open Directory Server)")
 				view.textField?.stringValue = formattedName
 			} else if rowData.nodeName.hasPrefix("/Active Directory/") {
 				let remoteName = rowData.nodeName.replacingOccurrences(of: "/Active Directory/", with: "")
-				let formattedName = String(format: localize("%@ (Active Directory Server)", table: "Localizable"), remoteName)
+				let formattedName = localize("\(remoteName) (Active Directory Server)")
 				view.textField?.stringValue = formattedName
 			}
 

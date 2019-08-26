@@ -18,6 +18,7 @@
 
 import Cocoa
 import SVRUserManagement
+import LocalizedString
 
 internal final class MainWindowController: NSWindowController, NSWindowDelegate {
 	internal static func create(directoryNode: SVRDirectoryNode) -> MainWindowController {
@@ -70,7 +71,7 @@ internal final class MainWindowController: NSWindowController, NSWindowDelegate 
 			if serverName == "127.0.0.1" {
 				serverName = localize("This Mac", table: "Localizable")
 			}
-			window.title = String(format: localize("%@ (Open Directory Server)", table: "Localizable"), serverName)
+			window.title = localize("\(serverName) (Open Directory Server)")
 		} else {
 			NSLog("Unknown node type, this shouldn't happen")
 			window.title = model.nodeName

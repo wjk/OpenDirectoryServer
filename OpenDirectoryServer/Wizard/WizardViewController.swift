@@ -18,6 +18,7 @@
 
 import Cocoa
 import SwiftKVO
+import LocalizedString
 
 internal class WizardPaneController: NSViewController {
 	public let commonKVO = KVOProxy<WizardPaneController>()

@@ -19,6 +19,7 @@
 import Cocoa
 import SwiftKVO
 import SVRUserManagement
+import LocalizedString
 
 class AuthenticationViewController: NSViewController, NSTextFieldDelegate {
 	private func commonInit() {
@@ -144,7 +145,7 @@ class AuthenticationViewController: NSViewController, NSTextFieldDelegate {
 				instructionLabel.stringValue = localize("Please enter the name and password of an administrator in the Open Directory domain on this Mac.", table: "Localizable")
 			} else if model.nodeName.hasPrefix("/LDAPv3/") {
 				let serverAddress = model.nodeName.replacingOccurrences(of: "/LDAPv3/", with: "")
-				let text = String(format: localize("Please enter the name and password of an administrator in the Open Directory domain on the server %@.", table: "Localizable"), serverAddress)
+				let text = localize("Please enter the name and password of an administrator in the Open Directory domain on the server \(serverAddress).")
 				instructionLabel.stringValue = text
 			}
 		}

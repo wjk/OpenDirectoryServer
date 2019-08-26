@@ -54,6 +54,3 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 // MARK: -
 
 internal let MainBundle = Bundle(for: AppDelegate.self)
-func localize(_ key: String, table: String) -> String {
-	return MainBundle.localizedString(forKey: key, value: nil, table: table)
-}

@@ -17,6 +17,7 @@
  */
 
 import Cocoa
+import LocalizedString
 
 internal final class PrivilegedToolInstallPaneController: WizardPaneController {
 	internal static func create(previousPaneCallback: @escaping () -> WizardPaneController, nextPaneCallback: @escaping () -> WizardPaneController) -> PrivilegedToolInstallPaneController {
