@@ -20,7 +20,12 @@ public extension SVRDirectoryNode {
 			let keychainEntryPrefix: String
 			if self.nodeName.hasPrefix("/LDAPv3/") {
 				let serverName = self.nodeName.replacingOccurrences(of: "/LDAPv3/", with: "")
-				keychainEntryPrefix = "\(serverName) (Open Directory Server)"
+
+				if serverName == "127.0.0.1" {
+					keychainEntryPrefix = "This Mac (Open Directory Server)"
+				} else {
+					keychainEntryPrefix = "\(serverName) (Open Directory Server)"
+				}
 			} else if self.nodeName == "/Local/Default" {
 				keychainEntryPrefix = "Local Directory Server"
 			} else {
@@ -46,7 +51,12 @@ public extension SVRDirectoryNode {
 			let keychainEntryPrefix: String
 			if self.nodeName.hasPrefix("/LDAPv3/") {
 				let serverName = self.nodeName.replacingOccurrences(of: "/LDAPv3/", with: "")
-				keychainEntryPrefix = "\(serverName) (Open Directory Server)"
+
+				if serverName == "127.0.0.1" {
+					keychainEntryPrefix = "This Mac (Open Directory Server)"
+				} else {
+					keychainEntryPrefix = "\(serverName) (Open Directory Server)"
+				}
 			} else if self.nodeName == "/Local/Default" {
 				keychainEntryPrefix = "Local Directory Server"
 			} else {
