@@ -98,4 +98,16 @@
 	return retval;
 }
 
+#pragma mark NSObject
+
+- (BOOL)isEqual:(id)object {
+	if (![object isKindOfClass:[SVRDirectoryNode class]]) return NO;
+	SVRDirectoryNode *other = object;
+	return [node isEqual:other->node];
+}
+
+- (NSUInteger)hash {
+	return [node hash];
+}
+
 @end
