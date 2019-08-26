@@ -18,12 +18,13 @@
 
 import Foundation
 import KeychainAccess
+import LocalizedString
 
 public extension SVRDirectoryNode {
 	private func createKeychain() -> Keychain {
 		let bundle = Bundle(for: SVRDirectoryNode.self)
-		let label = bundle.localizedString(forKey: "Open Directory Server Saved Credential", value: nil, table: nil)
-		let comment = bundle.localizedString(forKey: "This credential was saved by the Open Directory Server app. Please don't modify it, as then the app won't be able to find it again.", value: nil, table: nil)
+		let label = localize("Open Directory Server Saved Credential", bundle: bundle)
+		let comment = localize("This credential was saved by the Open Directory Server app. Please don't modify it, as then the app won't be able to find it again.", bundle: bundle)
 
 		return Keychain(service: "me.sunsol.OpenDirectoryServer").label(label).comment(comment)
 	}
