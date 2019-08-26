@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,6 +26,7 @@
 		1F1E0205229886B1009EA15A /* AuthorizationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E0204229886B1009EA15A /* AuthorizationAPI.swift */; };
 		1F1E02062298881E009EA15A /* AuthorizationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E0204229886B1009EA15A /* AuthorizationAPI.swift */; };
 		1F1E0208229888AD009EA15A /* HelperToolProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E0207229888AD009EA15A /* HelperToolProtocol.swift */; };
+		1F63414D23135F9600AB8A27 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 1F63414C23135F9600AB8A27 /* KeychainAccess */; };
 		1F6736DA229891A600C7A446 /* HelperToolProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E0207229888AD009EA15A /* HelperToolProtocol.swift */; };
 		1F6736DF2298949D00C7A446 /* sshpass.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F6736DE2298949D00C7A446 /* sshpass.c */; };
 		1F6A56992298A44900CFC403 /* Authorization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F6A569B2298A44900CFC403 /* Authorization.strings */; };
@@ -148,6 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F63414D23135F9600AB8A27 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +355,9 @@
 			dependencies = (
 			);
 			name = SVRUserManagement;
+			packageProductDependencies = (
+				1F63414C23135F9600AB8A27 /* KeychainAccess */,
+			);
 			productName = SVRUserManagement;
 			productReference = 1F1147F52298703D00ED8DA7 /* SVRUserManagement.framework */;
 			productType = "com.apple.product-type.framework";
@@ -419,6 +424,9 @@
 				Base,
 			);
 			mainGroup = 1F1147CA22986E5B00ED8DA7;
+			packageReferences = (
+				1F63414B23135F9600AB8A27 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+			);
 			productRefGroup = 1F1147D622986E7200ED8DA7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1331,6 +1339,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1F63414B23135F9600AB8A27 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1F63414C23135F9600AB8A27 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1F63414B23135F9600AB8A27 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1F1147CB22986E5B00ED8DA7 /* Project object */;
 }
