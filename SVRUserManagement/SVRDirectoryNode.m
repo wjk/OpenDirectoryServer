@@ -76,7 +76,7 @@
 	return [node setCredentialsWithRecordType:kODRecordTypeUsers recordName:self.userName password:self.password error:NULL];
 }
 
-- (nullable NSArray<SVRUserRecord *> *)allUserRecordsWithError:(NSError **)outError {
+- (nullable NSArray<SVRUserRecord *> *)queryAllUserRecordsWithError:(NSError **)outError {
 	NSError *error;
 	ODQuery *query = [ODQuery queryWithNode:node forRecordTypes:kODRecordTypeUsers attribute:kODAttributeTypeAllAttributes matchType:kODMatchAny queryValues:nil returnAttributes:kODAttributeTypeAllAttributes maximumResults:NSIntegerMax error:&error];
 	if (query == nil) {

@@ -40,7 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // Note: All query methods on this class are blocking calls.
 // You may want to call them on a background dispatch queue.
-- (nullable NSArray<SVRUserRecord *> *)allUserRecordsWithError:(NSError **)outError;
+- (nullable NSArray<SVRUserRecord *> *)queryAllUserRecordsWithError:(NSError **)outError;
 
 @end
 
