@@ -66,22 +66,22 @@ internal final class PrivilegedToolInstallPaneController: WizardPaneController {
 				return
 			} catch AuthorizationError.denied {
 				let alert = NSAlert()
-				alert.messageText = localize("You do not have permission to install helper tools.", table: "Localizable")
-				alert.informativeText = localize("Please consult your system administrator for further information.", table: "Localizable")
-				alert.addButton(withTitle: localize("OK", table: "Localizable"))
+				alert.messageText = localize("You do not have permission to install helper tools.")
+				alert.informativeText = localize("Please consult your system administrator for further information.")
+				alert.addButton(withTitle: localize("OK"))
 				alert.beginSheetModal(for: self.view.window!, completionHandler: nil)
 				return
 			} catch AuthorizationError.message(let message) {
 				let alert = NSAlert()
-				alert.messageText = localize("The privileged helper tool could not be registered.", table: "Localizable")
+				alert.messageText = localize("The privileged helper tool could not be registered.")
 				alert.informativeText = message
-				alert.addButton(withTitle: localize("OK", table: "Localizable"))
+				alert.addButton(withTitle: localize("OK"))
 				alert.beginSheetModal(for: self.view.window!, completionHandler: nil)
 				return
 			} catch _ {
 				let alert = NSAlert()
-				alert.messageText = localize("The privileged helper tool could not be registered.", table: "Localizable")
-				alert.addButton(withTitle: localize("OK", table: "Localizable"))
+				alert.messageText = localize("The privileged helper tool could not be registered.")
+				alert.addButton(withTitle: localize("OK"))
 				alert.beginSheetModal(for: self.view.window!, completionHandler: nil)
 				return
 			}

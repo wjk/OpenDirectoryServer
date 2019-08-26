@@ -93,9 +93,9 @@ class AuthenticationViewController: NSViewController, NSTextFieldDelegate {
 
 		if !model.authenticate() {
 			let alert = NSAlert()
-			alert.messageText = localize("The specified username and/or password is incorrect.", table: "Localizable")
-			alert.informativeText = localize("Please try again.", table: "Localizable")
-			alert.addButton(withTitle: localize("OK", table: "Localizable"))
+			alert.messageText = localize("The specified username and/or password is incorrect.")
+			alert.informativeText = localize("Please try again.")
+			alert.addButton(withTitle: localize("OK"))
 			alert.beginSheetModal(for: self.view.window!, completionHandler: nil)
 			return
 		}
@@ -140,9 +140,9 @@ class AuthenticationViewController: NSViewController, NSTextFieldDelegate {
 
 		if let instructionLabel = instructionLabel {
 			if model.nodeName == "/Local/Default" {
-				instructionLabel.stringValue = localize("Please enter the name and password of a local administrator.", table: "Localizable")
+				instructionLabel.stringValue = localize("Please enter the name and password of a local administrator.")
 			} else if model.nodeName == "/LDAPv3/127.0.0.1" {
-				instructionLabel.stringValue = localize("Please enter the name and password of an administrator in the Open Directory domain on this Mac.", table: "Localizable")
+				instructionLabel.stringValue = localize("Please enter the name and password of an administrator in the Open Directory domain on this Mac.")
 			} else if model.nodeName.hasPrefix("/LDAPv3/") {
 				let serverAddress = model.nodeName.replacingOccurrences(of: "/LDAPv3/", with: "")
 				let text = localize("Please enter the name and password of an administrator in the Open Directory domain on the server \(serverAddress).")

@@ -197,9 +197,9 @@ internal final class WizardViewController: NSViewController {
 		cancelButton.isEnabled = currentPane.cancelButtonEnabled
 
 		if currentPane.isFinalPane {
-			continueButton.title = localize("Complete", table: "Localizable")
+			continueButton.title = localize("Complete")
 		} else {
-			continueButton.title = localize("Continue", table: "Localizable")
+			continueButton.title = localize("Continue")
 		}
 
 		if let window = self.view.window {

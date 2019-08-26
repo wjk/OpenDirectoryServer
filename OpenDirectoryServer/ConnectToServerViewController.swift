@@ -79,8 +79,8 @@ class ConnectToServerViewController: NSViewController, NSTableViewDataSource, NS
 			// Directory server to test against.)
 			if model.nodeName.hasPrefix("/Active Directory/") {
 				let alert = NSAlert()
-				alert.messageText = localize("This application cannot edit Active Directory domains.", table: "Localizable")
-				alert.addButton(withTitle: localize("OK", table: "Localizable"))
+				alert.messageText = localize("This application cannot edit Active Directory domains.")
+				alert.addButton(withTitle: localize("OK"))
 				alert.beginSheetModal(for: self.view.window!, completionHandler: nil)
 				return
 			}
@@ -94,7 +94,7 @@ class ConnectToServerViewController: NSViewController, NSTableViewDataSource, NS
 				NSLog("Could not connect to \(model.nodeName): \(error)")
 				let alert = NSAlert()
 				alert.messageText = localize("The Open Directory domain on the server \"\(serverName)\" couldn't be contacted.")
-				alert.addButton(withTitle: localize("OK", table: "Localizable"))
+				alert.addButton(withTitle: localize("OK"))
 				alert.beginSheetModal(for: self.view.window!, completionHandler: nil)
 				return
 			}
@@ -220,14 +220,14 @@ class ConnectToServerViewController: NSViewController, NSTableViewDataSource, NS
 		}
 
 		if nodeTableView.selectedRow == -1 {
-			continueButton.title = localize("Connect...", table: "Localizable")
+			continueButton.title = localize("Connect...")
 			continueButton.isEnabled = false
 		} else {
 			let rowData = tableRows[nodeTableView.selectedRow]
 			if rowData.nodeType == .createLocalLDAPLink {
-				continueButton.title = localize("Create...", table: "Localizable")
+				continueButton.title = localize("Create...")
 			} else {
-				continueButton.title = localize("Connect...", table: "Localizable")
+				continueButton.title = localize("Connect...")
 			}
 
 			continueButton.isEnabled = true

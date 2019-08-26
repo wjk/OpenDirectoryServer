@@ -65,11 +65,11 @@ internal final class MainWindowController: NSWindowController, NSWindowDelegate 
 		}
 
 		if model.nodeName == "/Local/Default" {
-			window.title = localize("Local Directory", table: "Localizable")
+			window.title = localize("Local Directory")
 		} else if model.nodeName.hasPrefix("/LDAPv3/") {
 			var serverName = model.nodeName.replacingOccurrences(of: "/LDAPv3/", with: "")
 			if serverName == "127.0.0.1" {
-				serverName = localize("This Mac", table: "Localizable")
+				serverName = localize("This Mac")
 			}
 			window.title = localize("\(serverName) (Open Directory Server)")
 		} else {
