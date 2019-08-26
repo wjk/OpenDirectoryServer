@@ -21,7 +21,7 @@
 @import Security;
 
 @interface SVRUserRecord ()
-- (instancetype)initWithRecord:(ODRecord *)record owningNode:(SVRDirectoryNode *)owningNode;
+- (instancetype)initWithRecord:(ODRecord *)record;
 @end
 
 @implementation SVRDirectoryNode
@@ -93,7 +93,7 @@
 	NSMutableArray<SVRUserRecord *> *retval = [[NSMutableArray alloc] init];
 	for (ODRecord *record in results) {
 		NSAssert([[record recordType] isEqualToString:kODRecordTypeUsers], @"ODRecord not of user type");
-		[retval addObject:[[SVRUserRecord alloc] initWithRecord:record owningNode:self]];
+		[retval addObject:[[SVRUserRecord alloc] initWithRecord:record]];
 	}
 	return retval;
 }

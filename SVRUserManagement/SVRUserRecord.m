@@ -23,13 +23,11 @@
 @implementation SVRUserRecord
 {
 	ODRecord *record;
-	SVRDirectoryNode *owningNode;
 }
 
-- (instancetype)initWithRecord:(ODRecord *)record owningNode:(SVRDirectoryNode *)owningNode {
+- (instancetype)initWithRecord:(ODRecord *)record {
 	self = [super init];
 	self->record = record;
-	self->owningNode = owningNode;
 	return self;
 }
 
@@ -38,11 +36,11 @@
 - (BOOL)isEqual:(id)object {
 	if (![object isKindOfClass:[SVRUserRecord class]]) return NO;
 	SVRUserRecord *other = object;
-	return [other->record isEqual:record] && [other->owningNode isEqual:owningNode];
+	return [other->record isEqual:record];
 }
 
 - (NSUInteger)hash {
-	return [record hash] ^ [owningNode hash];
+	return [record hash];
 }
 
 @end
