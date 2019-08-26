@@ -33,7 +33,7 @@
 
 #pragma mark Attributes
 
-- (nullable NSArray<NSString *> *)stringValuesForAttribute:(NSString *)attributeName error:(NSError **)outError {
+- (nullable NSArray<NSString *> *)stringValuesForAttribute:(SVRUserAttribute)attributeName error:(NSError **)outError {
 	NSArray *nativeValues = [record valuesForAttribute:attributeName error:outError];
 	if (nativeValues == nil) return nil;
 
@@ -51,7 +51,7 @@
 	return retval;
 }
 
-- (nullable NSArray<NSData *> *)binaryValuesForAttribute:(NSString *)attributeName error:(NSError **)outError {
+- (nullable NSArray<NSData *> *)binaryValuesForAttribute:(SVRUserAttribute)attributeName error:(NSError **)outError {
 	NSArray *nativeValues = [record valuesForAttribute:attributeName error:outError];
 	if (nativeValues == nil) return nil;
 

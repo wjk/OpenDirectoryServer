@@ -20,14 +20,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NSString * SVRUserAttribute NS_TYPED_EXTENSIBLE_ENUM;
+
 @interface SVRUserRecord : NSObject
 
 - (instancetype)init NS_UNAVAILABLE;
 
 #pragma mark Attributes
 
-- (nullable NSArray<NSString *> *)stringValuesForAttribute:(NSString *)attributeName error:(NSError **)outError;
-- (nullable NSArray<NSData *> *)binaryValuesForAttribute:(NSString *)attributeName error:(NSError **)outError;
+- (nullable NSArray<NSString *> *)stringValuesForAttribute:(SVRUserAttribute)attributeName error:(NSError **)outError;
+- (nullable NSArray<NSData *> *)binaryValuesForAttribute:(SVRUserAttribute)attributeName error:(NSError **)outError;
 
 #pragma mark Changing Password
 
