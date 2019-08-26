@@ -24,6 +24,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)init NS_UNAVAILABLE;
 
+#pragma mark Changing Password
+
+- (BOOL)changePassword:(NSString *)oldPassword toPassword:(NSString *)newPassword error:(NSError **)outError;
+- (BOOL)resetPassword:(NSString *)newPassword error:(NSError **)outError;
+
 @end
 
 NS_ASSUME_NONNULL_END

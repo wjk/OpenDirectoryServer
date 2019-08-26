@@ -31,6 +31,16 @@
 	return self;
 }
 
+#pragma mark Changing Password
+
+- (BOOL)changePassword:(NSString *)oldPassword toPassword:(NSString *)newPassword error:(NSError *__autoreleasing  _Nullable *)outError {
+	return [record changePassword:oldPassword toPassword:newPassword error:outError];
+}
+
+- (BOOL)resetPassword:(NSString *)newPassword error:(NSError *__autoreleasing  _Nullable *)outError {
+	return [record changePassword:nil toPassword:newPassword error:outError];
+}
+
 #pragma mark NSObject
 
 - (BOOL)isEqual:(id)object {
