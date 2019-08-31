@@ -45,7 +45,7 @@ public struct LocalizedStringBuilder: ExpressibleByStringInterpolation {
 		if valueProviders.count > 0 {
 			let arguments = valueProviders.map { provider in provider() }
 			let format = bundle.localizedString(forKey: self.key, value: nil, table: table)
-			return String.localizedStringWithFormat(format, arguments)
+			return String(format: format, arguments: arguments)
 		} else {
 			return bundle.localizedString(forKey: self.key, value: nil, table: table)
 		}
