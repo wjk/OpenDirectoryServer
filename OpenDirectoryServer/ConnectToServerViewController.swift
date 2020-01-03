@@ -70,8 +70,35 @@ class ConnectToServerViewController: NSViewController, NSTableViewDataSource, NS
 
 		let model = tableRows[nodeTableView.selectedRow]
 		if model.nodeType == .createLocalLDAPLink {
-			// FIXME: Implement this
-			NSSound.beep()
+			if !PrivilegedToolConnection.isAvailable {
+				if PrivilegedToolConnection.showInstallRequiredSheet(parentWindow: self.view.window!) {
+					do {
+						try PrivilegedToolConnection.updateConnection()
+					} catch AuthorizationError.canceled {
+						// Do nothing here.
+					} catch AuthorizationError.denied {
+						let alert = NSAlert()
+						alert.messageText = localize("You do not have permission to install helper tools.")
+						alert.informativeText = localize("Please consult your system administrator for further information.")
+						alert.addButton(withTitle: localize("OK"))
+						alert.runModal(sheetParent: self.view.window!)
+					} catch AuthorizationError.message(let message) {
+						NSLog("Could not install privileged helper tool due to authorization error \(message)")
+
+						let alert = NSAlert()
+						alert.messageText = localize("The privileged helper tool could not be installed.")
+						alert.addButton(withTitle: localize("OK"))
+						alert.runModal(sheetParent: self.view.window!)
+					} catch {
+						NSLog("Could not install privileged helper tool: \(error)")
+
+						let alert = NSAlert()
+						alert.messageText = localize("The privileged helper tool could not be installed.")
+						alert.addButton(withTitle: localize("OK"))
+						alert.runModal(sheetParent: self.view.window!)
+					}
+				}
+			}
 		} else {
 			// Active Directory nodes cannot be edited using this application.
 			// (Theoretically, the OpenDirectory subsystem might be able to do so,

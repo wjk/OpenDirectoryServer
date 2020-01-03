@@ -35,13 +35,13 @@
 "OK" = "OK";
 
 // MARK: Strings used in the privileged-tool alert
-"Open Directory Server must install a privileged helper tool for it to be able to create Open Directory databases." = "Open Directory Server must install a privileged helper tool for it to be able to create Open Directory databases.";
+"Open Directory Server must install or update a privileged helper tool to complete this operation." = "Open Directory Server must install or update a privileged helper tool to complete this operation.";
 "Install" = "Install";
-"Quit" = "Quit";
+"Cancel" = "Cancel";
 
 "You do not have permission to install helper tools." = "You do not have permission to install helper tools.";
 "Please consult your system administrator for further information." = "Please consult your system administrator for further information.";
-"The privileged helper tool could not be registered." = "The privileged helper tool could not be registered.";
+"The privileged helper tool could not be installed." = "The privileged helper tool could not be installed.";
 
 // MARK: Strings used in the wizard
 "Continue" = "Continue";

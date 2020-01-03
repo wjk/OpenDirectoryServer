@@ -16,7 +16,8 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import Foundation
+import Cocoa
+import LocalizedString
 import ServiceManagement
 
 internal enum PrivilegedToolConnection {
@@ -42,6 +43,23 @@ internal enum PrivilegedToolConnection {
 			semaphore.wait()
 			return result
 		}
+	}
+
+	// Returns `true` if the user clicked Install.
+	static func showInstallRequiredSheet(parentWindow: NSWindow) -> Bool {
+		let alert = NSAlert()
+		alert.messageText = localize("Open Directory Server must install or update a privileged helper tool to complete this operation.")
+		let defaultButton = alert.addButton(withTitle: localize("Install"))
+		defaultButton.keyEquivalent = "\r"
+		alert.addButton(withTitle: localize("Cancel"))
+
+		alert.beginSheetModal(for: parentWindow) {
+			(returnCode) in
+			NSApp.stopModal(withCode: returnCode)
+		}
+
+		let returnCode = NSApp.runModal(for: alert.window)
+		return returnCode == .alertFirstButtonReturn
 	}
 
 	static func createHelperToolProxy(responseObject: HelperToolResponseProtocol?) -> (NSXPCConnection, HelperToolRequestProtocol) {
