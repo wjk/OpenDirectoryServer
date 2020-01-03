@@ -60,6 +60,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="installHelperTool:" target="AVE-YP-NgU" id="YYD-WC-sKN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -75,6 +78,9 @@
                             <constraint firstItem="g5k-yA-Lls" firstAttribute="centerX" secondItem="13R-U8-fwJ" secondAttribute="centerX" id="yl2-hi-0Rx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="installButton" destination="g5k-yA-Lls" id="dUy-Qz-TfG"/>
+                    </connections>
                 </viewController>
                 <customObject id="4e7-SK-c7S" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
