@@ -31,7 +31,7 @@ public extension SVRDirectoryNode {
 
 	func saveCredentials() throws {
 		guard let userName = self.userName, let password = self.password else {
-			throw NSError(domain: SVRCredentialStoreErrors.domain, code: SVRCredentialStoreErrors.noCredentials, userInfo: nil)
+			throw SVRCredentialStoreErrors.noCredentials
 		}
 
 		do {
@@ -56,8 +56,7 @@ public extension SVRDirectoryNode {
 		} catch {
 			if let code = error as? Status {
 				let underlyingError = NSError(domain: NSOSStatusErrorDomain, code: Int(code.rawValue), userInfo: nil)
-				let userInfo = [NSUnderlyingErrorKey: underlyingError]
-				throw NSError(domain: SVRCredentialStoreErrors.domain, code: SVRCredentialStoreErrors.securityFrameworkFailure, userInfo: userInfo)
+				throw SVRCredentialStoreErrors.securityFrameworkFailure(underlyingError: underlyingError)
 			} else {
 				fatalError("unexpected error thrown")
 			}
@@ -95,11 +94,9 @@ public extension SVRDirectoryNode {
 	}
 }
 
-public enum SVRCredentialStoreErrors {
-	public static let domain = "me.sunsol.OpenDirectoryServer.CredentialStoreErrorDomain"
-
+public enum SVRCredentialStoreErrors: Error {
 	/// The `userName` and/or `password` properties were not set.
-	public static let noCredentials = 1
+	case noCredentials
 	/// The Security framework returned an error. Check the underlying error for details.
-	public static let securityFrameworkFailure = 2
+	case securityFrameworkFailure(underlyingError: NSError)
 }
