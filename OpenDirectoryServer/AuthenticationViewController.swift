@@ -63,7 +63,7 @@ class AuthenticationViewController: NSViewController, NSTextFieldDelegate {
 
 	// MARK: Observable Properties
 
-	internal let KVO = KVOProxy<AuthenticationViewController>()
+	internal let KVO = SwiftKVO.Proxy<AuthenticationViewController>()
 	private(set) internal var authSuccess = false {
 		willSet {
 			KVO.willChangeValue(keyPath: \AuthenticationViewController.authSuccess)

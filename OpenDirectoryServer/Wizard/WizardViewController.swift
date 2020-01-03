@@ -21,7 +21,7 @@ import SwiftKVO
 import LocalizedString
 
 internal class WizardPaneController: NSViewController {
-	public let commonKVO = KVOProxy<WizardPaneController>()
+	public let commonKVO = SwiftKVO.Proxy<WizardPaneController>()
 	private var kvoIsReady = false
 
 	private func commonInit() {
@@ -97,7 +97,7 @@ internal final class WizardViewController: NSViewController {
 		return controller
 	}
 
-	private var observers: [AnyKeyPath: [KVOObserver]] = [
+	private var observers: [AnyKeyPath: [SwiftKVO.Observer]] = [
 		\WizardPaneController.backButtonEnabled: [],
 		\WizardPaneController.nextButtonEnabled: [],
 		\WizardPaneController.cancelButtonEnabled: []
@@ -212,7 +212,7 @@ internal final class WizardViewController: NSViewController {
 			window.styleMask = mask
 		}
 
-		var observer: KVOObserver
+		var observer: SwiftKVO.Observer
 		observer = currentPane.commonKVO.addObserver(keyPath: \WizardPaneController.backButtonEnabled, options: [.afterChange]) {
 			(_, newValue) in
 			backButton.isEnabled = newValue

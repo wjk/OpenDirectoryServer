@@ -33,7 +33,7 @@ class ConnectToServerViewController: NSViewController, NSTableViewDataSource, NS
 		}
 	}
 
-	private var observers: [AnyKeyPath: [KVOObserver]] = [
+	private var observers: [AnyKeyPath: [SwiftKVO.Observer]] = [
 		\AuthenticationViewController.authSuccess: []
 	]
 
