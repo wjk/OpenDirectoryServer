@@ -18,8 +18,14 @@
 
 import Cocoa
 import SVRUserManagement
+import LocalizedString
 
-internal final class MainViewController: NSViewController, NSSplitViewDelegate {
+fileprivate extension NSUserInterfaceItemIdentifier {
+	static let headerCell = NSUserInterfaceItemIdentifier(rawValue: "HeaderCell")
+	static let dataCell = NSUserInterfaceItemIdentifier(rawValue: "DataCell")
+}
+
+internal final class MainViewController: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate, NSSplitViewDelegate {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		updateUI()
@@ -47,6 +53,81 @@ internal final class MainViewController: NSViewController, NSSplitViewDelegate {
 
 	private func updateUI() {
 		// TODO: Implement this
+	}
+
+	// MARK: Outlets & Actions
+
+	@IBOutlet private var sidebar: NSOutlineView?
+
+	// MARK: Outline View
+
+	func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
+		assert(outlineView == sidebar)
+
+		if let item = item {
+			// TODO: Implement
+			return 0
+		} else {
+			// There are two root items: Users and Groups.
+			return 2
+		}
+	}
+
+	func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
+		assert(outlineView == sidebar)
+
+		if let item = item {
+			// TODO: Implement
+			return ()
+		} else {
+			if index == 0 {
+				return "Users"
+			} else if index == 1 {
+				return "Groups"
+			} else {
+				preconditionFailure("too many children of root item")
+			}
+		}
+	}
+
+	func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
+		assert(outlineView == sidebar)
+
+		guard let name = item as? String else {
+			preconditionFailure("item not a string")
+		}
+
+		if name == "Users" {
+			let view = outlineView.makeView(withIdentifier: .headerCell, owner: nil) as! NSTableCellView
+			view.textField?.stringValue = localize("Users").uppercased(with: Locale.current)
+			return view
+		} else if name == "Groups" {
+			let view = outlineView.makeView(withIdentifier: .headerCell, owner: nil) as! NSTableCellView
+			view.textField?.stringValue = localize("Groups").uppercased(with: Locale.current)
+			return view
+		}
+
+		return nil
+	}
+
+	func outlineView(_ outlineView: NSOutlineView, isGroupItem item: Any) -> Bool {
+		assert(outlineView == sidebar)
+
+		guard let name = item as? String else {
+			preconditionFailure("item not a string")
+		}
+
+		return name == "Users" || name == "Groups"
+	}
+
+	func outlineView(_ outlineView: NSOutlineView, shouldSelectItem item: Any) -> Bool {
+		// Group items should not be selectable.
+		return !self.outlineView(outlineView, isGroupItem: item)
+	}
+
+	func outlineView(_ outlineView: NSOutlineView, isItemExpandable item: Any) -> Bool {
+		// Only group items should be expandable.
+		return self.outlineView(outlineView, isGroupItem: item)
 	}
 
 	// MARK: NSSplitViewDelegate

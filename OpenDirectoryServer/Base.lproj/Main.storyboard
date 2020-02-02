@@ -309,6 +309,10 @@
                                                                     </prototypeCellViews>
                                                                 </tableColumn>
                                                             </tableColumns>
+                                                            <connections>
+                                                                <outlet property="dataSource" destination="Y9A-Je-icI" id="Cq4-8S-Dz8"/>
+                                                                <outlet property="delegate" destination="Y9A-Je-icI" id="aTB-lO-dJD"/>
+                                                            </connections>
                                                         </outlineView>
                                                     </subviews>
                                                     <nil key="backgroundColor"/>
@@ -366,6 +370,9 @@
                             <constraint firstItem="Qvc-94-cIU" firstAttribute="top" secondItem="f1v-Kh-ZoQ" secondAttribute="top" id="cZQ-K1-ngi"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sidebar" destination="nQG-yt-iju" id="c3y-9Z-KCK"/>
+                    </connections>
                 </viewController>
                 <customObject id="scE-Ql-0ob" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
