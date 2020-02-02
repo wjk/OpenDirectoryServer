@@ -54,6 +54,7 @@
 		1FDBC24223136F8A00B737C0 /* SVRUserRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FDBC24023136F8A00B737C0 /* SVRUserRecord.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FDBC24323136F8A00B737C0 /* SVRUserRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FDBC24123136F8A00B737C0 /* SVRUserRecord.m */; };
 		1FE2812E23E75558000EC1A8 /* SVRGroupAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE2812D23E75558000EC1A8 /* SVRGroupAttributes.swift */; };
+		1FE2813023E757C6000EC1A8 /* SVRGroupRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE2812F23E757C6000EC1A8 /* SVRGroupRecord.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +157,7 @@
 		1FDBC24023136F8A00B737C0 /* SVRUserRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVRUserRecord.h; sourceTree = "<group>"; };
 		1FDBC24123136F8A00B737C0 /* SVRUserRecord.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVRUserRecord.m; sourceTree = "<group>"; };
 		1FE2812D23E75558000EC1A8 /* SVRGroupAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVRGroupAttributes.swift; sourceTree = "<group>"; };
+		1FE2812F23E757C6000EC1A8 /* SVRGroupRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVRGroupRecord.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +274,7 @@
 				1FC0113A231475AB00EDB47F /* SVRUserAttributes.swift */,
 				1F58239423E68023007F240B /* SVRGroupRecord.h */,
 				1F58239523E68023007F240B /* SVRGroupRecord.m */,
+				1FE2812F23E757C6000EC1A8 /* SVRGroupRecord.swift */,
 				1FE2812D23E75558000EC1A8 /* SVRGroupAttributes.swift */,
 				1F1147F82298703D00ED8DA7 /* Info.plist */,
 				1F6341542313638D00AB8A27 /* Localizable.strings */,
@@ -615,6 +618,7 @@
 				1F1148052298705800ED8DA7 /* SVRDirectoryNode.m in Sources */,
 				1F58239323E67B3E007F240B /* SVRUserRecord.swift in Sources */,
 				1F63414F23135FB400AB8A27 /* SVRDirectoryNode+Keychain.swift in Sources */,
+				1FE2813023E757C6000EC1A8 /* SVRGroupRecord.swift in Sources */,
 				1FE2812E23E75558000EC1A8 /* SVRGroupAttributes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
