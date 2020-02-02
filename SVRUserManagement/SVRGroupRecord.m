@@ -23,20 +23,31 @@
 - (ODRecord *)nativeRecord;
 @end
 
+#define ASSERT_NOT_DELETED() NSAssert(!deleted, @"Record was already deleted")
+
 @implementation SVRGroupRecord
 {
 	ODRecord *record;
+	BOOL deleted;
 }
 
 - (instancetype)initWithRecord:(ODRecord *)record {
 	self = [super init];
 	self->record = record;
+	self->deleted = NO;
 	return self;
+}
+
++ (BOOL)deleteRecord:(SVRGroupRecord *)record error:(NSError **)outError {
+	BOOL result = [record->record deleteRecordAndReturnError:outError];
+	if (result) record->deleted = YES;
+	return result;
 }
 
 #pragma mark Attributes
 
 - (nullable NSArray<NSString *> *)stringValuesForAttribute:(SVRGroupAttribute)attributeName error:(NSError **)outError {
+	ASSERT_NOT_DELETED();
 	NSArray *nativeValues = [record valuesForAttribute:attributeName error:outError];
 	if (nativeValues == nil) return nil;
 
@@ -55,6 +66,7 @@
 }
 
 - (nullable NSArray<NSData *> *)binaryValuesForAttribute:(SVRGroupAttribute)attributeName error:(NSError **)outError {
+	ASSERT_NOT_DELETED();
 	NSArray *nativeValues = [record valuesForAttribute:attributeName error:outError];
 	if (nativeValues == nil) return nil;
 
@@ -73,40 +85,49 @@
 }
 
 - (BOOL)setStringValues:(NSArray<NSString *> *)values forAttribute:(SVRGroupAttribute)attributeName error:(NSError **)outError {
+	ASSERT_NOT_DELETED();
 	return [record setValue:values forAttribute:attributeName error:outError];
 }
 
 - (BOOL)setBinaryValues:(NSArray<NSData *> *)values forAttribute:(SVRGroupAttribute)attributeName error:(NSError **)outError; {
+	ASSERT_NOT_DELETED();
 	return [record setValue:values forAttribute:attributeName error:outError];
 }
 
 - (BOOL)appendStringValue:(NSString *)value toAttribute:(SVRGroupAttribute)attributeName error:(NSError **)outError {
+	ASSERT_NOT_DELETED();
 	return [record addValue:value toAttribute:attributeName error:outError];
 }
 
 - (BOOL)appendBinaryValue:(NSData *)value toAttribute:(SVRGroupAttribute)attributeName error:(NSError **)outError {
+	ASSERT_NOT_DELETED();
 	return [record addValue:value toAttribute:attributeName error:outError];
 }
 
 - (BOOL)removeStringValue:(NSString *)value fromAttribute:(SVRGroupAttribute)attributeName error:(NSError **)outError {
+	ASSERT_NOT_DELETED();
 	return [record removeValue:value fromAttribute:attributeName error:outError];
 }
 
 - (BOOL)removeBinaryValue:(NSData *)value fromAttribute:(SVRGroupAttribute)attributeName error:(NSError **)outError {
+	ASSERT_NOT_DELETED();
 	return [record removeValue:value fromAttribute:attributeName error:outError];
 }
 
 #pragma mark Group Membership
 
 - (BOOL)addGroupMember:(SVRUserRecord *)member error:(NSError **)outError {
+	ASSERT_NOT_DELETED();
 	return [record addMemberRecord:[member nativeRecord] error:outError];
 }
 
 - (BOOL)removeGroupMember:(SVRUserRecord *)member error:(NSError **)outError {
+	ASSERT_NOT_DELETED();
 	return [record removeMemberRecord:[member nativeRecord] error:outError];
 }
 
 - (BOOL)isGroupMember:(SVRUserRecord *)member {
+	ASSERT_NOT_DELETED();
 	return [record isMemberRecord:[member nativeRecord] error:nil];
 }
 
