@@ -237,22 +237,22 @@
                                         <rect key="frame" x="0.0" y="0.0" width="265" height="520"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
-                                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="27" horizontalPageScroll="10" verticalLineScroll="27" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdJ-Ef-J32">
+                                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdJ-Ef-J32">
                                                 <rect key="frame" x="0.0" y="0.0" width="265" height="520"/>
                                                 <clipView key="contentView" drawsBackground="NO" id="oR4-Ks-ZXB">
                                                     <rect key="frame" x="0.0" y="0.0" width="265" height="520"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowHeight="25" rowSizeStyle="automatic" usesAutomaticRowHeights="YES" viewBased="YES" floatsGroupRows="NO" indentationPerLevel="16" outlineTableColumn="ixR-Wa-Iqt" id="nQG-yt-iju">
+                                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" usesAutomaticRowHeights="YES" viewBased="YES" indentationPerLevel="16" outlineTableColumn="ixR-Wa-Iqt" id="nQG-yt-iju">
                                                             <rect key="frame" x="0.0" y="0.0" width="265" height="520"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <size key="intercellSpacing" width="3" height="2"/>
-                                                            <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                                             <tableColumns>
                                                                 <tableColumn identifier="SVRItemColumn" width="262" minWidth="16" maxWidth="1000" id="ixR-Wa-Iqt">
                                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                                        <font key="font" metaFont="controlContent" size="11"/>
+                                                                        <font key="font" metaFont="message" size="11"/>
                                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                                     </tableHeaderCell>
@@ -264,22 +264,22 @@
                                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                     <prototypeCellViews>
                                                                         <tableCellView identifier="HeaderCell" id="HTK-XX-XX9">
-                                                                            <rect key="frame" x="1" y="1" width="262" height="25"/>
+                                                                            <rect key="frame" x="1" y="1" width="262" height="22"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                             <subviews>
                                                                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="a0r-7z-Fc3">
-                                                                                    <rect key="frame" x="0.0" y="7" width="262" height="14"/>
+                                                                                    <rect key="frame" x="2" y="4" width="82" height="14"/>
                                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="HEADER CELL" id="cKq-Ep-sBI">
                                                                                         <font key="font" metaFont="smallSystemBold"/>
-                                                                                        <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                                     </textFieldCell>
                                                                                 </textField>
                                                                             </subviews>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="bottom" secondItem="a0r-7z-Fc3" secondAttribute="bottom" constant="7" id="4rA-dn-5fv"/>
-                                                                                <constraint firstItem="a0r-7z-Fc3" firstAttribute="leading" secondItem="HTK-XX-XX9" secondAttribute="leading" constant="2" id="N8k-SR-lMe"/>
-                                                                                <constraint firstAttribute="trailing" secondItem="a0r-7z-Fc3" secondAttribute="trailing" constant="2" id="jTh-SK-SLG"/>
+                                                                                <constraint firstAttribute="bottom" secondItem="a0r-7z-Fc3" secondAttribute="bottom" constant="4" id="4rA-dn-5fv"/>
+                                                                                <constraint firstItem="a0r-7z-Fc3" firstAttribute="leading" secondItem="HTK-XX-XX9" secondAttribute="leading" constant="4" id="N8k-SR-lMe"/>
+                                                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="a0r-7z-Fc3" secondAttribute="trailing" constant="20" symbolic="YES" id="jTh-SK-SLG"/>
                                                                                 <constraint firstItem="a0r-7z-Fc3" firstAttribute="top" secondItem="HTK-XX-XX9" secondAttribute="top" constant="4" id="vyd-B1-lhd"/>
                                                                             </constraints>
                                                                             <connections>
