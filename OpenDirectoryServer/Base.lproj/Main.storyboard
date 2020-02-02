@@ -248,7 +248,7 @@
                                                             <tableColumns>
                                                                 <tableColumn identifier="SVRItemColumn" width="262" minWidth="16" maxWidth="1000" id="ixR-Wa-Iqt">
                                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                                        <font key="font" metaFont="message" size="11"/>
+                                                                        <font key="font" metaFont="menu" size="11"/>
                                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                                     </tableHeaderCell>
@@ -304,63 +304,6 @@
                                                                             <connections>
                                                                                 <outlet property="textField" destination="b14-Cj-kHT" id="kHa-K5-CoR"/>
                                                                             </connections>
-                                                                        </tableCellView>
-                                                                        <tableCellView id="k5c-sx-9as">
-                                                                            <rect key="frame" x="1" y="38" width="262" height="42"/>
-                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                            <subviews>
-                                                                                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xYA-iW-S5l">
-                                                                                    <rect key="frame" x="14" y="9" width="37" height="23"/>
-                                                                                    <popUpButtonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" autoenablesItems="NO" altersStateOfSelectedItem="NO" id="XMM-qa-E6K">
-                                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                                        <font key="font" metaFont="system"/>
-                                                                                        <menu key="menu" autoenablesItems="NO" id="D8K-6i-11L">
-                                                                                            <items>
-                                                                                                <menuItem state="on" image="NSAddTemplate" hidden="YES" id="Aot-wD-cgO"/>
-                                                                                                <menuItem title="New User…" id="JcZ-Ik-uqV">
-                                                                                                    <modifierMask key="keyEquivalentModifierMask"/>
-                                                                                                </menuItem>
-                                                                                                <menuItem title="New Group…" id="KeV-jf-2H3">
-                                                                                                    <modifierMask key="keyEquivalentModifierMask"/>
-                                                                                                </menuItem>
-                                                                                                <menuItem title="New Computer…" enabled="NO" id="VEW-ME-3VA">
-                                                                                                    <modifierMask key="keyEquivalentModifierMask"/>
-                                                                                                </menuItem>
-                                                                                                <menuItem title="New Computer Group…" enabled="NO" id="cJI-OQ-xEw">
-                                                                                                    <modifierMask key="keyEquivalentModifierMask"/>
-                                                                                                </menuItem>
-                                                                                            </items>
-                                                                                        </menu>
-                                                                                    </popUpButtonCell>
-                                                                                </popUpButton>
-                                                                                <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kxl-ug-JHC">
-                                                                                    <rect key="frame" x="59" y="9" width="40" height="22"/>
-                                                                                    <popUpButtonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" autoenablesItems="NO" altersStateOfSelectedItem="NO" selectedItem="c2X-Z1-oAE" id="8To-kK-F8B">
-                                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                                        <font key="font" metaFont="system"/>
-                                                                                        <menu key="menu" autoenablesItems="NO" id="ygz-UW-h4B">
-                                                                                            <items>
-                                                                                                <menuItem state="on" image="NSActionTemplate" hidden="YES" id="c2X-Z1-oAE"/>
-                                                                                                <menuItem title="Change Credentials…" id="pFo-hn-iSC">
-                                                                                                    <modifierMask key="keyEquivalentModifierMask"/>
-                                                                                                </menuItem>
-                                                                                                <menuItem title="Show Hidden Accounts" id="x3G-Gl-ALH">
-                                                                                                    <modifierMask key="keyEquivalentModifierMask"/>
-                                                                                                </menuItem>
-                                                                                            </items>
-                                                                                        </menu>
-                                                                                    </popUpButtonCell>
-                                                                                </popUpButton>
-                                                                            </subviews>
-                                                                            <constraints>
-                                                                                <constraint firstItem="kxl-ug-JHC" firstAttribute="leading" secondItem="xYA-iW-S5l" secondAttribute="trailing" constant="8" id="90p-sQ-3fy"/>
-                                                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kxl-ug-JHC" secondAttribute="trailing" constant="20" symbolic="YES" id="CyZ-gS-C2Z"/>
-                                                                                <constraint firstItem="xYA-iW-S5l" firstAttribute="top" secondItem="k5c-sx-9as" secondAttribute="top" constant="10" id="PDx-cK-uFk"/>
-                                                                                <constraint firstAttribute="bottom" secondItem="kxl-ug-JHC" secondAttribute="bottom" constant="10" id="Zfs-Sf-FGa"/>
-                                                                                <constraint firstItem="xYA-iW-S5l" firstAttribute="leading" secondItem="k5c-sx-9as" secondAttribute="leading" constant="14" id="pU4-yp-sAv"/>
-                                                                                <constraint firstAttribute="bottom" secondItem="xYA-iW-S5l" secondAttribute="bottom" constant="10" id="ucK-VC-iOM"/>
-                                                                                <constraint firstItem="kxl-ug-JHC" firstAttribute="top" secondItem="k5c-sx-9as" secondAttribute="top" constant="11" id="wuJ-Mr-fxe"/>
-                                                                            </constraints>
                                                                         </tableCellView>
                                                                     </prototypeCellViews>
                                                                 </tableColumn>
@@ -833,8 +776,6 @@ Gw
         </scene>
     </scenes>
     <resources>
-        <image name="NSActionTemplate" width="14" height="14"/>
-        <image name="NSAddTemplate" width="11" height="11"/>
         <image name="NSComputer" width="32" height="32"/>
         <image name="NSNetwork" width="32" height="32"/>
     </resources>
