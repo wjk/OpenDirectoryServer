@@ -56,6 +56,7 @@ internal final class MainViewController: NSViewController, NSOutlineViewDataSour
 
 	private var showsSystemAccounts = false
 	private var userAccounts: [SVRUserRecord] = []
+	private var groupAccounts: [SVRGroupRecord] = []
 
 	private func updateUI() {
 		guard let model = model else {
@@ -64,9 +65,15 @@ internal final class MainViewController: NSViewController, NSOutlineViewDataSour
 
 		do {
 			userAccounts = try model.queryAllUserRecords()
+			groupAccounts = try model.queryAllGroupRecords()
 
 			if !showsSystemAccounts {
 				userAccounts = userAccounts.filter {
+					(record) -> Bool in
+					!record.isSystemAccount
+				}
+
+				groupAccounts = groupAccounts.filter {
 					(record) -> Bool in
 					!record.isSystemAccount
 				}
@@ -78,6 +85,13 @@ internal final class MainViewController: NSViewController, NSOutlineViewDataSour
 				let rightName = displayName(forUser: rhs)
 				return leftName.compare(rightName) == .orderedAscending
 			}
+
+			groupAccounts = groupAccounts.sorted {
+				(lhs, rhs) -> Bool in
+				let leftName = displayName(forGroup: lhs)
+				let rightName = displayName(forGroup: rhs)
+				return leftName.compare(rightName) == .orderedAscending
+			}
 		} catch let error {
 			preconditionFailure("Could not query user records: \(error)")
 		}
@@ -86,6 +100,16 @@ internal final class MainViewController: NSViewController, NSOutlineViewDataSour
 	}
 
 	private func displayName(forUser record: SVRUserRecord) -> String {
+		if let values = try? record.stringValues(forAttribute: .fullName), values.count > 0 {
+			return values[0]
+		} else if let values = try? record.stringValues(forAttribute: .shortName), values.count > 0 {
+			return values[0]
+		} else {
+			preconditionFailure("Could not get display name for user record \(record)")
+		}
+	}
+
+	private func displayName(forGroup record: SVRGroupRecord) -> String {
 		if let values = try? record.stringValues(forAttribute: .fullName), values.count > 0 {
 			return values[0]
 		} else if let values = try? record.stringValues(forAttribute: .shortName), values.count > 0 {
@@ -127,8 +151,7 @@ internal final class MainViewController: NSViewController, NSOutlineViewDataSour
 			if name == "Users" {
 				return userAccounts.count
 			} else if name == "Groups" {
-				// TODO: Implement
-				return 0
+				return groupAccounts.count
 			} else {
 				return 0
 			}
@@ -149,8 +172,7 @@ internal final class MainViewController: NSViewController, NSOutlineViewDataSour
 			if name == "Users" {
 				return userAccounts[index]
 			} else if name == "Groups" {
-				// TODO: Implement
-				return ()
+				return groupAccounts[index]
 			} else {
 				preconditionFailure("this item should not have children")
 			}
@@ -182,6 +204,10 @@ internal final class MainViewController: NSViewController, NSOutlineViewDataSour
 			let view = outlineView.makeView(withIdentifier: .dataCell, owner: nil) as! NSTableCellView
 			view.textField?.stringValue = displayName(forUser: record)
 			return view
+		} else if let record = item as? SVRGroupRecord {
+			let view = outlineView.makeView(withIdentifier: .dataCell, owner: nil) as! NSTableCellView
+			view.textField?.stringValue = displayName(forGroup: record)
+			return view
 		}
 
 		return nil
@@ -192,7 +218,7 @@ internal final class MainViewController: NSViewController, NSOutlineViewDataSour
 
 		if let name = item as? String {
 			return name == "Users" || name == "Groups"
-		} else if item is SVRUserRecord {
+		} else if item is SVRUserRecord || item is SVRGroupRecord {
 			return false
 		} else {
 			preconditionFailure("unknown item")
