@@ -296,7 +296,6 @@
 		1FCEEAA622A87ACF009C278B /* Wizard */ = {
 			isa = PBXGroup;
 			children = (
-				1FCEEAB122A88774009C278B /* CreateDirectoryMasterPanes */,
 				1FCEEAAC22A87D4E009C278B /* WizardViewController.swift */,
 				1FCEEAAB22A87D1C009C278B /* DirectoryServiceWizard.storyboard */,
 			);
@@ -309,13 +308,6 @@
 				1FCEEAAF22A8859D009C278B /* PrivilegedToolConnection.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		1FCEEAB122A88774009C278B /* CreateDirectoryMasterPanes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CreateDirectoryMasterPanes;
 			sourceTree = "<group>";
 		};
 		1FDBC23B23136D3500B737C0 /* MainWindow */ = {
