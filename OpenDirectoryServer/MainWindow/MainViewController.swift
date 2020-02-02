@@ -29,6 +29,9 @@ internal final class MainViewController: NSViewController, NSOutlineViewDataSour
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		updateUI()
+
+		sidebar?.expandItem("Users")
+		sidebar?.expandItem("Groups")
 	}
 
 	override var representedObject: Any? {
