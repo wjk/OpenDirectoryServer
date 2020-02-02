@@ -20,15 +20,25 @@
 #import "SVRDirectoryNode.h"
 @import OpenDirectory;
 
+#define ASSERT_NOT_DELETED() NSAssert(!deleted, @"Record was already deleted")
+
 @implementation SVRUserRecord
 {
 	ODRecord *record;
+	BOOL deleted;
 }
 
 - (instancetype)initWithRecord:(ODRecord *)record {
 	self = [super init];
 	self->record = record;
+	self->deleted = NO;
 	return self;
+}
+
++ (BOOL)deleteRecord:(SVRUserRecord *)record error:(NSError **)outError; {
+	BOOL result = [[record nativeRecord] deleteRecordAndReturnError:outError];
+	if (result) record->deleted = YES;
+	return result;
 }
 
 - (ODRecord *)nativeRecord {
@@ -38,6 +48,7 @@
 #pragma mark Attributes
 
 - (nullable NSArray<NSString *> *)stringValuesForAttribute:(SVRUserAttribute)attributeName error:(NSError **)outError {
+	ASSERT_NOT_DELETED();
 	NSArray *nativeValues = [record valuesForAttribute:attributeName error:outError];
 	if (nativeValues == nil) return nil;
 
@@ -56,6 +67,7 @@
 }
 
 - (nullable NSArray<NSData *> *)binaryValuesForAttribute:(SVRUserAttribute)attributeName error:(NSError **)outError {
+	ASSERT_NOT_DELETED();
 	NSArray *nativeValues = [record valuesForAttribute:attributeName error:outError];
 	if (nativeValues == nil) return nil;
 
@@ -74,48 +86,59 @@
 }
 
 - (BOOL)setStringValues:(NSArray<NSString *> *)values forAttribute:(SVRUserAttribute)attributeName error:(NSError **)outError {
+	ASSERT_NOT_DELETED();
 	return [record setValue:values forAttribute:attributeName error:outError];
 }
 
 - (BOOL)setBinaryValues:(NSArray<NSData *> *)values forAttribute:(SVRUserAttribute)attributeName error:(NSError **)outError; {
+	ASSERT_NOT_DELETED();
 	return [record setValue:values forAttribute:attributeName error:outError];
 }
 
 - (BOOL)appendStringValue:(NSString *)value toAttribute:(SVRUserAttribute)attributeName error:(NSError **)outError {
+	ASSERT_NOT_DELETED();
 	return [record addValue:value toAttribute:attributeName error:outError];
 }
 
 - (BOOL)appendBinaryValue:(NSData *)value toAttribute:(SVRUserAttribute)attributeName error:(NSError **)outError {
+	ASSERT_NOT_DELETED();
 	return [record addValue:value toAttribute:attributeName error:outError];
 }
 
 - (BOOL)removeStringValue:(NSString *)value fromAttribute:(SVRUserAttribute)attributeName error:(NSError **)outError {
+	ASSERT_NOT_DELETED();
 	return [record removeValue:value fromAttribute:attributeName error:outError];
 }
 
 - (BOOL)removeBinaryValue:(NSData *)value fromAttribute:(SVRUserAttribute)attributeName error:(NSError **)outError {
+	ASSERT_NOT_DELETED();
 	return [record removeValue:value fromAttribute:attributeName error:outError];
 }
 
 #pragma mark Changing Password
 
 - (BOOL)changePassword:(NSString *)oldPassword toPassword:(NSString *)newPassword error:(NSError *__autoreleasing  _Nullable *)outError {
+	ASSERT_NOT_DELETED();
 	return [record changePassword:oldPassword toPassword:newPassword error:outError];
 }
 
 - (BOOL)resetPassword:(NSString *)newPassword error:(NSError *__autoreleasing  _Nullable *)outError {
+	ASSERT_NOT_DELETED();
 	return [record changePassword:nil toPassword:newPassword error:outError];
 }
 
 #pragma mark NSObject
 
 - (BOOL)isEqual:(id)object {
+	ASSERT_NOT_DELETED();
+
 	if (![object isKindOfClass:[SVRUserRecord class]]) return NO;
 	SVRUserRecord *other = object;
 	return [other->record isEqual:record];
 }
 
 - (NSUInteger)hash {
+	ASSERT_NOT_DELETED();
 	return [record hash];
 }
 

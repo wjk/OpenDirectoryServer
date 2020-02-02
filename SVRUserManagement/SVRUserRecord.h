@@ -26,6 +26,8 @@ typedef NSString * SVRUserAttribute NS_TYPED_EXTENSIBLE_ENUM;
 
 - (instancetype)init NS_UNAVAILABLE;
 
++ (BOOL)deleteRecord:(SVRUserRecord *)record error:(NSError **)outError;
+
 #pragma mark Attributes
 
 - (nullable NSArray<NSString *> *)stringValuesForAttribute:(SVRUserAttribute)attributeName error:(NSError **)outError;
