@@ -70,12 +70,6 @@
                                         <menuItem title="New Group…" keyEquivalent="n" id="ujc-gm-Uzt">
                                             <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                         </menuItem>
-                                        <menuItem title="New Computer…" id="u6C-x2-5qN">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                        </menuItem>
-                                        <menuItem title="New Computer Group…" id="Kb0-u2-LtB">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="aJh-i4-bef"/>
                                         <menuItem title="Close Window" keyEquivalent="w" id="DVo-aG-piG">
                                             <connections>
@@ -283,7 +277,7 @@
                                                                             </connections>
                                                                         </tableCellView>
                                                                         <tableCellView identifier="DataCell" id="zjJ-HX-0sG">
-                                                                            <rect key="frame" x="1" y="20" width="262" height="20"/>
+                                                                            <rect key="frame" x="1" y="28" width="262" height="20"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                             <subviews>
                                                                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="b14-Cj-kHT">
