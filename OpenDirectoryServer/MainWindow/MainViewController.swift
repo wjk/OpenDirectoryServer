@@ -52,8 +52,26 @@ internal final class MainViewController: NSViewController, NSOutlineViewDataSour
 	}
 
 	private var showsSystemAccounts = false
+	private var userAccounts: [SVRUserRecord] = []
 
 	private func updateUI() {
+		guard let model = model else {
+			return
+		}
+
+		do {
+			userAccounts = try model.queryAllUserRecords()
+
+			if !showsSystemAccounts {
+				userAccounts = userAccounts.filter {
+					(record) -> Bool in
+					!record.isSystemAccount
+				}
+			}
+		} catch let error {
+			preconditionFailure("Could not query user records: \(error)")
+		}
+
 		sidebar?.reloadData()
 	}
 
@@ -82,8 +100,18 @@ internal final class MainViewController: NSViewController, NSOutlineViewDataSour
 		assert(outlineView == sidebar)
 
 		if let item = item {
-			// TODO: Implement
-			return 0
+			guard let name = item as? String else {
+				preconditionFailure("item not a string")
+			}
+
+			if name == "Users" {
+				return userAccounts.count
+			} else if name == "Groups" {
+				// TODO: Implement
+				return 0
+			} else {
+				return 0
+			}
 		} else {
 			// There are two root items: Users and Groups.
 			return 2
@@ -94,8 +122,18 @@ internal final class MainViewController: NSViewController, NSOutlineViewDataSour
 		assert(outlineView == sidebar)
 
 		if let item = item {
-			// TODO: Implement
-			return ()
+			guard let name = item as? String else {
+				preconditionFailure("item not a string")
+			}
+
+			if name == "Users" {
+				return userAccounts[index]
+			} else if name == "Groups" {
+				// TODO: Implement
+				return ()
+			} else {
+				preconditionFailure("this item should not have children")
+			}
 		} else {
 			if index == 0 {
 				return "Users"
@@ -110,17 +148,28 @@ internal final class MainViewController: NSViewController, NSOutlineViewDataSour
 	func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
 		assert(outlineView == sidebar)
 
-		guard let name = item as? String else {
-			preconditionFailure("item not a string")
-		}
+		if let name = item as? String {
+			if name == "Users" {
+				let view = outlineView.makeView(withIdentifier: .headerCell, owner: nil) as! NSTableCellView
+				view.textField?.stringValue = localize("Users").uppercased(with: Locale.current)
+				return view
+			} else if name == "Groups" {
+				let view = outlineView.makeView(withIdentifier: .headerCell, owner: nil) as! NSTableCellView
+				view.textField?.stringValue = localize("Groups").uppercased(with: Locale.current)
+				return view
+			}
+		} else if let record = item as? SVRUserRecord {
+			let name: String
+			if let values = try? record.stringValues(forAttribute: .fullName), values.count > 0 {
+				name = values[0]
+			} else if let values = try? record.stringValues(forAttribute: .shortName), values.count > 0 {
+				name = values[0]
+			} else {
+				preconditionFailure("Could not get name for user record \(record)")
+			}
 
-		if name == "Users" {
-			let view = outlineView.makeView(withIdentifier: .headerCell, owner: nil) as! NSTableCellView
-			view.textField?.stringValue = localize("Users").uppercased(with: Locale.current)
-			return view
-		} else if name == "Groups" {
-			let view = outlineView.makeView(withIdentifier: .headerCell, owner: nil) as! NSTableCellView
-			view.textField?.stringValue = localize("Groups").uppercased(with: Locale.current)
+			let view = outlineView.makeView(withIdentifier: .dataCell, owner: nil) as! NSTableCellView
+			view.textField?.stringValue = name
 			return view
 		}
 
@@ -130,11 +179,13 @@ internal final class MainViewController: NSViewController, NSOutlineViewDataSour
 	func outlineView(_ outlineView: NSOutlineView, isGroupItem item: Any) -> Bool {
 		assert(outlineView == sidebar)
 
-		guard let name = item as? String else {
-			preconditionFailure("item not a string")
+		if let name = item as? String {
+			return name == "Users" || name == "Groups"
+		} else if item is SVRUserRecord {
+			return false
+		} else {
+			preconditionFailure("unknown item")
 		}
-
-		return name == "Users" || name == "Groups"
 	}
 
 	func outlineView(_ outlineView: NSOutlineView, shouldSelectItem item: Any) -> Bool {
