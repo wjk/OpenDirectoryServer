@@ -25,7 +25,7 @@ fileprivate extension NSUserInterfaceItemIdentifier {
 	static let dataCell = NSUserInterfaceItemIdentifier(rawValue: "DataCell")
 }
 
-internal final class MainViewController: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate, NSSplitViewDelegate {
+internal final class MainViewController: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate, NSSplitViewDelegate, NSUserInterfaceValidations {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		updateUI()
@@ -51,13 +51,30 @@ internal final class MainViewController: NSViewController, NSOutlineViewDataSour
 		}
 	}
 
+	private var showsSystemAccounts = false
+
 	private func updateUI() {
-		// TODO: Implement this
+		sidebar?.reloadData()
 	}
 
 	// MARK: Outlets & Actions
 
 	@IBOutlet private var sidebar: NSOutlineView?
+
+	@IBAction private func toggleSystemUserAccounts(_ sender: AnyObject?) {
+		showsSystemAccounts = !showsSystemAccounts
+		updateUI()
+	}
+
+	func validateUserInterfaceItem(_ item: NSValidatedUserInterfaceItem) -> Bool {
+		if let menuItem = item as? NSMenuItem {
+			if menuItem.action == #selector(toggleSystemUserAccounts(_:)) {
+				menuItem.state = showsSystemAccounts ? .on : .off
+			}
+		}
+
+		return true
+	}
 
 	// MARK: Outline View
 

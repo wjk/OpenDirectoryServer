@@ -73,6 +73,9 @@
                                         <menuItem isSeparatorItem="YES" id="ie7-Nd-4Cm"/>
                                         <menuItem title="Show System Accounts" id="QJI-66-l8T">
                                             <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="toggleSystemUserAccounts:" target="Ady-hI-5gd" id="bCw-3q-XwP"/>
+                                            </connections>
                                         </menuItem>
                                         <menuItem title="Change Credentials…" id="LoK-ym-kEG">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -249,7 +252,7 @@
                                                             <tableColumns>
                                                                 <tableColumn identifier="SVRItemColumn" width="262" minWidth="16" maxWidth="1000" id="ixR-Wa-Iqt">
                                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                                        <font key="font" metaFont="label" size="11"/>
+                                                                        <font key="font" metaFont="message" size="11"/>
                                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                                     </tableHeaderCell>
