@@ -19,14 +19,6 @@
 import Foundation
 import os.log
 
-internal extension OSLog {
-	func log(type: OSLogType, message: StaticString, _ args: CVarArg...) {
-		os_log(message, log: self, type: type, args)
-	}
-}
-
-// MARK: -
-
 fileprivate class XPCListenerDelegate: NSObject, NSXPCListenerDelegate {
 	func listener(_ listener: NSXPCListener, shouldAcceptNewConnection connection: NSXPCConnection) -> Bool {
 		let logger = OSLog(subsystem: "me.sunsol.OpenDirectoryServer", category: "Security")
@@ -34,11 +26,11 @@ fileprivate class XPCListenerDelegate: NSObject, NSXPCListenerDelegate {
 		do {
 			let matches = try CodesignCheck.codeSigningMatches(pid: connection.processIdentifier)
 			if !matches {
-				logger.log(type: .info, message: "Refusing to connect to pid %{public}d, as its code signing does not match ours", connection.processIdentifier)
+				os_log(.info, log: logger, "Refusing to connect to pid %{public}d, as its code signing does not match ours", connection.processIdentifier)
 				return false
 			}
 		} catch {
-			logger.log(type: .error, message: "Could not verify code signing for pid %{public}d: %{public}@", connection.processIdentifier, String(describing: error))
+			os_log(.error, log: logger, "Could not verify code signing for pid %{public}d: %{public}@", connection.processIdentifier, String(describing: error))
 			return false
 		}
 
