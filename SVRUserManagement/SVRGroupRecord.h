@@ -17,6 +17,7 @@
  */
 
 @import Foundation;
+#import <SVRUserManagement/SVRUserRecord.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -36,6 +37,12 @@ typedef NSString * SVRGroupAttribute NS_TYPED_EXTENSIBLE_ENUM;
 - (BOOL)appendBinaryValue:(NSData *)value toAttribute:(SVRGroupAttribute)attributeName error:(NSError **)outError;
 - (BOOL)removeStringValue:(NSString *)value fromAttribute:(SVRGroupAttribute)attributeName error:(NSError **)outError;
 - (BOOL)removeBinaryValue:(NSData *)value fromAttribute:(SVRGroupAttribute)attributeName error:(NSError **)outError;
+
+#pragma mark Group Membership
+
+- (BOOL)addGroupMember:(SVRUserRecord *)member error:(NSError **)outError;
+- (BOOL)removeGroupMember:(SVRUserRecord *)member error:(NSError **)outError;
+- (BOOL)isGroupMember:(SVRUserRecord *)member; // no outError parameter here, as it would confuse the Swift compiler
 
 @end
 

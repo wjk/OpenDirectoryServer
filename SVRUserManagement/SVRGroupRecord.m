@@ -19,6 +19,10 @@
 #import "SVRGroupRecord.h"
 @import OpenDirectory;
 
+@interface SVRUserRecord ()
+- (ODRecord *)nativeRecord;
+@end
+
 @implementation SVRGroupRecord
 {
 	ODRecord *record;
@@ -90,6 +94,20 @@
 
 - (BOOL)removeBinaryValue:(NSData *)value fromAttribute:(SVRGroupAttribute)attributeName error:(NSError **)outError {
 	return [record removeValue:value fromAttribute:attributeName error:outError];
+}
+
+#pragma mark Group Membership
+
+- (BOOL)addGroupMember:(SVRUserRecord *)member error:(NSError **)outError {
+	return [record addMemberRecord:[member nativeRecord] error:outError];
+}
+
+- (BOOL)removeGroupMember:(SVRUserRecord *)member error:(NSError **)outError {
+	return [record removeMemberRecord:[member nativeRecord] error:outError];
+}
+
+- (BOOL)isGroupMember:(SVRUserRecord *)member {
+	return [record isMemberRecord:[member nativeRecord] error:nil];
 }
 
 @end

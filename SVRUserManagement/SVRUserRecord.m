@@ -31,6 +31,10 @@
 	return self;
 }
 
+- (ODRecord *)nativeRecord {
+	return record;
+}
+
 #pragma mark Attributes
 
 - (nullable NSArray<NSString *> *)stringValuesForAttribute:(SVRUserAttribute)attributeName error:(NSError **)outError {
