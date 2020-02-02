@@ -24,15 +24,14 @@ public extension SVRUserRecord {
 			preconditionFailure("Could not get short name(s) for user")
 		}
 
-		var isSystemAccount = false
 		for name in names {
 			if name.hasPrefix("_") {
-				isSystemAccount = true
+				return true
 			} else if name == "root" || name == "daemon" || name == "nobody" {
-				isSystemAccount = true
+				return true
 			}
 		}
 
-		return isSystemAccount
+		return false
 	}
 }
