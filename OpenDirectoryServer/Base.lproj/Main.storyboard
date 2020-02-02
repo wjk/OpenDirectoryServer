@@ -237,13 +237,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="265" height="520"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
-                                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="44" horizontalPageScroll="10" verticalLineScroll="44" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdJ-Ef-J32">
+                                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="27" horizontalPageScroll="10" verticalLineScroll="27" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdJ-Ef-J32">
                                                 <rect key="frame" x="0.0" y="0.0" width="265" height="520"/>
                                                 <clipView key="contentView" drawsBackground="NO" id="oR4-Ks-ZXB">
                                                     <rect key="frame" x="0.0" y="0.0" width="265" height="520"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowHeight="42" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="ixR-Wa-Iqt" id="nQG-yt-iju">
+                                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowHeight="25" rowSizeStyle="automatic" usesAutomaticRowHeights="YES" viewBased="YES" indentationPerLevel="16" outlineTableColumn="ixR-Wa-Iqt" id="nQG-yt-iju">
                                                             <rect key="frame" x="0.0" y="0.0" width="265" height="520"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <size key="intercellSpacing" width="3" height="2"/>
