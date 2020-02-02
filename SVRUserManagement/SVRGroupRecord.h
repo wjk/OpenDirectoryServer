@@ -1,6 +1,6 @@
 /*
- * Open Directory Server - app for macOS Mojave
- * Copyright (C) 2019 William Kent
+ * Open Directory Server - app for macOS
+ * Copyright (C) 2020 William Kent
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,10 +16,21 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#import <Cocoa/Cocoa.h>
-#import <SVRUserManagement/SVRDirectoryNode.h>
-#import <SVRUserManagement/SVRUserRecord.h>
-#import <SVRUserManagement/SVRGroupRecord.h>
+@import Foundation;
 
-extern double SVRUserManagementVersionNumber;
-extern const unsigned char SVRUserManagementVersionString[];
+NS_ASSUME_NONNULL_BEGIN
+
+typedef NSString * SVRGroupAttribute NS_TYPED_EXTENSIBLE_ENUM;
+
+@interface SVRGroupRecord : NSObject
+
+- (instancetype)init NS_UNAVAILABLE;
+
+#pragma mark Attributes
+
+- (nullable NSArray<NSString *> *)stringValuesForAttribute:(SVRGroupAttribute)attributeName error:(NSError **)outError;
+- (nullable NSArray<NSData *> *)binaryValuesForAttribute:(SVRGroupAttribute)attributeName error:(NSError **)outError;
+
+@end
+
+NS_ASSUME_NONNULL_END
