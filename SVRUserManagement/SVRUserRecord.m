@@ -77,6 +77,22 @@
 	return [record setValue:values forAttribute:attributeName error:outError];
 }
 
+- (BOOL)appendStringValue:(NSString *)value toAttribute:(SVRUserAttribute)attributeName error:(NSError **)outError {
+	return [record addValue:value toAttribute:attributeName error:outError];
+}
+
+- (BOOL)appendBinaryValue:(NSData *)value toAttribute:(SVRUserAttribute)attributeName error:(NSError **)outError {
+	return [record addValue:value toAttribute:attributeName error:outError];
+}
+
+- (BOOL)removeStringValue:(NSString *)value fromAttribute:(SVRUserAttribute)attributeName error:(NSError **)outError {
+	return [record removeValue:value fromAttribute:attributeName error:outError];
+}
+
+- (BOOL)removeBinaryValue:(NSData *)value fromAttribute:(SVRUserAttribute)attributeName error:(NSError **)outError {
+	return [record removeValue:value fromAttribute:attributeName error:outError];
+}
+
 #pragma mark Changing Password
 
 - (BOOL)changePassword:(NSString *)oldPassword toPassword:(NSString *)newPassword error:(NSError *__autoreleasing  _Nullable *)outError {

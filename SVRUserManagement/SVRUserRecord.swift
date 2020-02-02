@@ -34,28 +34,4 @@ public extension SVRUserRecord {
 
 		return false
 	}
-
-	func append(stringValue newValue: String, toAttribute attributeName: SVRUserAttribute) throws {
-		var values = try self.stringValues(forAttribute: attributeName)
-		values.append(newValue)
-		try self.setStringValues(values, forAttribute: attributeName)
-	}
-
-	func append(binaryValue newValue: Data, toAttribute attributeName: SVRUserAttribute) throws {
-		var values = try self.binaryValues(forAttribute: attributeName)
-		values.append(newValue)
-		try self.setBinaryValues(values, forAttribute: attributeName)
-	}
-
-	func remove(stringValue valueToRemove: String, fromAttribute attributeName: SVRUserAttribute) throws {
-		var values = try self.stringValues(forAttribute: attributeName)
-		values.removeAll { $0 == valueToRemove }
-		try self.setStringValues(values, forAttribute: attributeName)
-	}
-
-	func remove(binaryValue valueToRemove: Data, fromAttribute attributeName: SVRUserAttribute) throws {
-		var values = try self.binaryValues(forAttribute: attributeName)
-		values.removeAll { $0 == valueToRemove }
-		try self.setBinaryValues(values, forAttribute: attributeName)
-	}
 }
