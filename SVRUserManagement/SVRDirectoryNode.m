@@ -24,6 +24,12 @@
 - (instancetype)initWithRecord:(ODRecord *)record;
 @end
 
+@interface SVRGroupRecord ()
+- (instancetype)initWithRecord:(ODRecord *)record;
+@end
+
+// MARK: -
+
 @implementation SVRDirectoryNode
 {
 	ODNode *node;
@@ -94,6 +100,28 @@
 	for (ODRecord *record in results) {
 		NSAssert([[record recordType] isEqualToString:kODRecordTypeUsers], @"ODRecord not of user type");
 		[retval addObject:[[SVRUserRecord alloc] initWithRecord:record]];
+	}
+	return retval;
+}
+
+- (nullable NSArray<SVRGroupRecord *> *)queryAllGroupRecordsWithError:(NSError **)outError {
+	NSError *error;
+	ODQuery *query = [ODQuery queryWithNode:node forRecordTypes:kODRecordTypeGroups attribute:kODAttributeTypeAllAttributes matchType:kODMatchAny queryValues:nil returnAttributes:kODAttributeTypeAllAttributes maximumResults:NSIntegerMax error:&error];
+	if (query == nil) {
+		if (outError != NULL) *outError = error;
+		return nil;
+	}
+
+	NSArray *results = [query resultsAllowingPartial:NO error:&error];
+	if (results == nil) {
+		if (outError != NULL) *outError = error;
+		return nil;
+	}
+
+	NSMutableArray<SVRGroupRecord *> *retval = [[NSMutableArray alloc] init];
+	for (ODRecord *record in results) {
+		NSAssert([[record recordType] isEqualToString:kODRecordTypeGroups], @"ODRecord not of group type");
+		[retval addObject:[[SVRGroupRecord alloc] initWithRecord:record]];
 	}
 	return retval;
 }

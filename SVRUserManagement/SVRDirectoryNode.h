@@ -18,6 +18,7 @@
 
 @import Foundation;
 #import <SVRUserManagement/SVRUserRecord.h>
+#import <SVRUserManagement/SVRGroupRecord.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -41,6 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 // Note: All query methods on this class are blocking calls.
 // You may want to call them on a background dispatch queue.
 - (nullable NSArray<SVRUserRecord *> *)queryAllUserRecordsWithError:(NSError **)outError;
+- (nullable NSArray<SVRGroupRecord *> *)queryAllGroupRecordsWithError:(NSError **)outError;
 
 @end
 
