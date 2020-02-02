@@ -23,6 +23,7 @@
 		1F1E0205229886B1009EA15A /* AuthorizationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E0204229886B1009EA15A /* AuthorizationAPI.swift */; };
 		1F1E02062298881E009EA15A /* AuthorizationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E0204229886B1009EA15A /* AuthorizationAPI.swift */; };
 		1F1E0208229888AD009EA15A /* HelperToolProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E0207229888AD009EA15A /* HelperToolProtocol.swift */; };
+		1F58239323E67B3E007F240B /* SVRUserRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F58239223E67B3E007F240B /* SVRUserRecord.swift */; };
 		1F63414D23135F9600AB8A27 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 1F63414C23135F9600AB8A27 /* KeychainAccess */; };
 		1F63414F23135FB400AB8A27 /* SVRDirectoryNode+Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F63414E23135FB400AB8A27 /* SVRDirectoryNode+Keychain.swift */; };
 		1F6341522313638D00AB8A27 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F6341542313638D00AB8A27 /* Localizable.strings */; };
@@ -124,6 +125,7 @@
 		1F1148032298705800ED8DA7 /* SVRDirectoryNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRDirectoryNode.m; sourceTree = "<group>"; };
 		1F1E0204229886B1009EA15A /* AuthorizationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationAPI.swift; sourceTree = "<group>"; };
 		1F1E0207229888AD009EA15A /* HelperToolProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperToolProtocol.swift; sourceTree = "<group>"; };
+		1F58239223E67B3E007F240B /* SVRUserRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVRUserRecord.swift; sourceTree = "<group>"; };
 		1F63414E23135FB400AB8A27 /* SVRDirectoryNode+Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SVRDirectoryNode+Keychain.swift"; sourceTree = "<group>"; };
 		1F6341532313638D00AB8A27 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1F6736DD2298949C00C7A446 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				1F63414E23135FB400AB8A27 /* SVRDirectoryNode+Keychain.swift */,
 				1FDBC24023136F8A00B737C0 /* SVRUserRecord.h */,
 				1FDBC24123136F8A00B737C0 /* SVRUserRecord.m */,
+				1F58239223E67B3E007F240B /* SVRUserRecord.swift */,
 				1FC0113A231475AB00EDB47F /* SVRUserRecord+Attributes.swift */,
 				1F1147F82298703D00ED8DA7 /* Info.plist */,
 				1F6341542313638D00AB8A27 /* Localizable.strings */,
@@ -599,6 +602,7 @@
 				1FC0113B231475AB00EDB47F /* SVRUserRecord+Attributes.swift in Sources */,
 				1FDBC24323136F8A00B737C0 /* SVRUserRecord.m in Sources */,
 				1F1148052298705800ED8DA7 /* SVRDirectoryNode.m in Sources */,
+				1F58239323E67B3E007F240B /* SVRUserRecord.swift in Sources */,
 				1F63414F23135FB400AB8A27 /* SVRDirectoryNode+Keychain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
