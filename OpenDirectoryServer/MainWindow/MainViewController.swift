@@ -68,11 +68,28 @@ internal final class MainViewController: NSViewController, NSOutlineViewDataSour
 					!record.isSystemAccount
 				}
 			}
+
+			userAccounts = userAccounts.sorted {
+				(lhs, rhs) -> Bool in
+				let leftName = displayName(forUser: lhs)
+				let rightName = displayName(forUser: rhs)
+				return leftName.compare(rightName) == .orderedAscending
+			}
 		} catch let error {
 			preconditionFailure("Could not query user records: \(error)")
 		}
 
 		sidebar?.reloadData()
+	}
+
+	private func displayName(forUser record: SVRUserRecord) -> String {
+		if let values = try? record.stringValues(forAttribute: .fullName), values.count > 0 {
+			return values[0]
+		} else if let values = try? record.stringValues(forAttribute: .shortName), values.count > 0 {
+			return values[0]
+		} else {
+			preconditionFailure("Could not get display name for user record \(record)")
+		}
 	}
 
 	// MARK: Outlets & Actions
@@ -159,17 +176,8 @@ internal final class MainViewController: NSViewController, NSOutlineViewDataSour
 				return view
 			}
 		} else if let record = item as? SVRUserRecord {
-			let name: String
-			if let values = try? record.stringValues(forAttribute: .fullName), values.count > 0 {
-				name = values[0]
-			} else if let values = try? record.stringValues(forAttribute: .shortName), values.count > 0 {
-				name = values[0]
-			} else {
-				preconditionFailure("Could not get name for user record \(record)")
-			}
-
 			let view = outlineView.makeView(withIdentifier: .dataCell, owner: nil) as! NSTableCellView
-			view.textField?.stringValue = name
+			view.textField?.stringValue = displayName(forUser: record)
 			return view
 		}
 
