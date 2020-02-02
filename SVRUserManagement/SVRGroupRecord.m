@@ -76,4 +76,20 @@
 	return [record setValue:values forAttribute:attributeName error:outError];
 }
 
+- (BOOL)appendStringValue:(NSString *)value toAttribute:(SVRGroupAttribute)attributeName error:(NSError **)outError {
+	return [record addValue:value toAttribute:attributeName error:outError];
+}
+
+- (BOOL)appendBinaryValue:(NSData *)value toAttribute:(SVRGroupAttribute)attributeName error:(NSError **)outError {
+	return [record addValue:value toAttribute:attributeName error:outError];
+}
+
+- (BOOL)removeStringValue:(NSString *)value fromAttribute:(SVRGroupAttribute)attributeName error:(NSError **)outError {
+	return [record removeValue:value fromAttribute:attributeName error:outError];
+}
+
+- (BOOL)removeBinaryValue:(NSData *)value fromAttribute:(SVRGroupAttribute)attributeName error:(NSError **)outError {
+	return [record removeValue:value fromAttribute:attributeName error:outError];
+}
+
 @end
