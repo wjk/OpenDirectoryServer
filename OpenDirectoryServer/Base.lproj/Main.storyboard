@@ -70,6 +70,13 @@
                                         <menuItem title="New Group…" keyEquivalent="n" id="ujc-gm-Uzt">
                                             <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                         </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="ie7-Nd-4Cm"/>
+                                        <menuItem title="Show Hidden Accounts" id="QJI-66-l8T">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                        <menuItem title="Change Credentials…" id="LoK-ym-kEG">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="aJh-i4-bef"/>
                                         <menuItem title="Close Window" keyEquivalent="w" id="DVo-aG-piG">
                                             <connections>
