@@ -68,4 +68,12 @@
 	return retval;
 }
 
+- (BOOL)setStringValues:(NSArray<NSString *> *)values forAttribute:(SVRGroupAttribute)attributeName error:(NSError **)outError {
+	return [record setValue:values forAttribute:attributeName error:outError];
+}
+
+- (BOOL)setBinaryValues:(NSArray<NSData *> *)values forAttribute:(SVRGroupAttribute)attributeName error:(NSError **)outError; {
+	return [record setValue:values forAttribute:attributeName error:outError];
+}
+
 @end

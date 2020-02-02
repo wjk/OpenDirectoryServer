@@ -30,6 +30,8 @@ typedef NSString * SVRGroupAttribute NS_TYPED_EXTENSIBLE_ENUM;
 
 - (nullable NSArray<NSString *> *)stringValuesForAttribute:(SVRGroupAttribute)attributeName error:(NSError **)outError;
 - (nullable NSArray<NSData *> *)binaryValuesForAttribute:(SVRGroupAttribute)attributeName error:(NSError **)outError;
+- (BOOL)setStringValues:(NSArray<NSString *> *)values forAttribute:(SVRGroupAttribute)attributeName error:(NSError **)outError;
+- (BOOL)setBinaryValues:(NSArray<NSData *> *)values forAttribute:(SVRGroupAttribute)attributeName error:(NSError **)outError;
 
 @end
 

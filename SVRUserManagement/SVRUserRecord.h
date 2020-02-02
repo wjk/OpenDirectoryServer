@@ -30,6 +30,8 @@ typedef NSString * SVRUserAttribute NS_TYPED_EXTENSIBLE_ENUM;
 
 - (nullable NSArray<NSString *> *)stringValuesForAttribute:(SVRUserAttribute)attributeName error:(NSError **)outError;
 - (nullable NSArray<NSData *> *)binaryValuesForAttribute:(SVRUserAttribute)attributeName error:(NSError **)outError;
+- (BOOL)setStringValues:(NSArray<NSString *> *)values forAttribute:(SVRUserAttribute)attributeName error:(NSError **)outError;
+- (BOOL)setBinaryValues:(NSArray<NSData *> *)values forAttribute:(SVRUserAttribute)attributeName error:(NSError **)outError;
 
 #pragma mark Changing Password
 

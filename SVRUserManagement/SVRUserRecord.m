@@ -69,6 +69,14 @@
 	return retval;
 }
 
+- (BOOL)setStringValues:(NSArray<NSString *> *)values forAttribute:(SVRUserAttribute)attributeName error:(NSError **)outError {
+	return [record setValue:values forAttribute:attributeName error:outError];
+}
+
+- (BOOL)setBinaryValues:(NSArray<NSData *> *)values forAttribute:(SVRUserAttribute)attributeName error:(NSError **)outError; {
+	return [record setValue:values forAttribute:attributeName error:outError];
+}
+
 #pragma mark Changing Password
 
 - (BOOL)changePassword:(NSString *)oldPassword toPassword:(NSString *)newPassword error:(NSError *__autoreleasing  _Nullable *)outError {
