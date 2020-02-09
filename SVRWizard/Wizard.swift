@@ -124,17 +124,41 @@ public extension Wizard {
 			preconditionFailure("Content view controller has incorrect type")
 		}
 
+		guard let window = windowController.window else {
+			preconditionFailure("controller has no window")
+		}
+
 		wizardController.initialize(dataSource: dataSource) {
 			(canceled) in
 			NSApp.stopModal()
-			windowController.window?.orderOut(nil)
+			window.orderOut(nil)
 			completionHandler?(canceled)
+		}
+
+		NSApp.runModal(for: window)
+	}
+
+	static func beginSheetWizard(forWindow parent: NSWindow, dataSource: WizardDataSource, completionHandler: WizardViewController.CompletionHandler?) {
+		let storyboard = NSStoryboard(name: "Wizard", bundle: wizardBundle)
+		guard let windowController: NSWindowController = storyboard.instantiateInitialController() else {
+			preconditionFailure("could not load initial window controller")
+		}
+
+		guard let wizardController = windowController.contentViewController as? WizardWindowViewController else {
+			preconditionFailure("Content view controller has incorrect type")
 		}
 
 		guard let window = windowController.window else {
 			preconditionFailure("controller has no window")
 		}
 
-		NSApp.runModal(for: window)
+		wizardController.initialize(dataSource: dataSource) {
+			(canceled) in
+			window.sheetParent?.endSheet(window)
+			window.orderOut(nil)
+			completionHandler?(canceled)
+		}
+
+		parent.beginSheet(window, completionHandler: nil)
 	}
 }
