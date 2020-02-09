@@ -19,20 +19,15 @@
 import Cocoa
 import LocalizedString
 
-fileprivate let wizardBundle = Bundle(for: WizardWindowViewController.self)
+internal let wizardBundle = Bundle(for: WizardWindowViewController.self)
 
 internal final class WizardWindowViewController: WizardViewController {
-	public static func create(dataSource: WizardDataSource, completionHandler: CompletionHandler?) -> WizardWindowViewController {
-		let storyboard = NSStoryboard(name: "DirectoryServiceWizard", bundle: Bundle.main)
-		let controller = storyboard.instantiateInitialController() as! WizardWindowViewController
-
+	func initialize(dataSource: WizardDataSource, completionHandler: CompletionHandler?) {
 		if let completionHandler = completionHandler {
-			controller.configureWith(dataSource, completionHandler: completionHandler)
+			self.configureWith(dataSource, completionHandler: completionHandler)
 		} else {
-			controller.configureWith(dataSource, completionHandler: { _ in })
+			self.configureWith(dataSource, completionHandler: { _ in })
 		}
-
-		return controller
 	}
 
 	// MARK: Outlets & Actions

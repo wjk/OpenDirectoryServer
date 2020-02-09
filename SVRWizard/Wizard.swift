@@ -17,6 +17,7 @@
  */
 
 import Foundation
+import AppKit
 
 public final class Wizard {
 	private(set) internal var currentStep: WizardStep?
@@ -107,5 +108,33 @@ public final class Wizard {
 		} else {
 			delegate?.wizardDidFinish(self)
 		}
+	}
+}
+
+// MARK: -
+
+public extension Wizard {
+	static func showModalWizard(dataSource: WizardDataSource, completionHandler: WizardViewController.CompletionHandler?) {
+		let storyboard = NSStoryboard(name: "Wizard", bundle: wizardBundle)
+		guard let windowController: NSWindowController = storyboard.instantiateInitialController() else {
+			preconditionFailure("could not load initial window controller")
+		}
+
+		guard let wizardController = windowController.contentViewController as? WizardWindowViewController else {
+			preconditionFailure("Content view controller has incorrect type")
+		}
+
+		wizardController.initialize(dataSource: dataSource) {
+			(canceled) in
+			NSApp.stopModal()
+			windowController.window?.orderOut(nil)
+			completionHandler?(canceled)
+		}
+
+		guard let window = windowController.window else {
+			preconditionFailure("controller has no window")
+		}
+
+		NSApp.runModal(for: window)
 	}
 }
