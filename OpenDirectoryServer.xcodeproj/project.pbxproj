@@ -36,6 +36,7 @@
 		1F5C5C2323F0BF6200169008 /* WizardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C5C2223F0BF6200169008 /* WizardViewController.swift */; };
 		1F5C5C2623F0CA7100169008 /* WizardWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C5C2523F0CA7100169008 /* WizardWindowViewController.swift */; };
 		1F5C5C2723F0CAA800169008 /* SwiftUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA4374B23BFDED400DFBC78 /* SwiftUtilities.framework */; };
+		1F5C5C2E23F0CE2F00169008 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F5C5C3023F0CE2F00169008 /* Localizable.strings */; };
 		1F63414D23135F9600AB8A27 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 1F63414C23135F9600AB8A27 /* KeychainAccess */; };
 		1F63414F23135FB400AB8A27 /* SVRDirectoryNode+Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F63414E23135FB400AB8A27 /* SVRDirectoryNode+Keychain.swift */; };
 		1F6341522313638D00AB8A27 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F6341542313638D00AB8A27 /* Localizable.strings */; };
@@ -165,6 +166,7 @@
 		1F5C5C2023F0BF1B00169008 /* WizardStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WizardStep.swift; sourceTree = "<group>"; };
 		1F5C5C2223F0BF6200169008 /* WizardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WizardViewController.swift; sourceTree = "<group>"; };
 		1F5C5C2523F0CA7100169008 /* WizardWindowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WizardWindowViewController.swift; sourceTree = "<group>"; };
+		1F5C5C2F23F0CE2F00169008 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1F63414E23135FB400AB8A27 /* SVRDirectoryNode+Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SVRDirectoryNode+Keychain.swift"; sourceTree = "<group>"; };
 		1F6341532313638D00AB8A27 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1F6736DD2298949C00C7A446 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 				1F5C5C2223F0BF6200169008 /* WizardViewController.swift */,
 				1F5C5C2523F0CA7100169008 /* WizardWindowViewController.swift */,
 				1FCEEAAB22A87D1C009C278B /* Wizard.storyboard */,
+				1F5C5C3023F0CE2F00169008 /* Localizable.strings */,
 				1F5C5C1023F0BE8100169008 /* SVRWizard.h */,
 				1F5C5C1123F0BE8100169008 /* Info.plist */,
 			);
@@ -612,6 +615,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F5C5C2E23F0CE2F00169008 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -775,6 +779,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				1F1147EE2298702A00ED8DA7 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		1F5C5C3023F0CE2F00169008 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F5C5C2F23F0CE2F00169008 /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
