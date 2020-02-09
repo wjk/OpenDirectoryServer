@@ -128,6 +128,11 @@ public extension Wizard {
 			preconditionFailure("controller has no window")
 		}
 
+		guard let styleMask = window.styleMask.remove([.closable, .miniaturizable]) else {
+			preconditionFailure("could not manipulate style mask")
+		}
+		window.styleMask = styleMask
+
 		wizardController.initialize(dataSource: dataSource) {
 			(canceled) in
 			NSApp.stopModal()
