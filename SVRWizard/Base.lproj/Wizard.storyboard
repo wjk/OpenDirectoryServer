@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="o6p-rz-IqD">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="o6p-rz-IqD">
     <dependencies>
-        <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -29,10 +28,10 @@
             </objects>
             <point key="canvasLocation" x="-227.5" y="13"/>
         </scene>
-        <!--Wizard View Controller-->
+        <!--Wizard Window View Controller-->
         <scene sceneID="zBM-7Z-B1d">
             <objects>
-                <viewController id="eeC-9d-F5U" customClass="WizardViewController" customModule="OpenDirectoryServer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eeC-9d-F5U" customClass="WizardWindowViewController" customModule="SVRWizard" sceneMemberID="viewController">
                     <view key="view" id="DrL-Au-rq2">
                         <rect key="frame" x="0.0" y="0.0" width="774" height="490"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -53,7 +52,7 @@
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="goForward:" target="eeC-9d-F5U" id="dwx-8f-xAe"/>
+                                                <action selector="navigateToNextStep:" target="eeC-9d-F5U" id="p6e-j2-Lhe"/>
                                             </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Mjx-0r-cTD">
@@ -63,7 +62,7 @@
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="goBack:" target="eeC-9d-F5U" id="RTk-0x-rEM"/>
+                                                <action selector="navigateToPreviousStep:" target="eeC-9d-F5U" id="Koa-Nj-G3h"/>
                                             </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fn7-c2-dxC">
@@ -73,7 +72,7 @@
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="cancel:" target="eeC-9d-F5U" id="2yH-SA-VSd"/>
+                                                <action selector="cancelWizard:" target="eeC-9d-F5U" id="9F8-L9-wtV"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -112,10 +111,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="backButton" destination="Mjx-0r-cTD" id="5Sq-cy-Caa"/>
-                        <outlet property="cancelButton" destination="fn7-c2-dxC" id="sYw-em-Hu5"/>
-                        <outlet property="continueButton" destination="mt2-Fv-mD9" id="4Df-XB-3tJ"/>
-                        <outlet property="mainBox" destination="2ez-F2-HeZ" id="pwj-xb-TlW"/>
+                        <outlet property="backButton" destination="Mjx-0r-cTD" id="2ho-jv-g27"/>
+                        <outlet property="cancelButton" destination="fn7-c2-dxC" id="fI3-xo-jox"/>
+                        <outlet property="continueButton" destination="mt2-Fv-mD9" id="OJJ-7P-bG7"/>
+                        <outlet property="mainBox" destination="2ez-F2-HeZ" id="Odt-Fh-Qhb"/>
                     </connections>
                 </viewController>
                 <customObject id="9C5-ZB-EnP" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
