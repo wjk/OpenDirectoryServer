@@ -17,6 +17,7 @@
  */
 
 import Foundation
+import CodesignCheck
 import os.log
 
 fileprivate class XPCListenerDelegate: NSObject, NSXPCListenerDelegate {

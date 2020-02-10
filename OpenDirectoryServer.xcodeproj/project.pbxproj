@@ -45,6 +45,7 @@
 		1F6A56992298A44900CFC403 /* Authorization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F6A569B2298A44900CFC403 /* Authorization.strings */; };
 		1F6E2B2A2298B1E400DDC60F /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E2B292298B1E400DDC60F /* MainWindowController.swift */; };
 		1F6E2B2C2298B38200DDC60F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E2B2B2298B38200DDC60F /* MainViewController.swift */; };
+		1FA298FA23F0DAC400A095D1 /* CodesignCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 1FA298F923F0DAC400A095D1 /* CodesignCheck */; };
 		1FA4374F23BFDED400DFBC78 /* SwiftUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FA4374D23BFDED400DFBC78 /* SwiftUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FA4375223BFDED400DFBC78 /* SwiftUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA4374B23BFDED400DFBC78 /* SwiftUtilities.framework */; };
 		1FA4375323BFDED400DFBC78 /* SwiftUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA4374B23BFDED400DFBC78 /* SwiftUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -58,7 +59,6 @@
 		1FC0113B231475AB00EDB47F /* SVRUserAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC0113A231475AB00EDB47F /* SVRUserAttributes.swift */; };
 		1FCCB05122989C5200B5DC85 /* sshpass_wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCB05022989C5200B5DC85 /* sshpass_wrapper.m */; };
 		1FCCB0532298A0F600B5DC85 /* HelperTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCB0522298A0F600B5DC85 /* HelperTool.swift */; };
-		1FCCB0552298A1FE00B5DC85 /* CodesignCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCB0542298A1FE00B5DC85 /* CodesignCheck.swift */; };
 		1FCEEAA922A87D1C009C278B /* Wizard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FCEEAAB22A87D1C009C278B /* Wizard.storyboard */; };
 		1FCEEAB022A8859D009C278B /* PrivilegedToolConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCEEAAF22A8859D009C278B /* PrivilegedToolConnection.swift */; };
 		1FDBC24223136F8A00B737C0 /* SVRUserRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FDBC24023136F8A00B737C0 /* SVRUserRecord.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -185,7 +185,6 @@
 		1FC0113A231475AB00EDB47F /* SVRUserAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVRUserAttributes.swift; sourceTree = "<group>"; };
 		1FCCB05022989C5200B5DC85 /* sshpass_wrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sshpass_wrapper.m; sourceTree = "<group>"; };
 		1FCCB0522298A0F600B5DC85 /* HelperTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperTool.swift; sourceTree = "<group>"; };
-		1FCCB0542298A1FE00B5DC85 /* CodesignCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodesignCheck.swift; sourceTree = "<group>"; };
 		1FCEEAAA22A87D1C009C278B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Wizard.storyboard; sourceTree = "<group>"; };
 		1FCEEAAF22A8859D009C278B /* PrivilegedToolConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivilegedToolConnection.swift; sourceTree = "<group>"; };
 		1FDBC24023136F8A00B737C0 /* SVRUserRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVRUserRecord.h; sourceTree = "<group>"; };
@@ -199,6 +198,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FA298FA23F0DAC400A095D1 /* CodesignCheck in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,7 +245,6 @@
 			isa = PBXGroup;
 			children = (
 				1F1E0204229886B1009EA15A /* AuthorizationAPI.swift */,
-				1FCCB0542298A1FE00B5DC85 /* CodesignCheck.swift */,
 				1F1E0207229888AD009EA15A /* HelperToolProtocol.swift */,
 				1FCCB0522298A0F600B5DC85 /* HelperTool.swift */,
 				1F0DCFD22298829D00057AA1 /* main.swift */,
@@ -432,6 +431,9 @@
 			dependencies = (
 			);
 			name = PrivilegedHelperTool;
+			packageProductDependencies = (
+				1FA298F923F0DAC400A095D1 /* CodesignCheck */,
+			);
 			productName = PrivilegedHelper;
 			productReference = 1F0DCFD02298829D00057AA1 /* me.sunsol.OpenDirectoryServer.PrivilegedHelperTool */;
 			productType = "com.apple.product-type.tool";
@@ -680,7 +682,6 @@
 				1F1E0205229886B1009EA15A /* AuthorizationAPI.swift in Sources */,
 				1F0DCFD32298829D00057AA1 /* main.swift in Sources */,
 				1F6736DF2298949D00C7A446 /* sshpass.c in Sources */,
-				1FCCB0552298A1FE00B5DC85 /* CodesignCheck.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1638,6 +1639,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1F63414B23135F9600AB8A27 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
+		};
+		1FA298F923F0DAC400A095D1 /* CodesignCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1FA4375723BFDF1C00DFBC78 /* XCRemoteSwiftPackageReference "SwiftUtilities" */;
+			productName = CodesignCheck;
 		};
 		1FA4375823BFDF1C00DFBC78 /* LocalizedString */ = {
 			isa = XCSwiftPackageProductDependency;
