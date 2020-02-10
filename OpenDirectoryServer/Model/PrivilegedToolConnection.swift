@@ -47,7 +47,7 @@ internal enum PrivilegedToolConnection {
 	}
 
 	// Returns `true` if the user clicked Install.
-	static func showInstallRequiredSheet(parentWindow: NSWindow) -> Bool {
+	static func showInstallRequiredSheet(parentWindow: NSWindow, completionHandler: @escaping (Bool) -> Void) {
 		let alert = NSAlert()
 		alert.messageText = localize("Open Directory Server must install or update a privileged helper tool to complete this operation.")
 		let defaultButton = alert.addButton(withTitle: localize("Install"))
@@ -56,11 +56,8 @@ internal enum PrivilegedToolConnection {
 
 		alert.beginSheetModal(for: parentWindow) {
 			(returnCode) in
-			NSApp.stopModal(withCode: returnCode)
+			completionHandler(returnCode == .alertFirstButtonReturn)
 		}
-
-		let returnCode = NSApp.runModal(for: alert.window)
-		return returnCode == .alertFirstButtonReturn
 	}
 
 	static func createHelperToolProxy(responseObject: HelperToolResponseProtocol?) -> (NSXPCConnection, HelperToolRequestProtocol) {

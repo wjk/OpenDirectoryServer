@@ -55,7 +55,6 @@
 		1FA4375B23BFDF1C00DFBC78 /* SwiftKVO in Frameworks */ = {isa = PBXBuildFile; productRef = 1FA4375A23BFDF1C00DFBC78 /* SwiftKVO */; };
 		1FA4375D23BFDF2B00DFBC78 /* SwiftUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA4375C23BFDF2B00DFBC78 /* SwiftUtilities.swift */; };
 		1FA4375F23BFDF4300DFBC78 /* SwiftUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA4374B23BFDED400DFBC78 /* SwiftUtilities.framework */; };
-		1FA4376523BFE6FF00DFBC78 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA4376423BFE6FF00DFBC78 /* Utilities.swift */; };
 		1FA72ACD22987DEB00623350 /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = 1FA72ACB22987DEB00623350 /* COPYING */; };
 		1FA72ACE22987DEB00623350 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1FA72ACC22987DEB00623350 /* README.md */; };
 		1FC0113B231475AB00EDB47F /* SVRUserAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC0113A231475AB00EDB47F /* SVRUserAttributes.swift */; };
@@ -181,7 +180,6 @@
 		1FA4374D23BFDED400DFBC78 /* SwiftUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftUtilities.h; sourceTree = "<group>"; };
 		1FA4374E23BFDED400DFBC78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FA4375C23BFDF2B00DFBC78 /* SwiftUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUtilities.swift; sourceTree = "<group>"; };
-		1FA4376423BFE6FF00DFBC78 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		1FA72ACB22987DEB00623350 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		1FA72ACC22987DEB00623350 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1FC0113A231475AB00EDB47F /* SVRUserAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVRUserAttributes.swift; sourceTree = "<group>"; };
@@ -297,7 +295,6 @@
 				1F1147D822986E7200ED8DA7 /* AppDelegate.swift */,
 				1F1147E722986F9800ED8DA7 /* AuthenticationViewController.swift */,
 				1F1147E822986F9800ED8DA7 /* ConnectToServerViewController.swift */,
-				1FA4376423BFE6FF00DFBC78 /* Utilities.swift */,
 				1F1147DE22986E7300ED8DA7 /* Main.storyboard */,
 				1F1147EF2298702A00ED8DA7 /* Localizable.strings */,
 				1F6A569B2298A44900CFC403 /* Authorization.strings */,
@@ -697,7 +694,6 @@
 			files = (
 				1F6E2B2C2298B38200DDC60F /* MainViewController.swift in Sources */,
 				1F1147EA22986F9800ED8DA7 /* ConnectToServerViewController.swift in Sources */,
-				1FA4376523BFE6FF00DFBC78 /* Utilities.swift in Sources */,
 				1F1147E922986F9800ED8DA7 /* AuthenticationViewController.swift in Sources */,
 				1F6E2B2A2298B1E400DDC60F /* MainWindowController.swift in Sources */,
 				1F6736DA229891A600C7A446 /* HelperToolProtocol.swift in Sources */,
