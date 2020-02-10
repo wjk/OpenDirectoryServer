@@ -1628,7 +1628,7 @@
 			repositoryURL = "https://github.com/wjk/SwiftUtilities";
 			requirement = {
 				kind = revision;
-				revision = 772238afd76ee9f73d04783ad4d45bd108cce932;
+				revision = 1a14a6ea463cccd1e5f8f8033b974c842c448ab5;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
