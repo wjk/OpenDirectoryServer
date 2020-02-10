@@ -19,6 +19,7 @@
 import Cocoa
 import LocalizedString
 import ServiceManagement
+import AuthorizationAPI
 
 internal enum PrivilegedToolConnection {
 	static var isAvailable: Bool {
@@ -83,7 +84,7 @@ internal enum PrivilegedToolConnection {
 			fatalError("Could not create empty AuthorizationRef")
 		}
 
-		let right = AuthorizationRight(name: kSMRightModifySystemDaemons, description: "")
+		let right = AuthorizationRight(name: kSMRightModifySystemDaemons, description: "", ruleDefinition: .constant(name: ""))
 		try Authorization.verifyAuthorization(authRef, forAuthorizationRight: right, promptText: nil)
 
 		var error: Unmanaged<CFError>? = nil
@@ -97,6 +98,11 @@ internal enum PrivilegedToolConnection {
 			}
 		}
 
-		try Authorization.authorizationRightsUpdateDatabase(bundle: Bundle.main, stringTableName: "Authorization")
+		let allRights = [
+			Rights.createMasterServer, Rights.createReplicaServer,
+			Rights.createBackup, Rights.restoreBackup
+		]
+
+		try Authorization.authorizationRightsUpdateDatabase(rights: allRights, bundle: Bundle.main, stringTableName: "Authorization")
 	}
 }

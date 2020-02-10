@@ -20,6 +20,7 @@ import Cocoa
 import SwiftKVO
 import SVRUserManagement
 import LocalizedString
+import AuthorizationAPI
 
 class ConnectToServerViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
 	override func viewDidLoad() {

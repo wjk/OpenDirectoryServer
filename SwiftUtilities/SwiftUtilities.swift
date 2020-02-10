@@ -23,3 +23,4 @@
 
 @_exported import SwiftKVO
 @_exported import LocalizedString
+@_exported import AuthorizationAPI
