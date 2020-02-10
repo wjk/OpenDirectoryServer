@@ -1,5 +1,6 @@
 #! /bin/sh
 
+sudo launchctl kill -KILL system/me.sunsol.OpenDirectoryServer.PrivilegedHelperTool
 sudo launchctl unload /Library/LaunchDaemons/me.sunsol.OpenDirectoryServer.PrivilegedHelperTool.plist
 sudo rm /Library/LaunchDaemons/me.sunsol.OpenDirectoryServer.PrivilegedHelperTool.plist
 sudo rm /Library/PrivilegedHelperTools/me.sunsol.OpenDirectoryServer.PrivilegedHelperTool
